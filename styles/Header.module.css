@@ -1,0 +1,113 @@
+#top__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.44);
+    padding-bottom: 1em;
+}
+
+#top_header__left{
+    font-weight: 400;
+}
+
+#top_header__ol{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.top_header__list{
+    
+}
+
+.top_header__list > a{
+    padding-right: 1em;
+    cursor: pointer;
+    font-size: 1.6em;
+    transition: color .2s;
+}
+
+.top_header__list > a:hover{
+    color: #2163e8;
+    transition: color .2s;
+}
+
+#top_header__right{
+    display: flex;
+    align-items: center;
+}
+
+#togglediv {
+    border: .1em solid #2163e8;
+    padding: .45em 0;
+    border-right: none;
+    border-left: none;
+    overflow: hidden;
+    border-radius: .5em;
+    margin: 1em
+}
+
+.input {
+  display: none;
+  position: fixed;
+  z-index: -3;
+  transition: all 0.2s ease;
+}
+
+.input:checked + #label {
+  color: white;
+  background-color: #2163e8;
+}
+
+.input:hover + #label {
+  background-color: #2163e8;
+  color: white;
+}
+
+#label {
+  padding: .5em;
+  border: .1em solid #2163e8;
+  color: #2163e8;
+  transition: all 0.2s ease;
+  width: 1em;
+  font-size: 1.3em;
+}
+
+
+
+.theme_change_button{
+    transition: all .2s ease;
+    margin: 0 .3em;
+    animation: rotate 4s ease-in-out infinite forwards;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    } 
+    50%{
+        transform: rotate(-25deg);
+    }   
+}
+
+.toggle_theme_div > span{
+    width: 15px;
+    height: 5px;
+    background-color: gray;
+}
+
+#social_media_handles{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#social_media__handles > svg{
+    margin-left: .1em;
+    padding: .1em 0 .1em .1em ;
+    cursor: pointer;
+}
+
+#social_media__handles > svg:hover{
+    color: #2163e8;
+}

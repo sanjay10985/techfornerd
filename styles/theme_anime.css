@@ -1,0 +1,14 @@
+.lightText{
+    color: gray;
+    transition: color .2s ease-in-out;
+}
+
+.darkText{
+    color: gray;
+    transition: color .2s ease-in-out;
+}
+
+.smfont{    
+    /* font-size: 14px; */
+    transition: font-size .2s ease-in-out;
+}
