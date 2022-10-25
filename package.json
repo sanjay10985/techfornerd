@@ -13,10 +13,22 @@
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.10",
+    "@reduxjs/toolkit": "^1.8.6",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.0.0",
+    "html-react-parser": "^3.0.4",
+    "moment": "^2.29.4",
     "next": "12.3.1",
+    "next-redux-wrapper": "^8.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-router-dom": "^6.4.2"
+    "react-redux": "^8.0.4",
+    "react-router-dom": "^6.4.2",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.1",
+    "sass": "^1.55.0"
   },
   "devDependencies": {
     "eslint": "8.26.0",

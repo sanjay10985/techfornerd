@@ -1,122 +1,57 @@
-import React, { useState } from "react";
-import Link from "next/link";
+import React from "react";
 import styles from "../styles/Header.module.css";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import Image from "next/image";
+import { useSelector } from "react-redux";
+import { selectMode } from "../features/darkModeReducer";
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import SearchIcon from '@mui/icons-material/Search';
+import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const Header = ({ toggleMode, mode }) => {
+const Header = () => {
+
+  const mode = useSelector(selectMode);
+
   return (
-    <div className="header">
-      <div id={styles.top__header}>
-        <div
-          id={styles.top_header__left}
-          className={mode === "dark" ? "lightText" : "darkText"}
-        >
-          <ul id={styles.top_header__ol}>
-            <List listText="About" href="about" />
-            <List listText="Forum" />
-            <List listText="Login / Join" />
-          </ul>
+    <div className={styles.header} id="header">
+      <nav className={styles.navbar} >
+        <div className={styles.navbar_left}>
+          <a href="/" style={{color: mode ? "white":"#595d69"}}>
+          <Image
+            src="/images/title-icon.png"
+            width="60px"
+            height="55px"
+            alt="siteicon"
+            objectFit="contain"
+          />
+          <h1>FN</h1>
+          </a>
         </div>
-        <div id={styles.top_header__right}>
-          <div
-            id={styles.togglediv}
-            style={{ color: mode === "dark" ? "white" : "#2163e8" }}
-          >
-            {/* <input className={styles.input} type="radio" name="tx" id="sm_tx" onChange={decreaseFontSize} /> */}
-            <input className={styles.input} type="radio" name="tx" id="sm_tx" />
-            <label
-              id={styles.label}
-              className="lableback"
-              htmlFor="sm_tx"
-              onClick={(e) => (document.body.style.fontSize = "87%")}
-            >
-              A-
-            </label>
-            <input
-              className={styles.input}
-              type="radio"
-              name="tx"
-              id="default"
-              defaultChecked
-            />
-            <label
-              id={styles.label}
-              className="lableback"
-              htmlFor="default"
-              onClick={(e) => (document.body.style.fontSize = "100%")}
-            >
-              A
-            </label>
-            <input className={styles.input} type="radio" name="tx" id="lg_tx" />
-            <label
-              id={styles.label}
-              className="lableback"
-              htmlFor="lg_tx"
-              onClick={(e) => (document.body.style.fontSize = "113%")}
-            >
-              A+
-            </label>
-          </div>
-          <div className={styles.toggle_theme_div}>
-            {mode === "dark" ? (
-              <DarkModeIcon
-                className={styles.theme_change_button}
-                sx={{ color: "pink", fontSize: 32 }}
-                fontSize="large"
-                onClick={toggleMode}
-              />
-            ) : (
-              <Brightness7Icon
-                className={styles.theme_change_button}
-                sx={{ color: "orange", fontSize: 32 }}
-                fontSize="large"
-                onClick={toggleMode}
-              />
-            )}
-            <span></span>
-          </div>
-
-          <div id={styles.social_media__handles}>
-            <FacebookIcon
-              sx={{ fontSize: 35 }}
-              color={mode === "dark" ? "secondary" : "action"}
-            />
-            <TwitterIcon
-              sx={{ fontSize: 35 }}
-              color={mode === "dark" ? "secondary" : "action"}
-            />
-            <LinkedInIcon
-              sx={{ fontSize: 35 }}
-              color={mode === "dark" ? "secondary" : "action"}
-            />
-            <YouTubeIcon
-              sx={{ fontSize: 35 }}
-              color={mode === "dark" ? "secondary" : "action"}
-            />
-            <InstagramIcon
-              sx={{ fontSize: 35 }}
-              color={mode === "dark" ? "secondary" : "action"}
-            />
-          </div>
+        <ul className={styles.menu} style={{color: mode ? "#a1a1a8":"#595d69"}}>
+          <List icon={true} text="Home" href="/" />
+          <List text="Blog"  arr={true} href="/blog"/>
+          <List text="Internet"  arr={true} href="/internet"/>
+          {/* <List text="Tech" href="/tech"/> */}
+          <List text="Game"  arr={true} href="/game"/>
+        </ul>
+        <div className={styles.navbar_right}>
+          <button>Subscribe!</button>
+          <SearchIcon sx={{fontSize: 45, color: 'gray'}}/>
+          <FormatAlignRightIcon sx={{fontSize: 45, color: 'gray'}}/>
         </div>
-      </div>
+      </nav>
     </div>
   );
 };
 
-const List = ({ listText, href }) => {
-  return (
-    <li className={styles.top_header__list}>
-      {/* to convert the first letter of every list the logic is been used */}
-      <Link href={`/${href}`}>{listText}</Link>
+const List = ({icon,href,text,arr}) =>{
+  return(
+    <li>
+      {icon && <FiberManualRecordIcon sx={{color: '#2163e8'}} fontSize="small" style={{position: 'absolute',left: "-15px",bottom: '22px',}}/>}
+      <a href={href}>{text}</a>
+      {arr && <KeyboardArrowDownIcon style={{position: 'absolute',right: "-15px",bottom: '20px',}}/>}
     </li>
   );
-};
+}
 
 export default Header;

@@ -1,0 +1,41 @@
+.toggle_theme_div {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  #theme_change_button {
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin: 0 .4em;
+    animation: rotate 4s ease-in-out infinite forwards;
+  }
+  
+  .dark_mode_icon{
+    background-color: black;
+    border-radius: 50%;
+    padding: 4px;
+    border: 2px solid white;
+    box-shadow: 2px 2px -1px rgba(255, 255, 255, 0.179), 2px 2px 0px rgba(255, 255, 255, 0.212);
+    transition: all .2s ease;
+}
+
+.light_mode_icon{
+    background-color: rgb(223, 146, 2);
+    border-radius: 50%;
+    padding: 4px;
+    border: 2px solid white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.289), 2px 2px 10px rgba(0, 0, 0, 0.278);
+    transition: all .2s ease;
+}
+  
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-25deg);
+    }
+    
+  }
