@@ -1,0 +1,55 @@
+.textCarousel {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.textDiv {
+  background-color: red;
+  /* overflow: hidden; */
+  position: relative;
+  /* display: block; */
+  width: 800px;
+}
+
+.titleLabel{
+    position: absolute;
+    display: inline-flex;
+    
+    /* background-color: red; */
+    width: 100%;
+}
+
+.titleLabel > h1 {
+  margin-right: 370px;
+  padding-left: 25px;
+  width: 100% !important;
+  /* position: absolute; */
+}
+
+.textDiv > h1:first-child {
+  animation: alt 15s forwards ease;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes alt {
+  60% {
+    margin-right: -40px;
+    margin-left: -70px;
+  }
+}
+/* @keyframes alt {
+    0%{
+        margin-right: 370px;
+        marigin-left: 25px
+    }
+    33%{
+        margin-right: 25px;
+        margin-left: -80px;
+    }
+    77%{
+        margin-right: -400px;
+        margin-left: -100px;
+    }
+} */

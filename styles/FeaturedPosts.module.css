@@ -1,0 +1,70 @@
+.featuredPost{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#postLink{
+    width: 100%;
+    cursor: pointer;
+}
+
+#imgbox {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: 200%;
+  background-repeat: no-repeat;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+
+
+#imgbox:hover {
+  background-size: 250%;
+  transition: all 0.3s ease-in-out;
+}
+
+.animateImg {
+  background-size: 250% ;
+  transition: all 0.3s ease-in-out;
+}
+
+.featuredPostTitle a{
+    background-image: linear-gradient(white,white);
+    background-size: 0 2px;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    line-height: 10px;
+    transition: background-size .4s;
+    color: white;
+}
+
+.featuredPostTitle a:hover{
+      background-repeat: no-repeat;
+    background-size: 100% 2px !important;
+    transition: background-size 1s;
+  }
+
+
+  .textDisc{
+    bottom: 57px;
+    left: 22px;
+    position: absolute;
+  }
+
+  .animateText{
+    background-size: 100% 2px !important;
+    transition: background-size 1s;
+  }
+  
+  .animateImg {
+    /* transform: scale(1.2); */
+    background-size: 250%;
+    transition: all .3s ease-in-out;
+  }
+
+  .featuredPostTitle a:hover #imgbox{
+    background-size: 250%;
+  transition: all 0.3s ease-in-out;
+  } 

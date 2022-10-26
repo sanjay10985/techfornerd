@@ -24,6 +24,10 @@ a {
   margin: 0;
 }
 
+.featuredPostBox{
+  width: 100%;
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: light;
@@ -34,3 +38,18 @@ a {
   }
 } */
 
+.animateImg {
+  background-size: 250% ;
+  transition: all 0.3s ease-in-out;
+}
+
+.animateText{
+  background-size: 100% 2px !important;
+  transition: background-size 1s;
+}
+
+.animateImg {
+  /* transform: scale(1.2); */
+  background-size: 250%;
+  transition: all .3s ease-in-out;
+} 
