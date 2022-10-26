@@ -55,6 +55,7 @@ export const getFeaturedPosts = async () => {
                 id
                 title
                 featuredPost
+                excerpt 
                 featuredImage {
                   url
                 }

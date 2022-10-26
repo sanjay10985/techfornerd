@@ -17,6 +17,7 @@
   background-repeat: no-repeat;
   transition: all 0.4s ease-in-out;
   position: relative;
+  /* object-fit: contain; */
 }
 
 
@@ -30,17 +31,21 @@
   transition: all 0.3s ease-in-out;
 }
 
-.featuredPostTitle a{
+.featuredPostTitle h1{
     background-image: linear-gradient(white,white);
     background-size: 0 2px;
     background-position: bottom left;
     background-repeat: no-repeat;
-    line-height: 10px;
     transition: background-size .4s;
     color: white;
+    display: inline;
+    font-size: 2em;
+    width: 200px;
+    /* word-wrap: break-word; */
+    /* padding-inline-end:1em; */
 }
 
-.featuredPostTitle a:hover{
+.featuredPostTitle h1:hover{
       background-repeat: no-repeat;
     background-size: 100% 2px !important;
     transition: background-size 1s;
@@ -48,8 +53,9 @@
 
 
   .textDisc{
-    bottom: 57px;
-    left: 22px;
+    bottom: 2.5em;
+    left: 30px;
+    right: 20px;
     position: absolute;
   }
 
@@ -64,7 +70,60 @@
     transition: all .3s ease-in-out;
   }
 
-  .featuredPostTitle a:hover #imgbox{
-    background-size: 250%;
-  transition: all 0.3s ease-in-out;
-  } 
+  #categoryDiv{
+    display: flex;
+    padding: 0.4em 1em;
+    align-items: center;
+    position: relative;
+    /* background-color: red; */
+    /* background-color: rgb(196, 35, 35); */
+    border-radius: 1em;
+    width: fit-content;
+    margin-bottom: 1em;
+  }
+
+ #category{
+  color: white;
+  font-size: 1.6em;
+  padding-left: .5em;
+  font-weight: 600;
+ }
+
+ #excerpt{
+  color: white;
+  font-size: 1.8em;
+ }
+
+ #postDetails{
+  display: flex;
+  /* justify-content: space-around; */
+  /* margin-top: 1.5em; */
+  align-items: center;
+  color: white;
+  width: 100%;
+ }
+
+ #postDetails > label{
+  /* font-size: 1em; */
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: white;
+  margin-left: 1em;
+ }
+
+ #authorDiv{
+  display: flex;
+  align-items: center;
+ }
+
+ #authorName{
+  color: white;
+  margin-left: 1em;
+  font-size: 1.6em;
+ }
+
+ #postDetails > span{
+  margin: 1em;
+  font-size: 1.6em;
+ }

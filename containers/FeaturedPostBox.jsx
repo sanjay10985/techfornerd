@@ -14,14 +14,15 @@ const FeaturedPostBox = ({posts}) => {
   const animate_text = () => {
     const imgbox = document.getElementsByClassName("imgbox");
     Array.from(imgbox).forEach((e) => {
-      const postText = e.nextElementSibling.firstElementChild.firstElementChild;
+      const postText = e.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild;
+      // console.log(postText);
       e.addEventListener("mouseenter", () => {
         postText.classList.toggle("animateText");
       });
       postText.classList.remove("animateText");
     });
   };
-  console.log(featuredPosts)
+  // console.log(featuredPosts)  
 
   return (
     <div className="featuredPostBox">
@@ -33,13 +34,19 @@ const FeaturedPostBox = ({posts}) => {
           onMouseLeave={animate_text}
         >
           {featuredPosts.slice(-1).map((post) => (
-
+            // {post.categories.map((ca))}
           <FeaturedPosts
             title={post.title}
             imgSrc={post.featuredImage.url}
             slug={post.slug}
             key={post.id}
-            category ={post.categories.name}
+            category ={post.categories[0].name}
+            catcolor="#C42323"
+            authorName = {post.author.name}
+            authorImg = {post.author.photo.url}
+            createdAt = {post.createdAt}
+            excerpt={post.excerpt}
+            font = {true}
           />
           ))}
         </div>
