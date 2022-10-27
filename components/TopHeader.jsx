@@ -68,24 +68,19 @@ const TopHeader = () => {
         <DarkMode />
         <div id={styles.social_media__handles}>
           <FacebookIcon
-            sx={{ fontSize: 30 }}
-            color={mode ? "primary" : "action"}
+            sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
           />
           <TwitterIcon
-            sx={{ fontSize: 30 }}
-            color={mode ? "secondary" : "action"}
-          />
+            sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
+            />
           <LinkedInIcon
-            sx={{ fontSize: 30 }}
-            color={mode ? "secondary" : "action"}
+            sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
           />
           <YouTubeIcon
-            sx={{ fontSize: 30 }}
-            color={mode ? "secondary" : "action"}
+            sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
           />
           <InstagramIcon
-            sx={{ fontSize: 30 }}
-            color={mode ? "secondary" : "action"}
+            sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
           />
         </div>
       </div>

@@ -6,7 +6,7 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { Avatar } from "@mui/material";
 import moment from "moment";
 
-const FeaturedPosts = ({ title, imgSrc, slug, category, catcolor, authorName, authorImg, createdAt,excerpt,font }) => {
+const FeaturedPosts = ({ title, imgSrc, slug, category, catcolor, authorName, authorImg, createdAt,excerpt,font, bgpos }) => {
   // console.log(authorName)
 
 
@@ -25,6 +25,7 @@ const FeaturedPosts = ({ title, imgSrc, slug, category, catcolor, authorName, au
           className="imgbox"
           style={{
             backgroundImage: `linear-gradient(180deg, transparent, black),url(${imgSrc})`,
+            backgroundPosition: `${bgpos}`
           }}
         >
           {" "}
@@ -39,7 +40,7 @@ const FeaturedPosts = ({ title, imgSrc, slug, category, catcolor, authorName, au
           <a className={styles.featuredPostTitle} href={`posts/${slug}`}>
             
             <h1
-              className="link" style={{fontSize: font ? '4em': '2em', fontWeight: '700'}}
+              className="link" style={{fontSize: font ? '3.6em': '2.6em', fontWeight: '600'}}
               
             //   onMouseEnter={animate_img}
             //   onMouseLeave={animate_img}
@@ -51,7 +52,7 @@ const FeaturedPosts = ({ title, imgSrc, slug, category, catcolor, authorName, au
           {excerpt &&  <p id={styles.excerpt}>{excerpt}</p>}
           <div id={styles.postDetails}>
           <div id={styles.authorDiv}>
-           { authorImg && <Avatar src={authorImg}   />}
+           { authorImg && <Avatar src={authorImg} id={styles.authorAvatar}  />}
            <p id={styles.authorName}> by  {authorName}</p>
           </div>
           <label></label>
