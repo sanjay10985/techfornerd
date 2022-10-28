@@ -6,12 +6,12 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { Avatar } from "@mui/material";
 import moment from "moment";
 
-const FeaturedPostBox = () => {
-  const [featuredPosts, setFeaturedPosts] = useState([]);
+const FeaturedPostBox = ({featuredPosts}) => {
+  // const [featuredPosts, setFeaturedPosts] = useState([]);
 
-  useEffect(() => {
-    getFeaturedPosts().then((posts) => setFeaturedPosts(posts));
-  }, []);
+  // useEffect(() => {
+  //   getFeaturedPosts().then((posts) => setFeaturedPosts(posts));
+  // }, []);
 
   const animate_text = () => {
     const imgbox = document.getElementsByClassName("imgbox");

@@ -3,11 +3,7 @@ import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import { selectMode } from "../features/darkModeReducer";
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import SearchIcon from '@mui/icons-material/Search';
-import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import MenuIcon from '@mui/icons-material/Menu';
 import { BsSearch } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -32,7 +28,7 @@ const Header = () => {
           </a>
         </div>
         <ul className={styles.menu} id="menu" style={{color: mode ? "#a1a1a8":"#595d69"}}>
-          <List icon={true} text="Home" href="/" />
+          <List  text="Home" href="/" />
           <List text="Blog"  arr={true} href="/blog"/>
           <List text="Internet"  arr={true} href="/internet"/>
           {/* <List text="Tech" href="/tech"/> */}
@@ -55,7 +51,7 @@ const Header = () => {
 const List = ({icon,href,text,arr}) =>{
   return(
     <li>
-      {icon && <FiberManualRecordIcon sx={{color: '#2163e8'}} fontSize="small" style={{position: 'absolute',left: "-15px",bottom: '22px',}}/>}
+      {/* {icon && <FiberManualRecordIcon sx={{color: '#2163e8'}} fontSize="small" style={{position: 'absolute',left: "-15px",bottom: '22px',}}/>} */}
       <a href={href}>{text}</a>
       {arr && <KeyboardArrowDownIcon style={{position: 'absolute',right: "-15px",bottom: '20px',}}/>}
     </li>

@@ -15,13 +15,13 @@ const TopHighlightsPosts = () => {
 
   const mode = useSelector(selectMode);
 
-  console.log(highlightPosts)
+  // console.log(highlightPosts)
 
   return (
-    <section className={styles.topHighlightsPosts}>
+    <section className={styles.topHighlightsPosts} id="topHighlightsPosts">
       <div className={styles.highlightLeftDiv}>
-        <div style={{color: mode? 'white':'black'}}>
-          <div className={styles.highlightTitleDiv} >
+        <div style={{ color: mode ? "white" : "black" }}>
+          <div className={styles.highlightTitleDiv}>
             <BsHourglassTop fontSize="3.5em" />
             <h1>Today's top highlights</h1>
           </div>
@@ -29,25 +29,13 @@ const TopHighlightsPosts = () => {
         </div>
         <div className={styles.highlightsPostsBox}>
           {highlightPosts.map((post) => (
-            <HighlightsPosts
-              title={post.title}
-              postUrl={post.slug}
-              postPhoto={post.featuredImage.url}
-              category={post.categories[0].name}
-              categoryUrl={post.categories[0].slug}
-              catColor={post.categories[0].color.hex}
-              excrept={post.excrept}
-              key={post.id}
-              authorName={post.author.name}
-              authorImgUrl={post.author.photo.url}
-              createdAt={post.createdAt}
-              sponsored={post.sponsored}
-            />
+            <HighlightsPosts post={post} />
           ))}
         </div>
       </div>
       <div className={styles.highlightRightDiv}>
         <h1>heii this is right div for the social and trend div</h1>
+        
         {/* Social accounts div */}
         {/* Trending categories div */}
         {/* Recent Posts */}

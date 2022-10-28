@@ -16,6 +16,7 @@ body{
   transition: all .2s ease;
   width: 78%;
   margin: auto !important;
+  background-color: whitesmoke;
 }
 
 a {
@@ -140,6 +141,9 @@ a {
   #fplExcerpt{
     font-size: 1.4em;
   }
+  #topHighlightsPosts{
+    flex-direction: column;
+  }
 } 
 @media only screen and (max-width: 768px)  {
   body{
@@ -177,7 +181,10 @@ a {
     width: 100%;
     margin-left: 0;
   }
-
+  #highlightsPosts{
+    height: 57em;
+    margin-bottom: 2em;
+  }
 } 
 @media only screen and (max-width: 576px)  {
   #smMenuDiv > label{
@@ -186,6 +193,14 @@ a {
   body{
     width: 90%;
     font-size: 8px;
+  }
+  #highlightsPosts{
+    width: 100%;
+    height: 57em;
+    /* margin-bottom: 1em; */
+  }
+  #highlightsPostsImage{
+    height: 65%;
   }
 } 
 @media only screen and (max-width: 370px)  {
@@ -196,6 +211,7 @@ a {
     width: 90%;
     font-size: 6px;
   }
+
 } 
 @media only screen and (max-width: 290px)  {
   #smMenuDiv > label{
