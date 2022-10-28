@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import FeaturedPosts from "../components/FeaturedPosts";
 import { getFeaturedPosts } from "../services";
 import styles from "../styles/FeaturedPostBox.module.css";
 import Link from "next/link";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { Avatar } from "@mui/material";
 import moment from "moment";
+import { width } from "@mui/system";
 
 const FeaturedPostBox = () => {
   const [featuredPosts, setFeaturedPosts] = useState([]);
@@ -20,21 +20,39 @@ const FeaturedPostBox = () => {
       const postText =
         e.nextElementSibling.firstElementChild.nextElementSibling
           .firstElementChild;
-      // console.log(postText);
       e.addEventListener("mouseenter", () => {
         postText.classList.toggle("animateText");
       });
       postText.classList.remove("animateText");
     });
   };
-  console.log(featuredPosts);
+
+  const animate_img = () => {
+    const textAni = document.getElementsByClassName("link");
+    Array.from(textAni).forEach((e) => {
+      e.addEventListener("mouseenter", () => {
+        const imgBox = e.parentElement.parentElement.previousElementSibling;
+        imgBox.classList.add("animateImg");
+      });
+      e.addEventListener("mouseleave", () => {
+        const imgBox = e.parentElement.parentElement.previousElementSibling;
+        imgBox.classList.remove("animateImg");
+      });
+    });
+  };
+  // console.log(featuredPosts);
 
   return (
-    <div className="featuredPostBox">
-      <div className={styles.featuredPostdiv} style={{ width: "100%" }}>
+    <div className={styles.featuredPostBox}>
+      <div
+        className={styles.featuredPostdiv}
+        id="featuredPostDiv"
+        style={{ width: "100%" }}
+      >
         <div
-          className={styles.box}
-          id={styles.box_1}
+          // className={styles.box}
+          id="box1Div"
+          className={`${styles["box1"]} ${styles["box"]}`}
           onMouseEnter={animate_text}
           onMouseLeave={animate_text}
         >
@@ -44,6 +62,7 @@ const FeaturedPostBox = () => {
               id={styles.postLink}
               href={`posts/${post.slug}`}
               style={{ cursor: "pointer" }}
+              key={post.id}
             >
               <div className={styles.featuredPost}>
                 <div
@@ -51,6 +70,7 @@ const FeaturedPostBox = () => {
                   className="imgbox"
                   style={{
                     backgroundImage: `linear-gradient(180deg, transparent, black),url(${post.featuredImage.url})`,
+                    // backgroundSize: '180%'
                   }}
                 ></div>
                 <div className={styles.textDisc}>
@@ -74,18 +94,20 @@ const FeaturedPostBox = () => {
                   >
                     <h1
                       className="link"
-                      style={{
-                        fontSize: "3.6em",
-                        fontWeight: "600",
-                      }}
-
-                      //   onMouseEnter={animate_img}
-                      //   onMouseLeave={animate_img}
+                      id="fplTitle"
+                      // style={{
+                      //   fontSize: "3.6em",
+                      //   fontWeight: "600",
+                      // }}
+                      onMouseEnter={animate_img}
+                      onMouseLeave={animate_img}
                     >
                       {post.title}
                     </h1>
                   </a>
-                  <p id={styles.excerpt}>{post.excerpt}</p>
+                  <p className={styles.excerpt} id="fplExcerpt">
+                    {post.excerpt}
+                  </p>
                   <div id={styles.postDetails}>
                     <div id={styles.authorDiv}>
                       {
@@ -104,85 +126,20 @@ const FeaturedPostBox = () => {
             </Link>
           ))}
         </div>
-        <div id={styles.box_2}>
+        <div className={styles.box2} id="box2Div">
           <div
-            className={styles.box}
-            id={styles.box_3}
+          className={`${styles["box3"]} ${styles["box"]}`}
+          id="box3Div"
             onMouseEnter={animate_text}
             onMouseLeave={animate_text}
           >
             {featuredPosts.slice(-2, -1).map((post) => (
               // {post.categories.map((ca))}
               <Link
-              id={styles.postLink}
-              href={`posts/${post.slug}`}
-              style={{ cursor: "pointer" }}
-            >
-              <div className={styles.featuredPost}>
-                <div
-                  id={styles.imgbox}
-                  className="imgbox"
-                  style={{
-                    backgroundImage: `linear-gradient(180deg, transparent, black),url(${post.featuredImage.url})`,
-                  }}
-                ></div>
-                <div className={styles.textDisc}>
-                  <div
-                    id={styles.categoryDiv}
-                    style={{
-                      backgroundColor: `${post.categories[0].color.hex}`,
-                    }}
-                  >
-                    <FiberManualRecordIcon
-                      sx={{ color: "white", fontSize: 20 }}
-                    />
-                    <label id={styles.category}>
-                      {post.categories[0].name}
-                    </label>
-                  </div>
-
-                  <a
-                    className={styles.featuredPostTitle}
-                    href={`posts/${post.slug}`}
-                  >
-                    <h1
-                      className="link"
-                      style={{
-                        fontSize: "2.6em",
-                        fontWeight: "600",
-                      }}
-
-                      //   onMouseEnter={animate_img}
-                      //   onMouseLeave={animate_img}
-                    >
-                      {post.title}
-                    </h1>
-                  </a>
-                  <div id={styles.postDetails}>
-                    <div id={styles.authorDiv}>
-                      <p id={styles.authorName}> by {post.author.name}</p>
-                    </div>
-                    <label></label>
-                    <span>{moment(post.createdAt).format("MMM DD, YYYY")}</span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-            ))}
-          </div>
-          <div id="box_4" style={{ display: "flex", height: "50%" }}>
-            <div
-              className={styles.box}
-              id={styles.box_5}
-              onMouseEnter={animate_text}
-              onMouseLeave={animate_text}
-            >
-              {featuredPosts.slice(-3, -2).map((post) => (
-                // {post.categories.map((ca))}
-                <Link
                 id={styles.postLink}
                 href={`posts/${post.slug}`}
                 style={{ cursor: "pointer" }}
+                key={post.id}
               >
                 <div className={styles.featuredPost}>
                   <div
@@ -206,20 +163,20 @@ const FeaturedPostBox = () => {
                         {post.categories[0].name}
                       </label>
                     </div>
-  
+
                     <a
                       className={styles.featuredPostTitle}
                       href={`posts/${post.slug}`}
                     >
                       <h1
                         className="link"
+                        id="fprTitle"
                         style={{
                           fontSize: "2.6em",
                           fontWeight: "600",
                         }}
-  
-                        //   onMouseEnter={animate_img}
-                        //   onMouseLeave={animate_img}
+                        onMouseEnter={animate_img}
+                        onMouseLeave={animate_img}
                       >
                         {post.title}
                       </h1>
@@ -229,37 +186,163 @@ const FeaturedPostBox = () => {
                         <p id={styles.authorName}> by {post.author.name}</p>
                       </div>
                       <label></label>
-                      <span>{moment(post.createdAt).format("MMM DD, YYYY")}</span>
+                      <span>
+                        {moment(post.createdAt).format("MMM DD, YYYY")}
+                      </span>
                     </div>
                   </div>
                 </div>
               </Link>
+            ))}
+          </div>
+          <div className={styles.box4} id="box4Div">
+            <div
+          className={`${styles["box5"]} ${styles["box"]}`}
+          id="box5Div"
+              onMouseEnter={animate_text}
+              onMouseLeave={animate_text}
+            >
+              {featuredPosts.slice(-3, -2).map((post) => (
+                // {post.categories.map((ca))}
+                <Link
+                  id={styles.postLink}
+                  href={`posts/${post.slug}`}
+                  style={{ cursor: "pointer" }}
+                  key={post.id}
+                >
+                  <div className={styles.featuredPost}>
+                    <div
+                      id={styles.imgbox}
+                      className="imgbox"
+                      style={{
+                        backgroundImage: `linear-gradient(180deg, transparent, black),url(${post.featuredImage.url})`,
+                      }}
+                    ></div>
+                    <div className={styles.textDisc}>
+                      <div
+                        id={styles.categoryDiv}
+                        style={{
+                          backgroundColor: `${post.categories[0].color.hex}`,
+                        }}
+                      >
+                        <FiberManualRecordIcon
+                          sx={{ color: "white", fontSize: 20 }}
+                        />
+                        <label id={styles.category}>
+                          {post.categories[0].name}
+                        </label>
+                      </div>
+
+                      <a
+                        className={styles.featuredPostTitle}
+                        href={`posts/${post.slug}`}
+                      >
+                        <h1
+                          className="link"
+                          style={{
+                            fontSize: "2.2em",
+                            fontWeight: "600",
+                          }}
+                          onMouseEnter={animate_img}
+                          onMouseLeave={animate_img}
+                        >
+                          {post.title}
+                        </h1>
+                      </a>
+                      <div id={styles.postDetails}>
+                        <div id={styles.authorDiv}>
+                          <p id={styles.authorName}> by {post.author.name}</p>
+                        </div>
+                        <label></label>
+                        <span>
+                          {moment(post.createdAt).format("MMM DD, YYYY")}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
             <div
-              className={styles.box}
-              id={styles.box_6}
+          className={`${styles["box6"]} ${styles["box"]}`}
+          id="box6Div"
               onMouseEnter={animate_text}
               onMouseLeave={animate_text}
             >
               {featuredPosts.slice(-4, -3).map((post) => (
                 // {post.categories.map((ca))}
-                <FeaturedPosts
-                  title={post.title}
-                  imgSrc={post.featuredImage.url}
-                  slug={post.slug}
+                <Link
+                  id={styles.postLink}
+                  href={`posts/${post.slug}`}
+                  style={{ cursor: "pointer" }}
                   key={post.id}
-                  category={post.categories[0].name}
-                  catcolor={post.categories[0].color.hex}
-                  authorName={post.author.name}
-                  createdAt={post.createdAt}
-                  bgpost="top center"
-                />
+                >
+                  <div className={styles.featuredPost}>
+                    <div
+                      id={styles.imgbox}
+                      className="imgbox"
+                      style={{
+                        backgroundImage: `linear-gradient(180deg, transparent, black),url(${post.featuredImage.url})`,
+                        backgroundPosition: "top",
+                      }}
+                    ></div>
+                    <div className={styles.textDisc}>
+                      <div
+                        id={styles.categoryDiv}
+                        style={{
+                          backgroundColor: `${post.categories[0].color.hex}`,
+                        }}
+                      >
+                        <FiberManualRecordIcon
+                          sx={{ color: "white", fontSize: 20 }}
+                        />
+                        <label id={styles.category}>
+                          {post.categories[0].name}
+                        </label>
+                      </div>
+
+                      <a
+                        className={styles.featuredPostTitle}
+                        href={`posts/${post.slug}`}
+                      >
+                        <h1
+                          className="link"
+                          style={{
+                            fontSize: "2.2em",
+                            fontWeight: "600",
+                          }}
+                          onMouseEnter={animate_img}
+                          onMouseLeave={animate_img}
+                        >
+                          {post.title}
+                        </h1>
+                      </a>
+                      <div id={styles.postDetails}>
+                        <div id={styles.authorDiv}>
+                          <p id={styles.authorName}> by {post.author.name}</p>
+                        </div>
+                        <label></label>
+                        <span>
+                          {moment(post.createdAt).format("MMM DD, YYYY")}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
         </div>
       </div>
+      <style jsx>
+        {`
+          @media only screen and (max-width: 990px) {
+            #box_1 {
+              width: 100%;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };

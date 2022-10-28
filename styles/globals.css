@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap");
+
 
 html,
 body {
@@ -12,7 +14,7 @@ body {
 
 body{
   transition: all .2s ease;
-  width: 135em;
+  width: 82%;
   margin: auto !important;
 }
 
@@ -40,18 +42,177 @@ a {
   }
 } */
 
-.animateImg {
-  background-size: 250% ;
-  transition: all 0.3s ease-in-out;
-}
-
 .animateText{
   background-size: 100% 2px !important;
   transition: background-size 1s;
 }
 
 .animateImg {
-  /* transform: scale(1.2); */
-  background-size: 250%;
+  transform: scale(1.2);
   transition: all .3s ease-in-out;
 } 
+
+@media only screen and (max-width: 1400px)  {
+  body{
+    width: 88%;
+  }
+} 
+
+@media only screen and (max-width: 1200px)  {
+  body{
+    width: 90%;
+    font-size: 9.6px;
+  }
+  #fplTitle{
+    font-size: 3.2em;
+  }
+  #fplExcerpt{
+    font-size: 1.6em;
+  }
+} 
+@media only screen and (max-width: 1100px)  {
+  body{
+    width: 94%;
+    font-size: 9.4px;
+  }
+} 
+
+@media only screen and (max-width: 1050px)  {
+  body{
+    width: 96%;
+    font-size: 9px;
+  }
+} 
+
+
+@media only screen and (max-width: 990px)  {
+  #top__header{
+    display: none !important;
+}
+  #menu{
+    display: none;
+  }
+  #smMenuDiv{
+    display: flex !important;
+  }
+  #featuredPostDiv{
+    flex-wrap: wrap;
+  }
+  #featuredPostDiv{
+    width: 100%;  
+    /* flex-direction: column; */
+  }
+  #box1Div{
+    margin-right: 0;
+    height: 50em;
+    width: 100%;
+    margin-bottom: .5em;
+  }
+  #box2Div{
+    margin-left: 0;
+    margin-top: 0;
+    height: 70em;
+    width: 100%;
+  }
+  #box3Div{
+    margin-left: 0;
+    height: 50%;
+    width: 100%;
+  }
+  #box4Div{
+    height: 50%;
+    width: 100%;
+    margin-top:.5em ;
+  }
+  #box5Div{
+    height: 100%;
+    /* width: 100%; */
+    margin-top: 0;
+    margin-left: 0;
+  }
+  #box6Div{
+    height: 100%;
+    margin-top: 0;
+    /* width: 100%; */
+  }
+  body{
+    width: 90%;
+    font-size: 9px;
+  }
+  #fplTitle{
+    font-size: 3em;
+  }
+  #fplExcerpt{
+    font-size: 1.4em;
+  }
+} 
+@media only screen and (max-width: 768px)  {
+  body{
+    width: 90%;
+    font-size: 8.5px;
+  }
+  #subButton{
+    display: none;
+  }
+  #box2Div{
+    margin-left: 0;
+    height: 90em;
+    width: 100%;
+  }
+  #box3Div{
+    margin-left: 0;
+    height: 50%;
+    width: 100%;
+  }
+  #box4Div{
+    height: 100%;
+    width: 100%;
+    margin-top:1em ;
+    flex-direction: column;
+  }
+  #box5Div{
+    height: 100%;
+    width: 100%;
+    /* margin-top: 0; */
+    margin-left: 0;
+  }
+  #box6Div{
+    height: 100%;
+    /* margin-top: 0; */
+    width: 100%;
+    margin-left: 0;
+  }
+
+} 
+@media only screen and (max-width: 576px)  {
+  #smMenuDiv > label{
+    display: none;
+  }
+  body{
+    width: 90%;
+    font-size: 8px;
+  }
+} 
+@media only screen and (max-width: 370px)  {
+  #smMenuDiv > label{
+    display: none;
+  }
+  body{
+    width: 90%;
+    font-size: 6px;
+  }
+} 
+@media only screen and (max-width: 290px)  {
+  #smMenuDiv > label{
+    display: none;
+  }
+  body{
+    width: 90%;
+    font-size: 5.5px;
+  }
+} 
+
+
+/* @media only screen and (max-width: '1400px') {
+  
+} */

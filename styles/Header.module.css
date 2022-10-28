@@ -56,12 +56,27 @@
   color: #2163e8;
 }
 
-.navbar_right{
+.navbarRight{
     display: flex;
     align-items: center;
 }
 
-.navbar_right > button{
+.smMenu{
+  display: flex;
+  align-items: center;
+  margin-right: .5em;
+  color: rgb(125, 124, 124);
+  cursor: pointer;
+  display: none;
+}
+
+.smMenu > label{
+  font-size: 1.5em;
+  margin-right: .1em;
+  cursor: pointer;
+}
+
+.navbarRight > button{
   background-color: #d6293e;
   color: white;
   border: none;
@@ -74,17 +89,21 @@
   margin-right: .8em;
 }
 
-.navbar_right > button:hover{
+.navbarRight > button:hover{
   background-color: #b72233;
   transition: background-color .1s ease;
 }
 
-.navbar_right > svg{
+#serchIcon{
+  font-size: 3em;
+}
+
+.navbarRight > svg{
   cursor: pointer;
-  margin-left: .1em;
+  color: gray;
   padding: .1em;
 }
 
-.navbar_right > svg:hover{
+.navbarRight > svg:hover{
   color: #2163e8;
 }

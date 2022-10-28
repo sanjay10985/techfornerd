@@ -7,6 +7,10 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import SearchIcon from '@mui/icons-material/Search';
 import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import MenuIcon from '@mui/icons-material/Menu';
+import { BsSearch } from "react-icons/bs";
+import { CgMenuRight } from "react-icons/cg";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const Header = () => {
 
@@ -27,17 +31,21 @@ const Header = () => {
           <h1>FN</h1>
           </a>
         </div>
-        <ul className={styles.menu} style={{color: mode ? "#a1a1a8":"#595d69"}}>
+        <ul className={styles.menu} id="menu" style={{color: mode ? "#a1a1a8":"#595d69"}}>
           <List icon={true} text="Home" href="/" />
           <List text="Blog"  arr={true} href="/blog"/>
           <List text="Internet"  arr={true} href="/internet"/>
           {/* <List text="Tech" href="/tech"/> */}
           <List text="Game"  arr={true} href="/game"/>
         </ul>
-        <div className={styles.navbar_right}>
-          <button>Subscribe!</button>
-          <SearchIcon sx={{fontSize: 45, color: 'gray'}}/>
-          <FormatAlignRightIcon sx={{fontSize: 45, color: 'gray'}}/>
+        <div className={styles.navbarRight}>
+          <div className={styles.smMenu} id="smMenuDiv">
+            <label htmlFor="menu">Menu</label>
+            <AiOutlineMenu id="smMenu" fontSize="3.5em" />
+          </div>
+          <button id="subButton">Subscribe!</button>
+          <BsSearch id="searchIcon" fontSize="3em" />
+          <CgMenuRight fontSize="5em"/>
         </div>
       </nav>
     </div>
