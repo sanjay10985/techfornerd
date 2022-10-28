@@ -9,6 +9,15 @@ import moment from "moment";
 const FeaturedPosts = ({ title, imgSrc, slug, category, catcolor, authorName, authorImg, createdAt,excerpt,font, bgpos }) => {
   // console.log(authorName)
 
+  const animate_img = (e) =>{
+    // console.log(e)
+    // console.log(e.target.parentElement.parentElement.previousSibling)
+    const textAni = e.target.parentElement.parentElement.previousSibling;
+    textAni.classList.toggle('animateImg')
+    console.log(textAni.classList)
+
+  }
+
 
   return (
     <Link
@@ -42,8 +51,8 @@ const FeaturedPosts = ({ title, imgSrc, slug, category, catcolor, authorName, au
             <h1
               className="link" style={{fontSize: font ? '3.6em': '2.6em', fontWeight: '600'}}
               
-            //   onMouseEnter={animate_img}
-            //   onMouseLeave={animate_img}
+              onMouseEnter={animate_img}
+              onMouseLeave={animate_img}
             >
 
               {title}   

@@ -50,8 +50,3 @@ a {
   transition: background-size 1s;
 }
 
-.animateImg {
-  /* transform: scale(1.2); */
-  background-size: 250%;
-  transition: all .3s ease-in-out;
-} 
