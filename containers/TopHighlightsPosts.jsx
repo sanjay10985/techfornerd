@@ -29,7 +29,7 @@ const TopHighlightsPosts = () => {
         </div>
         <div className={styles.highlightsPostsBox}>
           {highlightPosts.map((post) => (
-            <HighlightsPosts post={post} />
+            <HighlightsPosts post={post} key={post.id}/>
           ))}
         </div>
       </div>

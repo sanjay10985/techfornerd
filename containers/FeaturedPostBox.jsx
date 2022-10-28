@@ -6,38 +6,25 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { Avatar } from "@mui/material";
 import moment from "moment";
 
-const FeaturedPostBox = ({featuredPosts}) => {
+const FeaturedPostBox = ({ featuredPosts }) => {
   // const [featuredPosts, setFeaturedPosts] = useState([]);
 
   // useEffect(() => {
   //   getFeaturedPosts().then((posts) => setFeaturedPosts(posts));
   // }, []);
 
-  const animate_text = () => {
-    const imgbox = document.getElementsByClassName("imgbox");
-    Array.from(imgbox).forEach((e) => {
-      const postText =
-        e.nextElementSibling.firstElementChild.nextElementSibling
-          .firstElementChild;
-      e.addEventListener("mouseenter", () => {
-        postText.classList.toggle("animateText");
-      });
-      postText.classList.remove("animateText");
-    });
+  const animate_text = (e) => {
+    // const imgbox = e.target.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild;
+    const textDiv = e.target.nextElementSibling;
+    const imgbox =
+      textDiv.firstElementChild.nextElementSibling.firstElementChild;
+    imgbox.classList.toggle("animateText");
+    console.log(imgbox);
   };
 
-  const animate_img = () => {
-    const textAni = document.getElementsByClassName("link");
-    Array.from(textAni).forEach((e) => {
-      e.addEventListener("mouseenter", () => {
-        const imgBox = e.parentElement.parentElement.previousElementSibling;
-        imgBox.classList.add("animateImg");
-      });
-      e.addEventListener("mouseleave", () => {
-        const imgBox = e.parentElement.parentElement.previousElementSibling;
-        imgBox.classList.remove("animateImg");
-      });
-    });
+  const animate_img = (e) => {
+    const textAni = e.target.parentElement.parentElement.previousElementSibling;
+    textAni.classList.toggle("animateImg");
   };
   // console.log(featuredPosts);
 
@@ -127,8 +114,8 @@ const FeaturedPostBox = ({featuredPosts}) => {
         </div>
         <div className={styles.box2} id="box2Div">
           <div
-          className={`${styles["box3"]} ${styles["box"]}`}
-          id="box3Div"
+            className={`${styles["box3"]} ${styles["box"]}`}
+            id="box3Div"
             onMouseEnter={animate_text}
             onMouseLeave={animate_text}
           >
@@ -196,8 +183,8 @@ const FeaturedPostBox = ({featuredPosts}) => {
           </div>
           <div className={styles.box4} id="box4Div">
             <div
-          className={`${styles["box5"]} ${styles["box"]}`}
-          id="box5Div"
+              className={`${styles["box5"]} ${styles["box"]}`}
+              id="box5Div"
               onMouseEnter={animate_text}
               onMouseLeave={animate_text}
             >
@@ -263,8 +250,8 @@ const FeaturedPostBox = ({featuredPosts}) => {
               ))}
             </div>
             <div
-          className={`${styles["box6"]} ${styles["box"]}`}
-          id="box6Div"
+              className={`${styles["box6"]} ${styles["box"]}`}
+              id="box6Div"
               onMouseEnter={animate_text}
               onMouseLeave={animate_text}
             >
