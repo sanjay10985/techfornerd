@@ -5,7 +5,6 @@ import Link from "next/link";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { Avatar } from "@mui/material";
 import moment from "moment";
-import { width } from "@mui/system";
 
 const FeaturedPostBox = () => {
   const [featuredPosts, setFeaturedPosts] = useState([]);

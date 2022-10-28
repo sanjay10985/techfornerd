@@ -1,12 +1,10 @@
 import Head from "next/head";
-import FeaturedPostBox from "../containers/FeaturedPostBox";
-// import TextCarousel from "../components/TextCarousel";
 import styles from "../styles/Home.module.css";
+import {FeaturedPostBox, TopHighlightsPosts} from "../containers";
 
 
 export default function Home() {
 
-  // console.log(posts.slice(-3,-2))
 
   return (
     <div className={styles.home}>
@@ -16,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <FeaturedPostBox/>
+      <TopHighlightsPosts/>
     </div>
   );
 }

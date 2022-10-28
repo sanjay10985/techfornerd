@@ -14,7 +14,7 @@ body {
 
 body{
   transition: all .2s ease;
-  width: 82%;
+  width: 78%;
   margin: auto !important;
 }
 
@@ -32,15 +32,7 @@ a {
   width: 100%;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: light;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-} */
+
 
 .animateText{
   background-size: 100% 2px !important;
@@ -48,13 +40,15 @@ a {
 }
 
 .animateImg {
-  transform: scale(1.2);
-  transition: all .3s ease-in-out;
+  transform: scale(1.1);
+  transition: all 1s ease-in-out;
 } 
+
+
 
 @media only screen and (max-width: 1400px)  {
   body{
-    width: 88%;
+    width: 84%;
   }
 } 
 
@@ -96,11 +90,12 @@ a {
     display: flex !important;
   }
   #featuredPostDiv{
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   }
   #featuredPostDiv{
     width: 100%;  
-    /* flex-direction: column; */
+    height: auto;
+    flex-direction: column;
   }
   #box1Div{
     margin-right: 0;

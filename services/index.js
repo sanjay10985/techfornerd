@@ -91,3 +91,42 @@ export const getTrendPosts = async () => {
   
     return result.posts;
   };
+
+  export const getHighlightsPosts = async () => {
+    const query = gql`
+      query GetFeaturedPost() {
+            posts(
+              orderBy: createdAt_DESC
+              first: 6
+            ){
+                author {
+                  name
+                  id
+                  photo {
+                    url
+                  }
+                }
+                createdAt
+                slug
+                id
+                sponsored
+                title
+                excerpt 
+                featuredImage {
+                  url
+                }
+                categories {
+                  name
+                  slug
+                  color {
+                    hex
+                  }
+                }
+              }
+      }   
+    `;
+  
+    const result = await request(graphqlAPI, query);
+  
+    return result.posts;
+  };
