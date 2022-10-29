@@ -13,13 +13,6 @@
 
 .box {
   margin: 1.8em;
-
-  border-radius: 1.5rem;
-  overflow: hidden;
-  position: relative;
-}
-#box {
-  margin: 1.8em;
   border-radius: 1.5rem;
   overflow: hidden;
   position: relative;
@@ -78,6 +71,17 @@
   transition: all 0.5s ease-in-out;
 }
 
+#imgbox::before{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(180deg, transparent, black);
+  z-index: 1;
+}
+
 #imgbox:hover {
   transform: scale(1.15);
   transition: all 0.5s ease-in-out;
@@ -93,8 +97,8 @@
   color: white;
   display: inline;
   font-size: 3.6em;
-  width: 200px;
-  z-index: 10000;
+  /* width: 200px; */
+  /* z-index: 10000; */
   transition: background-size 0.5s;
 }
 
@@ -161,13 +165,11 @@
   align-items: center;
 }
 
-#authorAvatar {
-  margin-right: 1em;
-}
 
 #authorName {
   color: white;
   font-size: 1.6em;
+  /* margin-left: 1em; */
 }
 
 #postDetails > span {

@@ -5,7 +5,6 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { BsInfoCircle } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { selectMode } from "../features/darkModeReducer";
-import { Avatar } from "@mui/material";
 import moment from "moment/moment";
 
 const HighlightsPosts = ({ post }) => {
@@ -16,8 +15,14 @@ const HighlightsPosts = ({ post }) => {
       <div
         className={styles.highlightsPostsImage}
         id="highlightsPostsImage"
-        style={{ backgroundImage: `url(${post.featuredImage.url})` }}
+        // style={{ backgroundImage: `url(${post.featuredImage.url})` }}
       >
+        <Image
+        src={post.featuredImage.url}
+        alt="postThumbnail"
+        layout="fill"
+        objectFit="cover"
+        />
         <div
           id={styles.categoryDiv}
           style={{
@@ -65,7 +70,16 @@ const HighlightsPosts = ({ post }) => {
         style={{ color: mode ? "#a1a1b7" : "#595d69" }}
       >
         <a href="/" className={styles.hlAuthorDiv}>
-          <Avatar src={post.author.photo.url} id="authorDiv" />
+        <Image
+                        
+                        src={post.author.photo.url}
+                        id={styles.authorAvatar}
+                        width="40px"
+                        height="40px"
+                        style={{borderRadius: '50%', marginRight: '1em'}}
+                        alt="AuthorImage"
+                        objectFit="cover"
+                      />
           <label htmlFor="authorDiv">
             by{" "}
             {post.author.name.charAt(0).toUpperCase() +

@@ -7,7 +7,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-size: 10px;
+  
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -15,8 +15,9 @@ body {
 body{
   transition: all .2s ease;
   width: 78%;
+  font-size: 62.5%;
   margin: auto !important;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
 }
 
 a {
@@ -56,7 +57,7 @@ a {
 @media only screen and (max-width: 1200px)  {
   body{
     width: 90%;
-    font-size: 9.6px;
+    font-size: 60%;
   }
   #fplTitle{
     font-size: 3.2em;
@@ -68,14 +69,14 @@ a {
 @media only screen and (max-width: 1100px)  {
   body{
     width: 94%;
-    font-size: 9.4px;
+    font-size: 58.75%;
   }
 } 
 
 @media only screen and (max-width: 1050px)  {
   body{
     width: 96%;
-    font-size: 9px;
+    font-size: 56.25%;
   }
 } 
 
@@ -89,9 +90,6 @@ a {
   }
   #smMenuDiv{
     display: flex !important;
-  }
-  #featuredPostDiv{
-    /* flex-wrap: wrap; */
   }
   #featuredPostDiv{
     width: 100%;  
@@ -133,7 +131,6 @@ a {
   }
   body{
     width: 90%;
-    font-size: 9px;
   }
   #fplTitle{
     font-size: 3em;
@@ -148,7 +145,7 @@ a {
 @media only screen and (max-width: 768px)  {
   body{
     width: 90%;
-    font-size: 8.5px;
+    font-size: 53.125%;
   }
   #subButton{
     display: none;
@@ -192,7 +189,7 @@ a {
   }
   body{
     width: 90%;
-    font-size: 8px;
+    font-size: 50%;
   }
   #highlightsPosts{
     width: 100%;
@@ -209,9 +206,9 @@ a {
   }
   body{
     width: 90%;
-    font-size: 6px;
+    font-size: 43.75%;
   }
-
+  
 } 
 @media only screen and (max-width: 290px)  {
   #smMenuDiv > label{
@@ -219,7 +216,8 @@ a {
   }
   body{
     width: 90%;
-    font-size: 5.5px;
+    font-size: 37.5%;
+    /* font-size: 5.5px; */
   }
 } 
 

@@ -3,23 +3,19 @@ import { getFeaturedPosts } from "../services";
 import styles from "../styles/FeaturedPostBox.module.css";
 import Link from "next/link";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-import { Avatar } from "@mui/material";
 import moment from "moment";
+import Image from "next/image";
 
 const FeaturedPostBox = ({ featuredPosts }) => {
-  // const [featuredPosts, setFeaturedPosts] = useState([]);
 
-  // useEffect(() => {
-  //   getFeaturedPosts().then((posts) => setFeaturedPosts(posts));
-  // }, []);
 
   const animate_text = (e) => {
     // const imgbox = e.target.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild;
     const textDiv = e.target.nextElementSibling;
     const imgbox =
       textDiv.firstElementChild.nextElementSibling.firstElementChild;
+    // const imgbox = e.target.parentElement.parentElement.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild;
     imgbox.classList.toggle("animateText");
-    console.log(imgbox);
   };
 
   const animate_img = (e) => {
@@ -36,29 +32,29 @@ const FeaturedPostBox = ({ featuredPosts }) => {
         style={{ width: "100%" }}
       >
         <div
-          // className={styles.box}
           id="box1Div"
           className={`${styles["box1"]} ${styles["box"]}`}
-          onMouseEnter={animate_text}
-          onMouseLeave={animate_text}
-        >
+          >
           {featuredPosts.slice(-1).map((post) => (
-            // {post.categories.map((ca))}
             <Link
-              id={styles.postLink}
-              href={`posts/${post.slug}`}
-              style={{ cursor: "pointer" }}
-              key={post.id}
+            id={styles.postLink}
+            href={`posts/${post.slug}`}
+            style={{ cursor: "pointer" }}
+            key={post.id}
             >
               <div className={styles.featuredPost}>
                 <div
                   id={styles.imgbox}
                   className="imgbox"
-                  style={{
-                    backgroundImage: `linear-gradient(180deg, transparent, black),url(${post.featuredImage.url})`,
-                    // backgroundSize: '180%'
-                  }}
-                ></div>
+                    onMouseEnter={animate_text}
+                    onMouseLeave={animate_text}
+                    >
+                  <Image
+                    layout="fill"
+                    src={post.featuredImage.url}
+                    objectFit="cover"
+                  />
+                </div>
                 <div className={styles.textDisc}>
                   <div
                     id={styles.categoryDiv}
@@ -96,13 +92,19 @@ const FeaturedPostBox = ({ featuredPosts }) => {
                   </p>
                   <div id={styles.postDetails}>
                     <div id={styles.authorDiv}>
-                      {
-                        <Avatar
+                      
+                        <Image
+                        
                           src={post.author.photo.url}
                           id={styles.authorAvatar}
+                          width="40px"
+                          height="40px"
+                          style={{borderRadius: '50%', marginRight: '1em'}}
+                          alt="AuthorImage"
+                          objectFit="cover"
                         />
-                      }
-                      <p id={styles.authorName}> by {post.author.name}</p>
+                      
+                      <p id={styles.authorName} style={{marginLeft: '1em'}}> by {post.author.name}</p>
                     </div>
                     <label></label>
                     <span>{moment(post.createdAt).format("MMM DD, YYYY")}</span>
@@ -116,25 +118,28 @@ const FeaturedPostBox = ({ featuredPosts }) => {
           <div
             className={`${styles["box3"]} ${styles["box"]}`}
             id="box3Div"
-            onMouseEnter={animate_text}
-            onMouseLeave={animate_text}
-          >
+            >
             {featuredPosts.slice(-2, -1).map((post) => (
               // {post.categories.map((ca))}
               <Link
-                id={styles.postLink}
-                href={`posts/${post.slug}`}
-                style={{ cursor: "pointer" }}
-                key={post.id}
+              id={styles.postLink}
+              href={`posts/${post.slug}`}
+              style={{ cursor: "pointer" }}
+              key={post.id}
               >
                 <div className={styles.featuredPost}>
-                  <div
-                    id={styles.imgbox}
-                    className="imgbox"
-                    style={{
-                      backgroundImage: `linear-gradient(180deg, transparent, black),url(${post.featuredImage.url})`,
-                    }}
-                  ></div>
+                <div
+                  id={styles.imgbox}
+                  className="imgbox"
+                    onMouseEnter={animate_text}
+                    onMouseLeave={animate_text}
+                    >
+                  <Image
+                    layout="fill"
+                    src={post.featuredImage.url}
+                    objectFit="cover"
+                  />
+                </div>
                   <div className={styles.textDisc}>
                     <div
                       id={styles.categoryDiv}
@@ -185,25 +190,28 @@ const FeaturedPostBox = ({ featuredPosts }) => {
             <div
               className={`${styles["box5"]} ${styles["box"]}`}
               id="box5Div"
-              onMouseEnter={animate_text}
-              onMouseLeave={animate_text}
-            >
+              >
               {featuredPosts.slice(-3, -2).map((post) => (
                 // {post.categories.map((ca))}
                 <Link
-                  id={styles.postLink}
-                  href={`posts/${post.slug}`}
-                  style={{ cursor: "pointer" }}
-                  key={post.id}
+                id={styles.postLink}
+                href={`posts/${post.slug}`}
+                style={{ cursor: "pointer" }}
+                key={post.id}
                 >
                   <div className={styles.featuredPost}>
-                    <div
-                      id={styles.imgbox}
-                      className="imgbox"
-                      style={{
-                        backgroundImage: `linear-gradient(180deg, transparent, black),url(${post.featuredImage.url})`,
-                      }}
-                    ></div>
+                  <div
+                  id={styles.imgbox}
+                  className="imgbox"
+                    onMouseEnter={animate_text}
+                    onMouseLeave={animate_text}
+                    >
+                  <Image
+                    layout="fill"
+                    src={post.featuredImage.url}
+                    objectFit="cover"
+                  />
+                </div>
                     <div className={styles.textDisc}>
                       <div
                         id={styles.categoryDiv}
@@ -252,26 +260,28 @@ const FeaturedPostBox = ({ featuredPosts }) => {
             <div
               className={`${styles["box6"]} ${styles["box"]}`}
               id="box6Div"
-              onMouseEnter={animate_text}
-              onMouseLeave={animate_text}
-            >
+              >
               {featuredPosts.slice(-4, -3).map((post) => (
                 // {post.categories.map((ca))}
                 <Link
-                  id={styles.postLink}
-                  href={`posts/${post.slug}`}
-                  style={{ cursor: "pointer" }}
-                  key={post.id}
+                id={styles.postLink}
+                href={`posts/${post.slug}`}
+                style={{ cursor: "pointer" }}
+                key={post.id}
                 >
                   <div className={styles.featuredPost}>
-                    <div
-                      id={styles.imgbox}
-                      className="imgbox"
-                      style={{
-                        backgroundImage: `linear-gradient(180deg, transparent, black),url(${post.featuredImage.url})`,
-                        backgroundPosition: "top",
-                      }}
-                    ></div>
+                  <div
+                  id={styles.imgbox}
+                  className="imgbox"
+                    onMouseEnter={animate_text}
+                    onMouseLeave={animate_text}
+                    >
+                  <Image
+                    layout="fill"
+                    src={post.featuredImage.url}
+                    objectFit="cover"
+                  />
+                </div>
                     <div className={styles.textDisc}>
                       <div
                         id={styles.categoryDiv}
