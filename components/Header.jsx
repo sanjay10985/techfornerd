@@ -48,12 +48,12 @@ const Header = () => {
   );
 };
 
-const List = ({icon,href,text,arr}) =>{
+const List = ({href,text,arr}) =>{
   return(
     <li>
       {/* {icon && <FiberManualRecordIcon sx={{color: '#2163e8'}} fontSize="small" style={{position: 'absolute',left: "-15px",bottom: '22px',}}/>} */}
       <a href={href}>{text}</a>
-      {arr && <KeyboardArrowDownIcon style={{position: 'absolute',right: "-22px",bottom: '16px',padding: '.15em'}}/>}
+      {arr && <KeyboardArrowDownIcon style={{position: 'absolute',right: "-16px",bottom: '20px'}}/>}
     </li>
   );
 }

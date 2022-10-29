@@ -51,7 +51,20 @@
 
 .highlightRightDiv{
     flex: 0.25;
-    padding-left: 1.2em;
+    margin-left: 2.5em;
+}
+
+.categoriesBox{
+    display: flex;
+    margin: 2em 0;
+    height: auto;
+    flex-direction: column;
+    padding: 1em .4em;
+}
+
+.categoriesBox > h1{
+    font-size: 2.5em;
+    padding: .5em .5em;
 }
 
 

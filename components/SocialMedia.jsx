@@ -4,22 +4,22 @@ import { AiFillFacebook } from "react-icons/ai";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FaYoutubeSquare } from "react-icons/fa";
 
-const SocialMedia = ({icon,type,followers}) => {
+const SocialMedia = () => {
   return (
     <div className={styles.socialMediaDiv}>
-      <div className={styles.facebook}>
+      <div className={styles.facebook} id="socialAccDiv">
         <AiFillFacebook fontSize="22px"  color='white'/>
-        <h6>1.5K</h6>
+        <label>1.5K</label>
         <span>Fans</span>
       </div>
-      <div className={styles.instagram}>
+      <div className={styles.instagram} id="socialAccDiv">
         <AiOutlineInstagram fontSize="22px" color='white'/>
-        <h6>1.8M</h6>
+        <label>1.8M</label>
         <span>Followers</span>
       </div>
-      <div className={styles.youtube}>
+      <div className={styles.youtube} id="socialAccDiv">
         <FaYoutubeSquare fontSize="22px" color="white" style={{backgroundColor: '#ff0000'}}/>
-        <h6>22K</h6>
+        <label>22K</label>
         <span>Subs</span>
       </div>
     </div>

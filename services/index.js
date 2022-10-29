@@ -130,3 +130,23 @@ export const getTrendPosts = async () => {
   
     return result.posts;
   };
+
+  export const getCategories = async () => {
+    const query = gql`
+      query GetCategories {
+        categories(
+          first: 5  
+        ) {
+          name
+          slug
+          photo{
+            url
+          }
+        }
+      }
+    `;
+  
+    const result = await request(graphqlAPI, query);
+  
+    return result.categories;
+  };
