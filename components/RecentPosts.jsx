@@ -27,7 +27,7 @@ const RecentPosts = ({ title, slug, photoUrl, createdAt }) => {
         onMouseEnter={animate_text}
         onMouseLeave={animate_text}      
       >
-        <Image src={photoUrl} layout="fill" objectFit="cover" />
+        <Image src={photoUrl} layout="fill" objectFit="cover" alt="postThumbnail" />
       </div>
       <div className={styles.recentPostsDesc}>
         <h2 className={styles.recentPostTitle}>
@@ -40,7 +40,7 @@ const RecentPosts = ({ title, slug, photoUrl, createdAt }) => {
               }}
           >{title}</a>
         </h2>
-        <label htmlFor="recentPostsDiv">
+        <label>
           {moment(createdAt).format("MMM DD,YYYY")}
         </label>
       </div>

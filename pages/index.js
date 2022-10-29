@@ -30,17 +30,17 @@ export default function Home({ featuredposts }) {
   }, []);
 
   // const ani_add = () => {
-    () => {
+  () => {
     const container = document.getElementById("container");
     // console.log(container)
-    container.addEventListener('onclick', (e) =>{
-    const cirleEle = document.createElement("div");
-    cirleEle.style.top =0;
-    cirleEle.style.left =0;
-    cirleEle.classList.add("circle");
-    container.append(cirleEle);
-    // console.log(e);
-    })
+    container.addEventListener("onclick", (e) => {
+      const cirleEle = document.createElement("div");
+      cirleEle.style.top = 0;
+      cirleEle.style.left = 0;
+      cirleEle.classList.add("circle");
+      container.append(cirleEle);
+      // console.log(e);
+    });
   };
 
   return (
@@ -83,7 +83,7 @@ export default function Home({ featuredposts }) {
               />
             ))}
           </div>
-          <div className={styles.recentPostnAd}>
+          <div className={styles.recentPostnAd} id="recentPostnAd">
             <div className={styles.recentPostsBox}>
               <h1>Recent Post</h1>
               {recentPosts.map((post) => (

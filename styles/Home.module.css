@@ -92,9 +92,10 @@
 }
 
 .addShowDiv{
-    width: 100%;
+    width: 90%;
+    margin: auto;
     height: 45em;
-    background-color: gray;
+    background-color: rgb(49, 49, 49);
     border-radius: 1em;
     display: flex;
     align-items: center;

@@ -185,6 +185,11 @@ a {
   #socialAccDiv{
     padding: 3em 0;
   }
+  #recentPostnAd{
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+  }
 } 
 @media only screen and (max-width: 768px)  {
   body{
@@ -243,6 +248,11 @@ a {
   }
   #highlightsPostsImage{
     height: 60%;
+  }
+  #recentPostnAd{
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
   }
 } 
 @media only screen and (max-width: 370px)  {
