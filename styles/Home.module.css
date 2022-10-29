@@ -14,6 +14,11 @@
     flex: 0.75;
 }
 
+.highlightLeftDiv > div{
+    margin-bottom: 4em;
+
+}
+
 
 .highlightTitleDiv{
     display: flex;
@@ -32,19 +37,22 @@
     font-family: 'Rubik', sans-serif;
 }
 
-.highlightLeftDiv > div{
+/* .highlightLeftDiv > div{
     margin-bottom: 4em;
-}
+} */
 
 .highlightsPostsBox{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 0em !important;
 }
 
 
 .highlightRightDiv{
     flex: 0.25;
+    padding-left: 1.2em;
 }
+
 
 
