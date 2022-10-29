@@ -150,3 +150,25 @@ export const getTrendPosts = async () => {
   
     return result.categories;
   };
+
+  export const getRecentPosts = async () => {
+    const query = gql`
+    query GetPostDetais() {
+      posts(
+        orderBy: createdAt_ASC
+        last: 4
+        ){
+          title
+          id
+          featuredImage{
+            url
+          }
+          createdAt
+          slug
+        }
+    }
+    `;
+    const result = await request(graphqlAPI, query);
+  
+    return result.posts;
+  };

@@ -40,12 +40,47 @@ a {
   background-size: 100% 2px !important;
   transition: background-size 1s;
 }
+.animateRecentText{
+  background-size: 100% 1px !important;
+  transition: background-size .5s;
+}
 
 .animateImg {
   transform: scale(1.1);
   transition: all 1s ease-in-out;
 } 
 
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* filter: contrast(1.5); */
+  animation: aniCircle .2s backwards;
+}
+
+@keyframes aniCircle {
+  0%{
+      width: 0px;
+      height: 0px;
+      /* background-color: transparent; */
+      background-color: rgba(1, 0, 0, 0.147);
+      opacity: 0;
+  }
+
+  50%{
+      width: 40px;
+      height: 40px;
+      background-color: rgba(1, 0, 0, 0.147);
+      opacity: 1;
+  }
+  100%{
+      width: 0;
+      height: 0;
+      opacity: 0;
+      /* background-color: transparent; */
+      background-color: rgba(1, 0, 0, 0.147);
+  }
+}
 
 
 @media only screen and (max-width: 1400px)  {
