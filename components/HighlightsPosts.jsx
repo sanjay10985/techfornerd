@@ -48,7 +48,7 @@ const HighlightsPosts = ({ post }) => {
             </div>
           </>
         )}
-        <a href={`posts/${post.slug}`} className={styles.hlPostTitle}>
+        <a href={`/post/${post.slug}`} className={styles.hlPostTitle}>
           <h1
             style={{
               backgroundImage: mode

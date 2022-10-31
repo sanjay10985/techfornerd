@@ -33,7 +33,7 @@ const FeaturedPostBox = ({ featuredPosts }) => {
           {featuredPosts.slice(-1).map((post) => (
             <Link
               id={styles.postLink}
-              href={`posts/${post.slug}`}
+              href={`/post/${post.slug}`}
               style={{ cursor: "pointer" }}
               key={post.id}
             >
@@ -69,7 +69,7 @@ const FeaturedPostBox = ({ featuredPosts }) => {
 
                   <a
                     className={styles.featuredPostTitle}
-                    href={`posts/${post.slug}`}
+                    href={`/post/${post.slug}`}
                   >
                     <h1
                       className="link"
@@ -118,7 +118,7 @@ const FeaturedPostBox = ({ featuredPosts }) => {
               // {post.categories.map((ca))}
               <Link
                 id={styles.postLink}
-                href={`posts/${post.slug}`}
+                href={`/post/${post.slug}`}
                 style={{ cursor: "pointer" }}
                 key={post.id}
               >
@@ -153,7 +153,7 @@ const FeaturedPostBox = ({ featuredPosts }) => {
 
                     <a
                       className={styles.featuredPostTitle}
-                      href={`posts/${post.slug}`}
+                      href={`/post/${post.slug}`}
                     >
                       <h1
                         className="link"
@@ -188,7 +188,7 @@ const FeaturedPostBox = ({ featuredPosts }) => {
                 // {post.categories.map((ca))}
                 <Link
                   id={styles.postLink}
-                  href={`posts/${post.slug}`}
+                  href={`/post/${post.slug}`}
                   style={{ cursor: "pointer" }}
                   key={post.id}
                 >
@@ -224,7 +224,7 @@ const FeaturedPostBox = ({ featuredPosts }) => {
 
                       <a
                         className={styles.featuredPostTitle}
-                        href={`posts/${post.slug}`}
+                        href={`/post/${post.slug}`}
                       >
                         <h1
                           className="link"
@@ -257,7 +257,7 @@ const FeaturedPostBox = ({ featuredPosts }) => {
                 // {post.categories.map((ca))}
                 <Link
                   id={styles.postLink}
-                  href={`posts/${post.slug}`}
+                  href={`/post/${post.slug}`}
                   style={{ cursor: "pointer" }}
                   key={post.id}
                 >
@@ -293,7 +293,7 @@ const FeaturedPostBox = ({ featuredPosts }) => {
 
                       <a
                         className={styles.featuredPostTitle}
-                        href={`posts/${post.slug}`}
+                        href={`/post/${post.slug}`}
                       >
                         <h1
                           className="link"
