@@ -44,34 +44,46 @@ export const getPosts = async () => {
 
 export const getPostDetails = async (slug) => {
   const query = gql`
-    query GetPostDetails($slug: String!) {
-      post(where: { slug: $slug }) {
-        author {
-          bio
-          name
-          id
-          photo {
+    query GetPostDetails($slug: String!) 
+    {
+        post(where: { slug: $slug }) {
+          author {
+            bio
+            name
+            id
+            photo {
+              url
+            }
+          }
+          createdAt
+          slug
+          title
+          excerpt
+          featuredImage {
             url
           }
-        }
-        createdAt
-        slug
-        title
-        excerpt
-        featuredImage {
-          url
-        }
-        categories {
-          name
-          slug
-          color {
-            hex
+          categories {
+            name
+            slug
+            color {
+              hex
+            }
+          }
+          content {
+            raw
+            references {
+              ... on Asset {
+                id
+                url
+                width
+                height
+                handle
+                fileName
+                mimeType
+              }
+            }
           }
         }
-        content {
-          raw
-        }
-      }
     }
   `;
 

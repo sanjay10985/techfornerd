@@ -5,6 +5,7 @@ import PostDetail from "../../components/PostDetail";
 import { getPostDetails, getPosts } from "../../services";
 import CategoryColorLabel from "../../components/CategoryColorLabel";
 import moment from "moment/moment";
+import { RichText } from "@graphcms/rich-text-react-renderer";
 
 const PostDetails = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -116,23 +117,84 @@ const PostDetails = ({ post }) => {
         </div>
       </div>
       <div className={styles.postContentBox}>
-        <div className={styles.postContentDiv}>
-          {post.content.raw.children.map((typeObj, index) => {
-            const children = typeObj.children.map((item, itemIndex) => 
-              
-              getContentFragment(itemIndex, item.text)
-            );
-
-            return getContentFragment(index, children, typeObj, typeObj.type);
-          })}
-          {/* {post.content.raw.children.map((typeObj, index) => {
+         <div className={styles.postContentDiv}>
+        {/*  {post.content.raw.children.map((typeObj, index) => {
             const children = typeObj.children.map((item, itemIndex) =>
               getContentFragment(itemIndex, item.text)
             );
 
             return getContentFragment(index, children, typeObj, typeObj.type);
-          })} */}
-        </div>
+          })}*/}
+        
+        <RichText
+        content={post.content.raw.children}
+        renderers={{
+          h1: ({ children }) => <h1 >{children}</h1>,
+          blockquote: ({ children }) => (
+            <blockquote
+              style={{
+                paddingLeft: '16px',
+                borderLeft: '4px solid blue',
+                fontSize: '26px',
+              }}
+            >
+              {children}
+            </blockquote>
+          ),
+          a: ({ children, href, openInNewTab }) => (
+            <a
+              href={href}
+              target={openInNewTab ? '_blank' : '_self'}
+              style={{ color: 'green' }}
+              rel="noreferrer"
+            >
+              {/* {console.log()} */}
+              {children.props.content[0].text}
+              {/* {children} */}
+            </a>
+          ),
+          h2: ({ children }) => (
+            <h2 style={{ color: 'darkcyan' }} className={styles.headingTwo}>{children}</h2>
+          ),
+          h3: ({ children }) => (
+            <h3 style={{ color: 'darkcyan' }} className={styles.headingThree}>{children}</h3>
+          ),
+          h4: ({ children }) => (
+            <h4 style={{ color: 'darkcyan' }} className={styles.headingFour}>{children}</h4>
+          ),
+          p: ({ children }) => (
+            <p className={styles.paragraph}>{children}</p>
+          ),
+          bold: ({ children }) => <strong>{children}</strong>,
+          code_block: ({ children }) => {
+            return (
+              <pre className="line-numbers language-none">
+                <code>{children}</code>
+              </pre>
+            );
+          },
+          img: ({src,width,height}) => (<>
+            <img src={src}
+              width="100%"
+            />
+            {/* // {console.log(object)} */}
+            {/* {console.log()} */}
+            </>
+          ),
+          // Asset: {
+          //   application: () => (
+          //     <div>
+          //       <p>Asset</p>
+          //     </div>
+          //   ),
+          //   text: () => (
+          //     <div>
+          //       <p>text plain</p>
+          //     </div>
+          //   ),
+          // },
+        }}
+      /></div> 
         <div>{/* {category} */}</div>
       </div>
     </main>
@@ -154,6 +216,6 @@ export async function getStaticPaths() {
 
   return {
     paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
-    fallback: false,
+    fallback: true,
   };
 }
