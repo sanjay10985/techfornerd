@@ -37,9 +37,6 @@
   display: flex;
   padding: 0.4em 1em;
   align-items: center;
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
   border-radius: 1em;
   width: fit-content;
   margin-bottom: 1em;
@@ -101,10 +98,6 @@
   z-index: 100;
   font-size: 1.6em;
   margin-top: 1.5em;
-  /* position: absolute; */
-  /* bottom: 10px; */
-  /* top: 40px; */
-  /* bottom: 2em; */
 }
 
 .hlAuthorDiv{

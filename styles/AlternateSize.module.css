@@ -1,0 +1,36 @@
+#togglediv {
+    border: 0.1em solid #2163e8;
+    padding: 0.45em 0;
+    border-right: none;
+    border-left: none;
+    overflow: hidden;
+    border-radius: 0.5em;
+    margin: 1em;
+  }
+  
+  .input {
+    display: none;
+    position: fixed;
+    z-index: -3;
+    transition: all 0.2s ease;
+  }
+  
+  .input:checked + #label {
+    color: white;
+    background-color: #2163e8;
+  }
+  
+  .input:hover + #label {
+    background-color: #2163e8;
+    color: white;
+  }
+  
+  #label {
+    padding: 0.5em;
+    border: 0.1em solid #2163e8;
+    color: #2163e8;
+    transition: all 0.2s ease;
+    width: 1em;
+    font-size: 1.3em;
+    cursor: pointer;
+  }

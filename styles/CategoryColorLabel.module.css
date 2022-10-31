@@ -1,0 +1,20 @@
+#categoryDiv {
+    display: flex;
+    padding: 0.4em 1em;
+    align-items: center;
+    border-radius: 1em;
+    width: fit-content;
+    margin-bottom: .5em;
+    z-index: 100;
+  }
+
+#categoryDiv > svg{
+    margin-top: .1em;
+}
+  
+  #category {
+    color: white;
+    font-size: 1.3em;
+    padding-left: 0.3em;
+    font-weight: 400;
+  }

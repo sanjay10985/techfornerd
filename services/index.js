@@ -30,6 +30,7 @@ export const getPosts = async () => {
             categories {
               name
               slug
+              
             }
           }
         }
@@ -63,6 +64,9 @@ export const getPostDetails = async (slug) => {
         categories {
           name
           slug
+          color {
+            hex
+          }
         }
         content {
           raw
