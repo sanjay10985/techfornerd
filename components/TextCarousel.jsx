@@ -49,7 +49,7 @@ const TextCarousel = ({ trendPosts }) => {
             </a>
           </span>
         </div>
-        <div className={styles.carouselButtons} style={{ color: "black" }}>
+        <div className={styles.carouselButtons} style={{ color: "black" }} id="textCarouselButtons">
           <AiFillLeftCircle
             onClick={(e) => setIndex((count) => loop(count - 1))}
           />

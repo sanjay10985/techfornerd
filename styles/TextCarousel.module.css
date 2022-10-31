@@ -33,11 +33,11 @@
   font-size: 1.5em;
   font-weight: 600;
   overflow: hidden;
+  margin-left: 1em;
   
 }
 
 .title{
-  margin-left: 1em;
   background-image: linear-gradient(rgb(79, 77, 77),rgb(79, 77, 77));
   background-position: bottom left;
   background-repeat: no-repeat;

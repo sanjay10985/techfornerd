@@ -14,7 +14,7 @@ const TopHeader = () => {
   const mode = useSelector(selectMode);
 
   return (
-    <div id={styles.top__header} className="top__header">
+    <div className={styles.top__header} id="top__header">
       <div
         id={styles.top_header__left}
         className={mode ? "lightText" : "darkText"}
