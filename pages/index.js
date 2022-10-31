@@ -20,7 +20,7 @@ import { MdOutlineDownloadForOffline } from "react-icons/md";
 import TextCarousel from "../components/TextCarousel";
 
 
-export default function Home({ featuredposts, trendposts }) {
+export default function Home({ trendposts }) {
   const mode = useSelector(selectMode);
 
   const [highlightposts, setHighlightPosts] = useState([]);
@@ -41,7 +41,7 @@ export default function Home({ featuredposts, trendposts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TextCarousel trendPosts={trendposts} />
-      <FeaturedPostBox featuredPosts={featuredposts} />
+      <FeaturedPostBox/>
       <section
         className={styles.topHighlightsPosts}
         id="topHighlightsPosts"
@@ -119,10 +119,10 @@ export default function Home({ featuredposts, trendposts }) {
 }
 
 export async function getStaticProps() {
-  const featuredposts = (await getFeaturedPosts()) || [];
+  // const featuredposts = (await getFeaturedPosts()) || [];
   const trendposts = (await getTrendPosts()) || [];
   return {
-    props: { featuredposts, trendposts },
+    props: {  trendposts },
   };
 }
 // export async function getServerSideProps() {

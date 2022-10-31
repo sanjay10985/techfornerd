@@ -6,7 +6,13 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import moment from "moment";
 import Image from "next/image";
 
-const FeaturedPostBox = ({ featuredPosts }) => {
+const FeaturedPostBox = () => {
+  const [featuredPosts, setFeaturedPosts] = useState([])
+  
+  useEffect(() => {
+    getFeaturedPosts().then((fposts) => setFeaturedPosts(fposts));
+
+  },[])
   const animate_text = (e) => {
     // const imgbox = e.target.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild;
     const textDiv = e.target.nextElementSibling;

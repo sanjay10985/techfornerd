@@ -8,7 +8,7 @@
 
 .featuredImageBox {
   width: 100%;
-  margin: 2em 0 6em 0;
+  margin: 2em 0 2em 0;
   height: 400px;
   overflow: hidden;
   border-radius: 1em;
@@ -139,10 +139,10 @@
 .postContentBox{
     display: flex;
     width: 100%;
+    margin-top: 5em;
 }
 
 .postContentDiv{
-    /* flex: 0.7;    */
     width: 75%;
 }
 
@@ -151,28 +151,48 @@
     font-family: "Nunito Sans", sans-serif;
     font-weight: 700;
     margin: .5em 0;
+    color: black;
 }
 .headingThree{
     font-size: 2.8em;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 600;
     margin-bottom: 1em;
+    color: black;
 }
 .headingFour{
     font-size: 2.5em;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 600;
+    color: black;
 }
 
 .paragraph{
     font-family: Rubik, sans-serif;
     color: #595d69;
-    font-size:  1.4em;
+    font-size:  1.6em;
     margin-bottom: 2em;
     font-weight: 400;
     line-height: 1.5;
 }
 
 .img{
-    margin: 4em 0;
+    margin: 4em 0 4em -5em;
+    box-shadow: .2em .2em .5em black, -.2em -.2em .5em black;
+    transition: all 1s;
+  }
+  
+  .img:hover{
+    transform: translateY(-10px);
+    transition: all 1s;
 }
+
+.boldText{
+  color: #3e4048;
+}
+
+.link{
+  color: black;
+  text-decoration: underline;
+}
+

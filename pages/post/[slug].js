@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../../styles/PostDetails.module.css";
 import Image from "next/image";
 import PostDetail from "../../components/PostDetail";
@@ -6,78 +6,20 @@ import { getPostDetails, getPosts } from "../../services";
 import CategoryColorLabel from "../../components/CategoryColorLabel";
 import moment from "moment/moment";
 import { RichText } from "@graphcms/rich-text-react-renderer";
+import { useState } from "react";
 
 const PostDetails = ({ post }) => {
-  const getContentFragment = (index, text, obj, type) => {
-    let modifiedText = text;
 
-    if (obj) {
-      if (obj.bold) {
-        modifiedText = <b key={index}>{text}</b>;
-      }
-      if (obj.italic) {
-        modifiedText = <em key={index}>{text}</em>;
-      }
-      if (obj.underline) {
-        modifiedText = <u key={index}>{text}</u>;
-      }
-    }
+  const[domLoaded, setDomLoaded] = useState(false);
 
-    switch (type) {
-      case "heading-three":
-        return (
-          <h3 key={index} className={styles.headingThree}>
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </h3>
-        );
-      case "paragraph":
-        return (
-          <p key={index} className={styles.paragraph}>
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </p>
-        );
-      case "heading-four":
-        return (
-          <h4 key={index} className={styles.headingFour}>
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </h4>
-        );
-      case "heading-two":
-        return (
-          <h2 key={index} className={styles.headingTwo}>
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </h2>
-        );
-      case "image":
-        return (
-          <img
-            key={index}
-            alt={obj.title}
-            // height={obj.height}
-            // width={obj.width}
-            width="100%"
-            className={styles.img}
-            // height="100%"
-            src={obj.src}
-          />
-        );
-      default:
-        return modifiedText;
-    }
-  };
-
-  console.log(post);
+  useEffect(() => {
+    setDomLoaded(true);
+  },[])
 
   return (
-    <main className={styles.postDetailsBox}>
+    <>
+    {domLoaded && (<main className={styles.postDetailsBox}>
+      
       <div className={styles.featuredImageBox}>
         <div
           className={styles.featuredImageDiv}
@@ -117,87 +59,83 @@ const PostDetails = ({ post }) => {
         </div>
       </div>
       <div className={styles.postContentBox}>
-         <div className={styles.postContentDiv}>
-        {/*  {post.content.raw.children.map((typeObj, index) => {
-            const children = typeObj.children.map((item, itemIndex) =>
-              getContentFragment(itemIndex, item.text)
-            );
-
-            return getContentFragment(index, children, typeObj, typeObj.type);
-          })}*/}
-        
-        <RichText
-        content={post.content.raw.children}
-        renderers={{
-          h1: ({ children }) => <h1 >{children}</h1>,
-          blockquote: ({ children }) => (
-            <blockquote
-              style={{
-                paddingLeft: '16px',
-                borderLeft: '4px solid blue',
-                fontSize: '26px',
-              }}
-            >
-              {children}
-            </blockquote>
-          ),
-          a: ({ children, href, openInNewTab }) => (
-            <a
-              href={href}
-              target={openInNewTab ? '_blank' : '_self'}
-              style={{ color: 'green' }}
-              rel="noreferrer"
-            >
-              {/* {console.log()} */}
-              {children.props.content[0].text}
-              {/* {children} */}
-            </a>
-          ),
-          h2: ({ children }) => (
-            <h2 style={{ color: 'darkcyan' }} className={styles.headingTwo}>{children}</h2>
-          ),
-          h3: ({ children }) => (
-            <h3 style={{ color: 'darkcyan' }} className={styles.headingThree}>{children}</h3>
-          ),
-          h4: ({ children }) => (
-            <h4 style={{ color: 'darkcyan' }} className={styles.headingFour}>{children}</h4>
-          ),
-          p: ({ children }) => (
-            <p className={styles.paragraph}>{children}</p>
-          ),
-          bold: ({ children }) => <strong>{children}</strong>,
-          code_block: ({ children }) => {
-            return (
-              <pre className="line-numbers language-none">
-                <code>{children}</code>
-              </pre>
-            );
-          },
-          img: ({src,width,height}) => (<>
-            <img src={src}
-              width="100%"
-            />
-            {/* // {console.log(object)} */}
-            {/* {console.log()} */}
-            </>
-          ),
-          // Asset: {
-          //   application: () => (
-          //     <div>
-          //       <p>Asset</p>
-          //     </div>
-          //   ),
-          //   text: () => (
-          //     <div>
-          //       <p>text plain</p>
-          //     </div>
-          //   ),
-          // },
-        }}
-      /></div> 
+        <div className={styles.postContentDiv}>
+          {/* {post.content.raw.children[0].children[0].text} */}
+          <RichText
+            content={post.content.raw.children}
+            renderers={{
+              h1: ({ children }) => <h1>{children}</h1>,
+              blockquote: ({ children }) => (
+                <blockquote
+                  style={{
+                    paddingLeft: "16px",
+                    borderLeft: "4px solid blue",
+                    fontSize: "26px",
+                  }}
+                >
+                  {children}
+                </blockquote>
+              ),
+              a: ({ children, href, openInNewTab }) => (
+                <a
+                  href={href}
+                  target={openInNewTab ? "_blank" : "_self"}
+                  rel="noreferrer"
+                  className={styles.link}
+                >
+                  {children}
+                </a>
+              ),
+              h2: ({ children }) => (
+                <h2 className={styles.headingTwo}>{children}</h2>
+              ),
+              h3: ({ children }) => (
+                <h3 className={styles.headingThree}>{children}</h3>
+              ),
+              h4: ({ children }) => (
+                <h4 className={styles.headingFour}>{children}</h4>
+              ),
+              p: ({ children }) => (
+                <p className={styles.paragraph}>{children}</p>
+              ),
+              bold: ({ children }) => (
+                <strong className={styles.boldText}>{children}</strong>
+              ),
+              code_block: ({ children }) => {
+                return (
+                  <pre className="line-numbers language-none">
+                    <code>{children}</code>
+                  </pre>
+                );
+              },
+              img: ({ src, width, height }) => (
+                <>
+                  <img
+                    src={src}
+                    className={styles.img}
+                    width="120%"
+                  />
+                </>
+              ),
+              Asset: {
+                application: () => (
+                  <div>
+                    <p>Asset</p>
+                  </div>
+                ),
+                text: () => (
+                  <div>
+                    <p>text plain</p>
+                  </div>
+                ),
+              },
+            }}
+          />
+        </div>
         <div>{/* {category} */}</div>
       </div>
-    </main>
+    </main> )}
+    </>
   );
 };
 
