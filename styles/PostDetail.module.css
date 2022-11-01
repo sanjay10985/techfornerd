@@ -1,0 +1,199 @@
+.postDetailsBox {
+    width: 78%;
+    margin: auto;
+  
+    height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .featuredImageBox {
+    width: 100%;
+    margin: 2em 0 2em 0;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 1em;
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* padding: 4em; */
+  }
+  
+  .featuredImageDiv {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 1em;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1.5s;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    /* background-size: m; */
+  }
+  
+  .featuredImageDiv:hover {
+    background-size: 120%;
+  }
+  
+  .featuredImageDiv::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.54);
+    z-index: 1;
+  }
+  
+  .postDetails {
+    padding: 2em;
+    /* position: absolute; */
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .postDetails > h2 {
+    /* z-index: 4; */
+    color: white;
+    /* z-index: 1; */
+    font-size: 4em;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .postMoreDetails {
+    display: flex;
+    align-items: center;
+    font-family: Rubik, sans-serif;
+  }
+  
+  .hlAuthorBox {
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    font-size: 1.6em;
+    /* margin-top: .5em; */
+  }
+  
+  .hlAuthorDiv {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  
+  .hlAuthorDiv > label {
+    cursor: pointer;
+    margin-left: 0.4em;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .hlAuthorDiv > label > a:hover {
+    background-size: 100% 1px;
+    transition: background-size 0.4s;
+  }
+  
+  .hlAuthorDiv > label > a {
+    background-image: linear-gradient(white, white);
+    background-size: 0 1px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin: auto;
+    transition: background-size 0.4s;
+    display: inline;
+    padding: 0.1em;
+  }
+  
+  .hlAuthorBox > label {
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 0.2em 0.8em 0 0.8em;
+  }
+  
+  .postMoreDetails > label {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin: 0.6em 1em 0 1em;
+    background-color: white;
+  }
+  
+  .postMoreDetails > span {
+    font-size: 1.4em;
+    color: white;
+  }
+  
+  .postContentBox{
+      display: flex;
+      width: 100%;
+      margin-top: 5em;
+  }
+  
+  .postContentDiv{
+      width: 75%;
+  }
+  
+  .headingTwo{
+      font-size: 3.5em;
+      font-family: "Nunito Sans", sans-serif;
+      font-weight: 600;
+      margin: .5em 0;
+      color: black;
+  }
+  .headingThree{
+      font-size: 2.8em;
+      font-family: "Nunito Sans", sans-serif;
+      font-weight: 600;
+      margin-bottom: 1em;
+      color: black;
+  }
+  .headingFour{
+      font-size: 2.5em;
+      font-family: "Nunito Sans", sans-serif;
+      font-weight: 600;
+      color: black;
+  }
+  
+  .paragraph{
+      font-family: Rubik, sans-serif;
+      color: #595d69;
+      font-size:  1.6em;
+      margin-bottom: 2em;
+      font-weight: 400;
+      line-height: 1.5;
+  }
+  
+  /* .img{
+      margin: 4em 0 4em -5em;
+      box-shadow: .2em .2em .5em black, -.2em -.2em .5em black;
+      transition: all 1s;
+    }
+    
+    .img:hover{
+      transform: translateY(-10px);
+      transition: all 1s;
+  } */
+  
+  .boldText{
+    color: #3e4048;
+  }
+  
+  .link{
+    color: black;
+    text-decoration: underline;
+  }
+  
+  

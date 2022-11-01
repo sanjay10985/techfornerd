@@ -47,7 +47,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.37);
+  background-color: rgba(0, 0, 0, 0.54);
   z-index: 1;
 }
 
@@ -149,7 +149,7 @@
 .headingTwo{
     font-size: 3.5em;
     font-family: "Nunito Sans", sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     margin: .5em 0;
     color: black;
 }
@@ -176,7 +176,7 @@
     line-height: 1.5;
 }
 
-.img{
+/* .img{
     margin: 4em 0 4em -5em;
     box-shadow: .2em .2em .5em black, -.2em -.2em .5em black;
     transition: all 1s;
@@ -185,7 +185,7 @@
   .img:hover{
     transform: translateY(-10px);
     transition: all 1s;
-}
+} */
 
 .boldText{
   color: #3e4048;
