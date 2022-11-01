@@ -29,7 +29,6 @@ const PostsWidget = ({ slug, categories }) => {
         .firstElementChild;
 
     aniText.classList.toggle("animateRecentText");
-    console.log(aniText);
   };
 
   return (

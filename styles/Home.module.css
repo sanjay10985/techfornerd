@@ -110,7 +110,7 @@
     margin-left: 2.5em;
 }
 
-.categoriesBox{
+.trendignTopics{
     display: flex;
     margin: 1em 0 0 0;
     height: auto;
@@ -118,7 +118,7 @@
     padding: 1em .4em 0 .4em;
 }
 
-.categoriesBox > h1{
+.trendignTopics > h1{
     
     font-size: 2.5em;
     padding: .5em .5em;

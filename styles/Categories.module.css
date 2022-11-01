@@ -1,16 +1,16 @@
 .categoriesDiv{
     position: relative;
     width: 100%;
-    margin: 1em auto;
+    margin: 1.4em auto;
     height: 5.5em;
-    border-radius: .7em;
+    border-radius: .4em;
     cursor: pointer;
     overflow: hidden;
     display: flex;
     justify-content: center;
     z-index: 100;
     align-items: center;
-    box-shadow: .3em .3em .5em black,inset -.3em -.3em .5em black;
+    /* box-shadow: .3em .3em .5em black,inset -.3em -.3em .5em black; */
 }
 
 .categoryImg{
@@ -42,7 +42,7 @@
     position: absolute;
     z-index: 100;
     color: white;
-    font-size: 1.7em;
+    font-size: 1.9em;
     font-weight: 700;
 }
 
@@ -52,8 +52,19 @@
     background-size: 0 2px;
     background-repeat: no-repeat;
     transition: background-size .5s;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
 }
 
 .categoryName > a:hover{
     background-size: 100% 2px;
+}
+
+.categoriesDiv:hover .categoryName > a{
+    background-size: 100% 2px;
+}
+
+.categoryName > a:hover .categoryImg{
+    transition: all .5s;
+    transform: scale(1.1);
 }

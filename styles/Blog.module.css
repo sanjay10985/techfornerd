@@ -1,0 +1,30 @@
+.blogPostPage{
+    width: 78%;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    margin-top: 8em;
+}
+
+.blogPostsSection{
+    flex: .75;
+}
+
+.blogWidgetSection{
+    flex: .25;
+}
+
+.trendingTopics{
+    display: flex;
+    margin: 2em 0 0 0;
+    height: auto;
+    flex-direction: column;
+    padding: 1em .4em 0 .4em;
+}
+
+.trendingTopics > h3{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    padding: .5em 0em;
+}
