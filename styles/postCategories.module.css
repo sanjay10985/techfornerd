@@ -1,0 +1,43 @@
+.categoryDiv{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    /* z-index: -1; */
+    margin: 10px;
+    border-radius: 5px;
+    position: relative;
+    justify-content: space-between;
+    /* opacity: .8; */
+}
+
+.categoryDiv::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    /* background-color: rgba(0, 0, 0, 0.186); */
+    background-color: inherit;
+    z-index: -1;
+}
+
+.categoryDiv > h6{
+    font-size: 1.6em;
+    font-weight: 700;
+    z-index: 1000;
+    opacity: 1;
+    /* "Nunito Sans", sans-serif; */
+    font-family: "Nunito Sans", sans-serif;
+    /* position: absolute; */
+    /* color: inherit; */
+}
+
+.categoryDiv > label{
+    font-size: 14px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 400;
+    font-family: Rubik, sans-serif;
+}

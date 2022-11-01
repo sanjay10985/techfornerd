@@ -5,6 +5,14 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'media.graphassets.com',
+    },
+  ],
+  }
 }
 
 module.exports = nextConfig

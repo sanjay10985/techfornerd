@@ -1,149 +1,142 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap');
-
-
-.featuredPost{
+.featuredPost {
     width: 100%;
     height: 100%;
     cursor: pointer;
-}
+  }
 
-#postLink{
+  #postLink {
     width: 100%;
     cursor: pointer;
-}
+  }
+  
+  
 
 #imgbox {
-  width: 100%;
-  height: 100%;
-  /* background-position: center; */
-  background-size: 140%;
-  background-repeat: no-repeat;
-  transition: all 0.4s ease-in-out;
-  position: relative;
-  /* padding: em; */
-  /* object-fit: contain; */
-}
-
-
-#imgbox:hover {
-  background-size: 180%;
-  transition: all 0.3s ease-in-out;
-}
-
-.animateImg {
-  background-size: 180% ;
-  transition: all 0.3s ease-in-out;
-}
-
-.featuredPostTitle h1{
-    background-image: linear-gradient(white,white);
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    z-index: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  #imgbox::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(180deg, transparent, black);
+    z-index: 1;
+  }
+  
+  #imgbox:hover {
+    transform: scale(1.15);
+    transition: all 1s ease-in-out;
+  }
+  
+  .featuredPostTitle h1 {
+    background-image: linear-gradient(white, white);
     background-size: 0 2px;
     background-position: bottom left;
     background-repeat: no-repeat;
-    transition: background-size .4s;
-    font-family: 'Nunito Sans', sans-serif;
+    transition: background-size 0.4s;
+    font-family: "Nunito Sans", sans-serif;
     color: white;
     display: inline;
-    /* line-height: 40px; */
-    font-size: 2em;
-    width: 200px;
-    /* padding-right: 1em; */
-    /* padding-bottom: 1em; */
-    /* line-break: anywhere; */
-    /* word-wrap: break-word; */
-    /* padding-inline-end:1em; */
-}
-
-.featuredPostTitle h1:hover{
-      background-repeat: no-repeat;
-    background-size: 100% 2px !important;
-    transition: background-size 1s;
+    font-size: 3.6em;
+    /* width: 200px; */
+    /* z-index: 10000; */
+    transition: background-size 0.5s;
   }
-
-
-  .textDisc{
-    bottom: 2.5em;
-    left: 30px;
-    right: 40px;
-    position: absolute;
-    font-family: 'Rubik', sans-serif;
-
-  }
-
-  .animateText{
+  
+  .featuredPostTitle h1:hover {
+    background-repeat: no-repeat;
     background-size: 100% 2px !important;
     transition: background-size 1s;
   }
   
-  .animateImg {
-    /* transform: scale(1.2); */
-    background-size: 250%;
-    transition: all .3s ease-in-out;
+  .textDisc {
+    /* top: 5em; */
+    bottom: 2em;
+    left: 25px;
+    right: 25px;
+    position: absolute;
+    font-family: "Rubik", sans-serif;
   }
-
-  #categoryDiv{
+  
+  #categoryDiv {
     display: flex;
     padding: 0.4em 1em;
     align-items: center;
     position: relative;
-    /* background-color: red; */
-    /* background-color: rgb(196, 35, 35); */
     border-radius: 1em;
     width: fit-content;
     margin-bottom: 1em;
     z-index: 100;
   }
+  
+  #category {
+    color: white;
+    font-size: 1.6em;
+    padding-left: 0.5em;
+    font-weight: 400;
+  }
+  
+  .excerpt {
+    color: white;
+    font-size: 1.8em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    z-index: -100;
+  }
+  
+  #postDetails {
+    display: flex;
+    align-items: center;
+    color: white;
+    width: 100%;
+  }
+  
+  #postDetails > label {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 1em;
+  }
+  
+  #authorDiv {
+    display: flex;
+    align-items: center;
+  }
+  
+  #authorName {
+    color: white;
+    font-size: 1.6em;
+    margin-left: .5em;
+  }
+  
+  #postDetails > span {
+    margin: 1em;
+    font-size: 1.6em;
+  }
 
- #category{
-  color: white;
-  font-size: 1.6em;
-  padding-left: .5em;
-  font-weight: 400;
- }
+  .authorNameLink{
+    background-image: linear-gradient(white,white);
+    background-size: 0 1.5px;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    transition: background-size .4s;
+  }
 
- #excerpt{
-  color: white;
-  font-size: 1.8em;
-  margin-top: .5em;
-  margin-bottom: .5em;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400;
- }
-
- #postDetails{
-  display: flex;
-  /* justify-content: space-around; */
-  /* margin-top: 1.5em; */
-  align-items: center;
-  color: white;
-  width: 100%;
- }
-
- #postDetails > label{
-  /* font-size: 1em; */
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: white;
-  margin-left: 1em;
- }
-
- #authorDiv{
-  display: flex;
-  align-items: center;
- }
-
- #authorAvatar{
-  margin-right: 1em;
- }
-
- #authorName{
-  color: white;
-  /* margin-left: 1em; */
-  font-size: 1.6em;
- }
-
- #postDetails > span{
-  margin: 1em;
-  font-size: 1.6em;
- }
+  .authorNameLink:hover{
+    background-size: 100% 1.5px;
+    transition: background-size .4s;
+  }

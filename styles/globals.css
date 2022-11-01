@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
+
 
 html,
 body {
@@ -12,8 +14,14 @@ body {
 
 body{
   transition: all .2s ease;
-  width: 135em;
+  /* width: 78%; */
+  /* font-size: 62.5%; */
   margin: auto !important;
+  /* background-color: whitesmoke; */
+}
+
+#home,#top__header,#header {
+  width: 78%;
 }
 
 a {
@@ -30,23 +38,303 @@ a {
   width: 100%;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: light;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-} */
 
-.animateImg {
-  background-size: 250% ;
-  transition: all 0.3s ease-in-out;
-}
 
 .animateText{
   background-size: 100% 2px !important;
   transition: background-size 1s;
 }
+.animateRecentText{
+  background-size: 100% 1px !important;
+  transition: background-size .5s;
+}
 
+.animateImg {
+  transform: scale(1.1);
+  transition: all 1s ease-in-out;
+} 
+
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* filter: contrast(1.5); */
+  animation: aniCircle .2s backwards;
+}
+
+@keyframes aniCircle {
+  0%{
+      width: 0px;
+      height: 0px;
+      /* background-color: transparent; */
+      background-color: rgba(1, 0, 0, 0.147);
+      opacity: 0;
+  }
+
+  50%{
+      width: 40px;
+      height: 40px;
+      background-color: rgba(1, 0, 0, 0.147);
+      opacity: 1;
+  }
+  100%{
+      width: 0;
+      height: 0;
+      opacity: 0;
+      /* background-color: transparent; */
+      background-color: rgba(1, 0, 0, 0.147);
+  }
+}
+
+
+@media only screen and (max-width: 1400px)  {
+  #home,#top__header,#header,#postDetailsBox {
+    width: 84%;
+  }
+  
+} 
+
+@media only screen and (max-width: 1200px)  {
+  #home,#top__header,#header {
+    width: 90%;
+    font-size: 96%;
+  }
+  #postDetailsBox{
+    width: 90%;
+  }
+  #fplTitle{
+    font-size: 3.2em;
+  }
+  #fplExcerpt{
+    font-size: 1.6em;
+  }
+} 
+@media only screen and (max-width: 1100px)  {
+  #home,#top__header,#header {
+    width: 94%;
+    font-size: 94%;
+  }
+  #postDetailsBox{
+    width: 94%;
+    font-size: 96%;
+  }
+} 
+
+@media only screen and (max-width: 1050px)  {
+  
+  #home,#top__header,#header {
+    width: 96%;
+    font-size: 90%;
+  }
+  #postDetailsBox{
+    width: 96%;
+    font-size: 94%;
+  }
+} 
+
+
+@media only screen and (max-width: 990px)  {
+  #home,#header {
+    width: 80%;
+    font-size: 100%;
+  }
+  #postDetailsBox{
+    width: 80%;
+    font-size: 100%;
+
+  }
+  #postContentBox{
+    flex-direction: column;
+  }
+  #postContentDiv{
+    width: 100%;
+  }
+  #moreDetailsRight{
+    padding-left: 0;
+  }
+  #featuredImageDiv{
+    background-size: 120% !important;
+  }
+  #textCarouselButtons{
+    display: none;
+  }
+  #top__header{
+    display: none !important;
+}
+  #menu{
+    display: none;
+  }
+  #smMenuDiv{
+    display: flex !important;
+  }
+  #featuredPostDiv{
+    width: 100%;  
+    height: auto;
+    flex-direction: column;
+  }
+  #box1Div{
+    margin-right: 0;
+    height: 50em;
+    width: 100%;
+    margin-bottom: .5em;
+  }
+  #box2Div{
+    margin-left: 0;
+    margin-top: 0;
+    height: 70em;
+    width: 100%;
+  }
+  #box3Div{
+    margin-left: 0;
+    height: 50%;
+    width: 100%;
+  }
+  #box4Div{
+    height: 50%;
+    width: 100%;
+    margin-top:.5em ;
+  }
+  #box5Div{
+    height: 100%;
+    /* width: 100%; */
+    margin-top: 0;
+    margin-left: 0;
+  }
+  #box6Div{
+    height: 100%;
+    margin-top: 0;
+    /* width: 100%; */
+  }
+  #fplTitle{
+    font-size: 3em;
+  }
+  #fplExcerpt{
+    font-size: 1.4em;
+  }
+  #topHighlightsPosts{
+    flex-direction: column;
+  }
+  #highlightRightDiv{
+    padding-left: 0;
+    margin-left: 0;
+  }
+  #socialAccDiv{
+    padding: 3em 0;
+  }
+  #recentPostnAd{
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+  }
+} 
+@media only screen and (max-width: 768px)  {
+  
+  #home,#header {
+    width: 88%;
+    font-size: 95%;
+  }
+  #featuredImageDiv{
+    background-size: 130% !important;
+  }
+  #postDetailsBox{
+    width: 88%;
+    font-size: 95%;
+  }
+  #subButton{
+    display: none;
+  }
+  #box2Div{
+    margin-left: 0;
+    height: 90em;
+    width: 100%;
+  }
+  #box3Div{
+    margin-left: 0;
+    height: 50%;
+    width: 100%;
+  }
+  #box4Div{
+    height: 100%;
+    width: 100%;
+    margin-top:1em ;
+    flex-direction: column;
+  }
+  #box5Div{
+    height: 100%;
+    width: 100%;
+    /* margin-top: 0; */
+    margin-left: 0;
+  }
+  #box6Div{
+    height: 100%;
+    /* margin-top: 0; */
+    width: 100%;
+    margin-left: 0;
+  }
+  #highlightsPosts{
+    height: 57em;
+    margin-bottom: 2em;
+  }
+} 
+@media only screen and (max-width: 576px)  {
+  #smMenuDiv > label{
+    display: none;
+  }
+ 
+  #home,#header {
+    width: 90%;
+    font-size: 100%;
+  }
+  #featuredImageDiv{
+    background-size: 160% !important;
+  }
+  #postDetailsBox{
+    width: 90%;
+    font-size: 80%;
+  }
+  #postDetails{
+    padding: 0 !important;
+  }
+  #highlightsPosts{
+    width: 100%;
+    height: 57em;
+    /* margin-bottom: 1em; */
+  }
+  #highlightsPostsImage{
+    height: 60%;
+  }
+  #recentPostnAd{
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+} 
+@media only screen and (max-width: 370px)  {
+  #smMenuDiv > label{
+    display: none;
+  }
+  #home,#header {
+    width: 95%;
+    font-size: 90%;
+  }
+  #postDetailsBox{
+    width: 95%;
+    font-size: 75%;
+  }
+  #featuredImageDiv{
+    background-size: 200% !important;
+  }
+} 
+@media only screen and (max-width: 290px)  {
+  #smMenuDiv > label{
+    display: none;
+  }
+  #home,#header {
+    width: 95%;
+    font-size: 88%;
+  }
+  #postDetailsBox{
+    width: 95%;
+    font-size: 75%;
+  }
+} 

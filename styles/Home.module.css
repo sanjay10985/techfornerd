@@ -1,3 +1,167 @@
 .home{
     margin: auto;
 }
+
+.topHighlightsPosts{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 4em;
+    flex-wrap: wrap;
+}
+
+.highlightLeftDiv{
+    flex: 0.75;
+}
+
+.highlightLeftDiv > div{
+    margin-bottom: 4em;
+
+}
+
+
+.highlightTitleDiv{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.highlightTitleDiv > h1{
+    font-size: 3em;
+    font-family: "Nunito Sans", sans-serif;
+    margin-left: .2em;
+}
+
+.highlightTitleDiv ~ p{
+    font-size: 1.6em;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* .highlightLeftDiv > div{
+    margin-bottom: 4em;
+} */
+
+.highlightLeftSection{
+    width: 100%;
+    height: 100%;
+}
+
+.highlightsPostsBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: -1em !important;
+}
+
+.morePostButtonDiv{
+    display: flex;
+    color: #2163e8;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #2163e8;
+    margin: auto;
+    width: fit-content;
+    background-color: rgba(33, 99, 232, 0.1);
+    border-radius: .5em;
+    /* font-size: 2em; */
+    position: relative;
+    cursor: pointer;
+}
+
+.morePostsButton{
+    display: block;
+    /* margin-right: .2em; */
+    color: #2163e8;
+    text-align: center;
+    padding: .8em 1.5em .8em 1em;
+    font-size: 2em;
+    border: none;
+    background-color: rgba(33, 99, 232, 0.1);
+    font-weight: 700;
+    transition: all .2s;
+    position: relative;
+}
+
+.morePostsButton:hover{
+    color:white;
+    background-color: #2163e8;
+}
+
+.morePostButtonDiv > svg{
+    position: absolute;
+    right: .4em;
+    font-size: 2em;
+    color: #2163e8;
+    transition: all .2s;
+    
+}
+
+.morePostButtonDiv:hover.morePostButtonDiv > svg{
+ color: white;
+}
+
+/* .morePostsButton > svg{
+    margin-top: .4em;
+} */
+
+
+.highlightRightDiv{
+    flex: 0.25;
+    margin-left: 2.5em;
+}
+
+.categoriesBox{
+    display: flex;
+    margin: 1em 0 0 0;
+    height: auto;
+    flex-direction: column;
+    padding: 1em .4em 0 .4em;
+}
+
+.categoriesBox > h1{
+    
+    font-size: 2.5em;
+    padding: .5em .5em;
+}
+
+.recentPostnAd{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.recentPostsBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.recentPostsBox > h1{
+    font-size: 2.2em;
+    font-weight: 500;
+    padding: .5em 0;
+}
+
+.addShowDiv{
+    width: 90%;
+    margin: auto;
+    height: 45em;
+    background-color: rgb(49, 49, 49);
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.addShowDiv > h1{
+    font-size: 4em;
+    color: rgb(199, 199, 199);
+    padding: 2em;
+}
+

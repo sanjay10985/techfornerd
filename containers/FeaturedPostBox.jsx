@@ -1,39 +1,25 @@
 import React, { useEffect, useState } from "react";
-import FeaturedPosts from "../components/FeaturedPosts";
-import { getFeaturedPosts,getTrendPosts,getPosts } from "../services";
+import { getFeaturedPosts } from "../services";
 import styles from "../styles/FeaturedPostBox.module.css";
+import FeaturedPosts from "../components/FeaturedPosts";
 
-const FeaturedPostBox = ({posts}) => {
-
-  const[featuredPosts, setFeaturedPosts] = useState([]);
-
-  useEffect(() =>  {
-    getFeaturedPosts().then((posts) => setFeaturedPosts(posts));
-  },[])
+const FeaturedPostBox = () => {
+  const [featuredPosts, setFeaturedPosts] = useState([])
   
-  const animate_text = () => {
-    const imgbox = document.getElementsByClassName("imgbox");
-    Array.from(imgbox).forEach((e) => {
-      const postText = e.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild;
-      // console.log(postText);
-      e.addEventListener("mouseenter", () => {
-        postText.classList.toggle("animateText");
-      });
-      postText.classList.remove("animateText");
-    });
-  };
-  console.log(featuredPosts)  
+  useEffect(() => {
+    getFeaturedPosts().then((fposts) => setFeaturedPosts(fposts));
+
+  },[])
 
   return (
-    <div className="featuredPostBox">
-      <div className={styles.featuredPostdiv} style={{ width: "100%" }}>
-        <div
-          className={styles.box}
-          id={styles.box_1}
-          onMouseEnter={animate_text}
-          onMouseLeave={animate_text}
-        >
-          {featuredPosts.slice(-1).map((post) => (
+    <div className={styles.featuredPostBox}>
+      <div
+        className={styles.featuredPostdiv}
+        id="featuredPostDiv"
+        style={{ width: "100%" }}
+      >
+        <div id="box1Div" className={`${styles["box1"]} ${styles["box"]}`}>
+        {featuredPosts.slice(-1).map((post) => (
             // {post.categories.map((ca))}
           <FeaturedPosts
             title={post.title}
@@ -47,20 +33,14 @@ const FeaturedPostBox = ({posts}) => {
             authorImg = {post.author.photo.url}
             createdAt = {post.createdAt}
             excerpt={post.excerpt}
-            font = {true}
+            font = "3.6em"
             bgpos='center'
           />
           ))}
         </div>
-        <div id={styles.box_2}>
-          <div
-            className={styles.box}
-            id={styles.box_3}
-            onMouseEnter={animate_text}
-            onMouseLeave={animate_text}
-          >
-            {featuredPosts.slice(-2,-1).map((post) => (
-            // {post.categories.map((ca))}
+        <div className={styles.box2} id="box2Div">
+          <div className={`${styles["box3"]} ${styles["box"]}`} id="box3Div">
+          {featuredPosts.slice(-2,-1).map((post) => (
           <FeaturedPosts
             title={post.title}
             imgSrc={post.featuredImage.url}
@@ -71,17 +51,13 @@ const FeaturedPostBox = ({posts}) => {
             authorName = {post.author.name}
             createdAt = {post.createdAt}
             bgpos="center"
+            font="2.8em"
           />
           ))}
           </div>
-          <div id="box_4" style={{ display: "flex", height: "50%" }}>
-            <div
-              className={styles.box}
-              id={styles.box_5}
-              onMouseEnter={animate_text}
-              onMouseLeave={animate_text}
-            >
-              {featuredPosts.slice(-3,-2).map((post) => (
+          <div className={styles.box4} id="box4Div">
+            <div className={`${styles["box5"]} ${styles["box"]}`} id="box5Div">
+            {featuredPosts.slice(-3,-2).map((post) => (
             // {post.categories.map((ca))}
           <FeaturedPosts
             title={post.title}
@@ -93,18 +69,13 @@ const FeaturedPostBox = ({posts}) => {
             authorName = {post.author.name}
             createdAt = {post.createdAt}
             bgpos="top"
+            font="2.2em"
           />
           ))}
             </div>
-            <div
-              className={styles.box}
-              id={styles.box_6}
-              onMouseEnter={animate_text}
-              onMouseLeave={animate_text}
-            >
-              {featuredPosts.slice(-4,-3).map((post) => (
-            // {post.categories.map((ca))}
-          <FeaturedPosts
+            <div className={`${styles["box6"]} ${styles["box"]}`} id="box6Div">
+              {featuredPosts.slice(-4, -3).map((post) => (
+                <FeaturedPosts
             title={post.title}
             imgSrc={post.featuredImage.url}
             slug={post.slug}
@@ -113,21 +84,25 @@ const FeaturedPostBox = ({posts}) => {
             catcolor={post.categories[0].color.hex}
             authorName = {post.author.name}
             createdAt = {post.createdAt}
-            bgpost="top center"
+            bgpos="top"
+            font="2.2em"
           />
-          ))}
+              ))}
             </div>
           </div>
         </div>
       </div>
+      <style jsx>
+        {`
+          @media only screen and (max-width: 990px) {
+            #box_1 {
+              width: 100%;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };
 
-export async function getStaticProps() {
-  const posts = (await getTrendPosts()) || [];
-  return {
-    props: { posts },
-  };
-}
 export default FeaturedPostBox;

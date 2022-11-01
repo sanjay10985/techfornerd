@@ -1,8 +1,7 @@
 .header {
-  width: 100%;
-  /* height: 5em;   */
+  width: 78%;
+  margin: auto;
   font-family: 'Rubik', sans-serif;
-
 }
 
 .navbar {
@@ -31,16 +30,16 @@
   position: relative;
 }
 
-.menu li:first-child a{
+/* .menu li:first-child a{
     color: #2163e8 !important;
     margin-left: 0;
     padding-left: 0;
-}
+} */
 
 .menu > li {
   font-size: 1.8em;
   font-weight: 600;
-  margin-right: 1.5em;
+  margin-right: 2em;
   display: flex;
   align-items: center;
   position: relative;
@@ -52,16 +51,31 @@
 
 .menu > li:hover,
 .menu > li > a:focus,
-.menu > li > a:active {
+.menu > li > a.active {
   color: #2163e8;
 }
 
-.navbar_right{
+.navbarRight{
     display: flex;
     align-items: center;
 }
 
-.navbar_right > button{
+.smMenu{
+  display: flex;
+  align-items: center;
+  margin-right: .5em;
+  color: rgb(71, 69, 69);
+  cursor: pointer;
+  display: none;
+}
+
+.smMenu > label{
+  font-size: 1.5em;
+  margin-right: .1em;
+  cursor: pointer;
+}
+
+.navbarRight > button{
   background-color: #d6293e;
   color: white;
   border: none;
@@ -74,17 +88,22 @@
   margin-right: .8em;
 }
 
-.navbar_right > button:hover{
+.navbarRight > button:hover{
   background-color: #b72233;
   transition: background-color .1s ease;
 }
 
-.navbar_right > svg{
-  cursor: pointer;
-  margin-left: .1em;
-  padding: .1em;
+#serchIcon{
+  font-size: 3em;
 }
 
-.navbar_right > svg:hover{
+.navbarRight > svg{
+  cursor: pointer;
+  color: gray;
+  padding: .1em;
+  
+}
+
+.navbarRight > svg:hover{
   color: #2163e8;
 }

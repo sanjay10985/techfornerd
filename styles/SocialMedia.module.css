@@ -1,0 +1,68 @@
+.socialMediaDiv{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.socialMediaDiv > div{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2em 0;
+    border-radius: 1em;
+    margin: 0.4em;
+    color: white;
+    padding-top: 2em;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.socialMediaDiv > div > svg{
+    margin-bottom: .1em;
+}
+
+.facebook{
+    background-color: #4470CF;
+    transition: background-color .5s;
+}
+
+.facebook:hover{
+    background-color: #2a60d5;
+    transition: background-color .5s;
+    
+}
+
+.instagram{
+    background-image: radial-gradient(circle at 20% 130%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-size: 110% 110%;
+    transition: background-size .5s;
+}
+.instagram:hover{
+    background-size: 150% 150%;
+    transition: background-size .5s;
+}
+
+.youtube{
+    background-color: #EB0000;
+    margin-right: 0;
+    padding-right: 0;
+    transition: background-color .5s;
+}
+.youtube:hover{
+    background-color: #cd0000;
+    transition: background-color .5s;
+  
+}
+
+.socialMediaDiv > div > label{
+    font-size: 1.6em;
+    margin-top: .2em 0;
+}
+
+.socialMediaDiv > div > span{
+    font-size: 1.4em;
+    margin-bottom: .2em;
+    font-weight: 700;
+}

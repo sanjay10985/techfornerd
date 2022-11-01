@@ -9,12 +9,13 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import DarkMode from "./DarkMode";
 import { useSelector } from "react-redux";
 import { selectMode } from "../features/darkModeReducer";
+import AlternateSize from "./AlternateSize";
 
 const TopHeader = () => {
   const mode = useSelector(selectMode);
 
   return (
-    <div id={styles.top__header} className="top__header">
+    <div className={styles.top__header} id="top__header">
       <div
         id={styles.top_header__left}
         className={mode ? "lightText" : "darkText"}
@@ -26,45 +27,7 @@ const TopHeader = () => {
         </ul>
       </div>
       <div id={styles.top_header__right}>
-        <div
-          id={styles.togglediv}
-          style={{ color: mode ? "white" : "#2163e8" }}
-        >
-          {/* <input className={styles.input} type="radio" name="tx" id="sm_tx" onChange={decreaseFontSize} /> */}
-          <input className={styles.input} type="radio" name="tx" id="sm_tx" />
-          <label
-            id={styles.label}
-            className="lableback"
-            htmlFor="sm_tx"
-            onClick={(e) => (document.body.style.fontSize = "87%")}
-          >
-            A-
-          </label>
-          <input
-            className={styles.input}
-            type="radio"
-            name="tx"
-            id="default"
-            defaultChecked
-          />
-          <label
-            id={styles.label}
-            className="lableback"
-            htmlFor="default"
-            onClick={(e) => (document.body.style.fontSize = "100%")}
-          >
-            A
-          </label>
-          <input className={styles.input} type="radio" name="tx" id="lg_tx" />
-          <label
-            id={styles.label}
-            className="lableback"
-            htmlFor="lg_tx"
-            onClick={(e) => (document.body.style.fontSize = "113%")}
-          >
-            A+
-          </label>
-        </div>
+        <AlternateSize/>
         <DarkMode />
         <div id={styles.social_media__handles}>
           <FacebookIcon
