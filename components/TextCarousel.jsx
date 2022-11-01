@@ -37,19 +37,19 @@ const TextCarousel = ({ trendPosts }) => {
             <a
               className={styles.title}
               href={`/post/${trendPosts[index].slug}`}
-              // style={{
-              //   backgroundImage: mode
-              //     ? "linear-gradient(white,white)"
-              //     : "linear-gradient(rgb(79, 77, 77),rgb(79, 77, 77))",
-                
-              // }}
+              style={{
+                backgroundImage: mode
+                  ? "linear-gradient(white,white)"
+                  : "linear-gradient(rgb(79, 77, 77),rgb(79, 77, 77))",
+                color: mode ? "rgb(229, 221, 194)" : "rgb(80, 75, 75)",
+              }}
             >
            
               {true && !undefined ? trendPosts[index].title : ""}
             </a>
           </span>
         </div>
-        <div className={styles.carouselButtons} style={{ color: "black" }} id="textCarouselButtons">
+        <div className={styles.carouselButtons} style={{ color: mode ? "white":'black' }} id="textCarouselButtons">
           <AiFillLeftCircle
             onClick={(e) => setIndex((count) => loop(count - 1))}
           />

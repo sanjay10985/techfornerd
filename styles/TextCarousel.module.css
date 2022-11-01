@@ -43,7 +43,6 @@
   background-repeat: no-repeat;
   background-size: 0 1.5px;
   transition: background-size .4s;
-  padding: .1em 0;
 }
 
 .title:hover{
@@ -52,46 +51,24 @@
 
 }
 
-/* @keyframes car {
-  0%{
-    left: 100em;
-  }
-  30%{
-    left: 1em;
-  }
-  50%{
-    left: 1em;
-  }
-  80%{
-    left: 1em;
-  }
+
   
-} */
+
 
 .carouselButtons{
-  /* position: absolute;
-  top: .2em;
-  right: 10px; */
   font-size: 3em;
-  /* padding-top: .1em; */
-  /* color: white; */
-  
 }
 
 .carouselButtons > svg{
   margin-right: .1em;
-  /* background-color: rgba(0, 0, 0, 0.632); */
   border-radius: 50%;
   transition: color .2s;
-  /* color: rgb(64, 45, 19); */
-  /* color: rgb(234, 215, 196); */
   cursor: pointer;
   opacity: .8;
-  
+  /* padding: 1em; */
 }
 
 .carouselButtons > svg:hover{
-  /* color:black; */
   opacity: 1;
   transition: color .2s;
 }

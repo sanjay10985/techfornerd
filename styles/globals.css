@@ -14,10 +14,7 @@ body {
 
 body{
   transition: all .2s ease;
-  /* width: 78%; */
-  /* font-size: 62.5%; */
   margin: auto !important;
-  /* background-color: whitesmoke; */
 }
 
 #home,#top__header,#header {
@@ -32,6 +29,7 @@ a {
 * {
   box-sizing: border-box;
   margin: 0;
+  transition: all .1s;
 }
 
 .featuredPostBox{

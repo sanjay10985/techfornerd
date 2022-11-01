@@ -188,6 +188,7 @@ export const getTrendPosts = async () => {
         ) {
           name
           slug
+          id
           photo{
             url
           }

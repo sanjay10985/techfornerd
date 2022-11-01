@@ -130,7 +130,7 @@ const PostDetail = ({ post }) => {
           <div className={styles.categoryBox}>
             <h5 className={styles.categoryHeading}>Categories</h5>
             {categories.map((category) => (
-              <PostCategories category={category} slug={category.slug} />
+              <PostCategories key={category.id} category={category} slug={category.slug} />
             ))}
           </div>
           <div className={styles.similarPostsDiv} id="similarPostsDiv">

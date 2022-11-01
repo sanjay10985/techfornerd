@@ -35,7 +35,7 @@ const Header = () => {
         <ul
           className={styles.menu}
           id="menu"
-          style={{ color: mode ? "#a1a1a8" : "#595d69" }}
+          style={{ color: mode ? "#a1a1a8" : "#383a40" }}
         >
           <List text="Home" href="/" />
           <List text="Blog" arr={true} href="/blog" />
@@ -76,7 +76,7 @@ const List = ({ href, text, arr }) => {
       <a href={href}>{text}</a>
       {arr && (
         <KeyboardArrowDownIcon
-          style={{ position: "absolute", right: "-16px", bottom: "20px" }}
+          style={{ position: "absolute", right: "-16px", bottom: "16px" }}
         />
       )}
     </li>

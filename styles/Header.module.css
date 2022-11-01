@@ -28,6 +28,7 @@
   align-items: center;
   list-style-type: none;
   position: relative;
+  color: #383a40;
 }
 
 /* .menu li:first-child a{
@@ -37,8 +38,8 @@
 } */
 
 .menu > li {
-  font-size: 1.8em;
-  font-weight: 600;
+  font-size: 1.6em;
+  font-weight: 400;
   margin-right: 2em;
   display: flex;
   align-items: center;
@@ -46,6 +47,7 @@
 }
 
 .menu > li > a {
+  /* font-family:  Rubik, sans-serif; */
   padding: 1em 0;
 }
 
@@ -54,6 +56,8 @@
 .menu > li > a.active {
   color: #2163e8;
 }
+
+
 
 .navbarRight{
     display: flex;
