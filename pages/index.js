@@ -11,7 +11,7 @@ import Categories from "../containers/Categories";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import TextCarousel from "../components/TextCarousel";
 import PostsWidget from "../components/PostsWidget";
-import FeaturedPostBox from "../containers/FeaturedPostBox";
+// import FeaturedPostBox from "../containers/FeaturedPostBox";
 
 export default function Home({ highlightposts, trendposts }) {
   const mode = useSelector(selectMode);
@@ -20,7 +20,6 @@ export default function Home({ highlightposts, trendposts }) {
 
   useEffect(() => {
     getCategories().then((categories) => setCategories(categories));
-    // getPostsPerCategory('technology').then((result) =>console.log(result.length));
   }, []);
 
 
@@ -32,7 +31,7 @@ export default function Home({ highlightposts, trendposts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TextCarousel trendPosts={trendposts} />
-      <FeaturedPostBox/>
+      {/* <FeaturedPostBox/> */}
 
       <section
         className={styles.topHighlightsPosts}
