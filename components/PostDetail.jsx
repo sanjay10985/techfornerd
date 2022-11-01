@@ -1,23 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment/moment";
-import styles from '../styles/PostDetail.module.css'
+import styles from "../styles/PostDetail.module.css";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import CategoryColorLabel from "../components/CategoryColorLabel";
 import Image from "next/image";
+import RecentPosts from "./RecentPosts";
+import { getSimilarPosts } from "../services";
 
-const PostDetail = ({post}) => {
+const PostDetail = ({ post, slug, categories }) => {
+  const [relatedPosts, setRelatedPosts] = useState([]);
+
+  useEffect(() => {
+    getSimilarPosts(categories, slug).then((result) => {
+      setRelatedPosts(result);
+    });
+  }, []);
+
+  // console.log(relatedPosts);
+
   return (
-    <main className={styles.postDetailsBox}>
+    <main className={styles.postDetailsBox} id="postDetailsBox">
       <div className={styles.featuredImageBox}>
         <div
           className={styles.featuredImageDiv}
+          id="featuredImageDiv"
           style={{ backgroundImage: `url(${post.featuredImage.url})` }}
         >
-          <div className={styles.postDetails}>
+          <div className={styles.postDetails} id="postDetails">
             <CategoryColorLabel category={post.categories[0]} />
             <h2>{post.title}</h2>
             <div className={styles.postMoreDetails}>
               <div className={styles.hlAuthorBox}>
+                s
                 <a href="/" className={styles.hlAuthorDiv}>
                   <Image
                     src={post.author.photo.url}
@@ -32,11 +46,11 @@ const PostDetail = ({post}) => {
                   />
                   <label>
                     by
-                    <a href="">
+                    <label>
                       {" "}
                       {post.author.name.charAt(0).toUpperCase() +
                         post.author.name.slice(1)}
-                    </a>
+                    </label>
                   </label>
                 </a>
               </div>
@@ -46,8 +60,8 @@ const PostDetail = ({post}) => {
           </div>
         </div>
       </div>
-      <div className={styles.postContentBox}>
-        <div className={styles.postContentDiv}>
+      <div className={styles.postContentBox} id="postContentBox">
+        <div className={styles.postContentDiv} id="postContentDiv">
           {/* {post.content.raw.children[0].children[0].text} */}
           <RichText
             content={post.content.raw.children}
@@ -116,7 +130,12 @@ const PostDetail = ({post}) => {
             }}
           />
         </div>
-        <div>{/* {category} */}</div>
+        <div>
+          {relatedPosts.map((post) => (
+
+          <RecentPosts key={post.id} post={post} />
+          ))}
+        </div>
       </div>
     </main>
   );

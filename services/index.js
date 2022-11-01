@@ -232,3 +232,30 @@ export const getTrendPosts = async () => {
   
     return result.posts;
   };
+
+  export const getSimilarPosts = async (categories, slug) => {
+    const query = gql`
+      query GetPostDetails($slug: String!, $categories: [String!]) {
+        posts(
+          where: {
+            slug_not: $slug
+            AND: { categories_some: { slug_in: $categories } }
+          }
+          orderBy: createdAt_DESC
+        first: 4
+        ) {
+          id
+          title
+          featuredImage {
+            url
+          }
+          createdAt
+          slug
+        }
+      }
+    `;
+  
+    const result = await request(graphqlAPI, query, { categories, slug });
+  
+    return result.posts;
+  };

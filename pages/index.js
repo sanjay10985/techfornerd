@@ -1,8 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { FeaturedPostBox } from "../containers";
+// import { FeaturedPostBox } from "../containers";
 import {
-  getFeaturedPosts,
+  // getFeaturedPosts,
   getHighlightsPosts,
   getCategories,
   getRecentPosts,
@@ -20,15 +20,13 @@ import { MdOutlineDownloadForOffline } from "react-icons/md";
 import TextCarousel from "../components/TextCarousel";
 
 
-export default function Home({ trendposts }) {
+export default function Home({ highlightposts, trendposts }) {
   const mode = useSelector(selectMode);
 
-  const [highlightposts, setHighlightPosts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [recentPosts, setRecentPosts] = useState([]);
 
   useEffect(() => {
-    getHighlightsPosts().then((posts) => setHighlightPosts(posts));
     getCategories().then((categories) => setCategories(categories));
     getRecentPosts().then((rcposts) => setRecentPosts(rcposts));
   }, []);
@@ -41,7 +39,7 @@ export default function Home({ trendposts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TextCarousel trendPosts={trendposts} />
-      <FeaturedPostBox/>
+      {/* <FeaturedPostBox/> */}
       <section
         className={styles.topHighlightsPosts}
         id="topHighlightsPosts"
@@ -94,10 +92,11 @@ export default function Home({ trendposts }) {
               {recentPosts.map((post) => (
                 <RecentPosts
                   key={post.id}
-                  title={post.title}
-                  slug={post.slug}
-                  photoUrl={post.featuredImage.url}
-                  createdAt={post.createdAt}
+                  // title={post.title}
+                  // slug={post.slug}
+                  // photoUrl={post.featuredImage.url}
+                  // createdAt={post.createdAt}
+                  post={post}
                 />
               ))}
             </div>
@@ -120,9 +119,10 @@ export default function Home({ trendposts }) {
 
 export async function getStaticProps() {
   // const featuredposts = (await getFeaturedPosts()) || [];
+  const highlightposts = (await getHighlightsPosts()) || [];
   const trendposts = (await getTrendPosts()) || [];
   return {
-    props: {  trendposts },
+    props: {  highlightposts, trendposts },
   };
 }
 // export async function getServerSideProps() {

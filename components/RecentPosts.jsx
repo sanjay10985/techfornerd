@@ -6,7 +6,7 @@ import moment from "moment/moment";
 import { useSelector } from "react-redux";
 import { selectMode } from "../features/darkModeReducer";
 
-const RecentPosts = ({ title, slug, photoUrl, createdAt }) => {
+const RecentPosts = ({ post}) => {
     const mode = useSelector(selectMode);   
     const animate_text = (e) =>{
         // const aniText = e.target.firstElementChild.nextElementSibling.firstElementChild.firstElementChild;
@@ -16,6 +16,8 @@ const RecentPosts = ({ title, slug, photoUrl, createdAt }) => {
         aniText.classList.toggle('animateRecentText');
         console.log(aniText)
     }
+
+    console.log(post)
 
     return (
     <div
@@ -27,21 +29,21 @@ const RecentPosts = ({ title, slug, photoUrl, createdAt }) => {
         onMouseEnter={animate_text}
         onMouseLeave={animate_text}      
       >
-        <Image src={photoUrl} layout="fill" objectFit="cover" alt="postThumbnail" />
+        <Image src={post.featuredImage.url} layout="fill" objectFit="cover" alt="postThumbnail" />
       </div>
       <div className={styles.recentPostsDesc}>
         <h2 className={styles.recentPostTitle}>
-          <a href={`post/${slug}`}
+          <a href={`post/${post.slug}`}
             style={{
                 backgroundImage: mode
                   ? "linear-gradient(white, white)"
                   : "linear-gradient(black, black)",
                 color: mode ? "white" : "black",
               }}
-          >{title}</a>
+          >{post.title}</a>
         </h2>
         <label>
-          {moment(createdAt).format("MMM DD,YYYY")}
+          {moment(post.createdAt).format("MMM DD,YYYY")}
         </label>
       </div>
     </div>
