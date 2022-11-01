@@ -14,10 +14,10 @@ const PostDetails = ({ post }) => {
 
   return (
     <>
-    {domLoaded && (<PostDetail post={post} slug={post.slug} categories={post.categories.map((category) => category.slug)}/>)}
+    {domLoaded && (<PostDetail post={post} />)}
     </>
   );
-};
+};        
 
 export default PostDetails;
 

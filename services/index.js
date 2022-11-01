@@ -71,17 +71,7 @@ export const getPostDetails = async (slug) => {
           }
           content {
             raw
-            references {
-              ... on Asset {
-                id
-                url
-                width
-                height
-                handle
-                fileName
-                mimeType
-              }
-            }
+           
           }
         }
     }
@@ -201,6 +191,9 @@ export const getTrendPosts = async () => {
           photo{
             url
           }
+          color {
+            hex
+          }
         }
       }
     `;
@@ -209,6 +202,8 @@ export const getTrendPosts = async () => {
   
     return result.categories;
   };
+
+  
 
   export const getRecentPosts = async () => {
     
@@ -256,6 +251,28 @@ export const getTrendPosts = async () => {
     `;
   
     const result = await request(graphqlAPI, query, { categories, slug });
+  
+    return result.posts;
+  };
+
+
+
+  export const getPostsPerCategory = async (slug) => {
+    const query = gql`
+      query GetPostDetails($slug: String!) {
+        posts(
+          where: {
+            categories_some: {slug: $slug}
+          }
+        first: 5
+        ) {
+          id
+         
+        }
+      }
+    `;
+  
+    const result = await request(graphqlAPI, query, { slug });
   
     return result.posts;
   };

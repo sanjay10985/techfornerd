@@ -1,13 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-// import { FeaturedPostBox } from "../containers";
-import {
-  // getFeaturedPosts,
-  getHighlightsPosts,
-  getCategories,
-  getRecentPosts,
-  getTrendPosts,
-} from "../services";
+import { getHighlightsPosts, getCategories, getTrendPosts, getPostsPerCategory } from "../services";
 import { BsHourglassTop } from "react-icons/bs";
 import HighlightsPosts from "../components/HighlightsPosts";
 import { useSelector } from "react-redux";
@@ -15,21 +8,21 @@ import { selectMode } from "../features/darkModeReducer";
 import SocialMedia from "../components/SocialMedia";
 import { useEffect, useState } from "react";
 import Categories from "../containers/Categories";
-import RecentPosts from "../components/RecentPosts";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import TextCarousel from "../components/TextCarousel";
-
+import PostsWidget from "../components/PostsWidget";
+import FeaturedPostBox from "../containers/FeaturedPostBox";
 
 export default function Home({ highlightposts, trendposts }) {
   const mode = useSelector(selectMode);
 
   const [categories, setCategories] = useState([]);
-  const [recentPosts, setRecentPosts] = useState([]);
 
   useEffect(() => {
     getCategories().then((categories) => setCategories(categories));
-    getRecentPosts().then((rcposts) => setRecentPosts(rcposts));
+    // getPostsPerCategory('technology').then((result) =>console.log(result.length));
   }, []);
+
 
   return (
     <div className={styles.home} id="home">
@@ -39,7 +32,8 @@ export default function Home({ highlightposts, trendposts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TextCarousel trendPosts={trendposts} />
-      {/* <FeaturedPostBox/> */}
+      <FeaturedPostBox/>
+
       <section
         className={styles.topHighlightsPosts}
         id="topHighlightsPosts"
@@ -88,29 +82,12 @@ export default function Home({ highlightposts, trendposts }) {
           </div>
           <div className={styles.recentPostnAd} id="recentPostnAd">
             <div className={styles.recentPostsBox}>
-              <h1>Recent Post</h1>
-              {recentPosts.map((post) => (
-                <RecentPosts
-                  key={post.id}
-                  // title={post.title}
-                  // slug={post.slug}
-                  // photoUrl={post.featuredImage.url}
-                  // createdAt={post.createdAt}
-                  post={post}
-                />
-              ))}
+              <PostsWidget />
             </div>
-            <div
-              className={styles.addShowDiv}
-              id="container"
-              // onMouseEnter={ani_add}
-              // onMouseLeave={ani_add}
-            >
+            <div className={styles.addShowDiv} id="container">
               <h1>Ads Will be Shown Here...</h1>
             </div>
           </div>
-
-          {/* Recent Posts */}
         </div>
       </section>
     </div>
@@ -118,17 +95,9 @@ export default function Home({ highlightposts, trendposts }) {
 }
 
 export async function getStaticProps() {
-  // const featuredposts = (await getFeaturedPosts()) || [];
   const highlightposts = (await getHighlightsPosts()) || [];
   const trendposts = (await getTrendPosts()) || [];
   return {
-    props: {  highlightposts, trendposts },
+    props: { highlightposts, trendposts },
   };
 }
-// export async function getServerSideProps() {
-//   const featuredposts = (await getFeaturedPosts()) || [];
-//   const trendposts = (await getTrendPosts()) || [];
-//   return {
-//     props: { featuredposts, trendposts },
-//   };
-// }

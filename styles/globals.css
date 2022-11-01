@@ -149,6 +149,9 @@ a {
   #postContentDiv{
     width: 100%;
   }
+  #moreDetailsRight{
+    padding-left: 0;
+  }
   #featuredImageDiv{
     background-size: 120% !important;
   }

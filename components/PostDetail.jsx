@@ -4,19 +4,16 @@ import styles from "../styles/PostDetail.module.css";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import CategoryColorLabel from "../components/CategoryColorLabel";
 import Image from "next/image";
-import RecentPosts from "./RecentPosts";
-import { getSimilarPosts } from "../services";
+import PostsWidget from "./PostsWidget";
+import { getCategories } from "../services";
+import PostCategories from "./PostCategories";
 
-const PostDetail = ({ post, slug, categories }) => {
-  const [relatedPosts, setRelatedPosts] = useState([]);
+const PostDetail = ({ post }) => {
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    getSimilarPosts(categories, slug).then((result) => {
-      setRelatedPosts(result);
-    });
+    getCategories().then((result) => setCategories(result));
   }, []);
-
-  // console.log(relatedPosts);
 
   return (
     <main className={styles.postDetailsBox} id="postDetailsBox">
@@ -47,7 +44,6 @@ const PostDetail = ({ post, slug, categories }) => {
                   <label>
                     by
                     <label>
-                      {" "}
                       {post.author.name.charAt(0).toUpperCase() +
                         post.author.name.slice(1)}
                     </label>
@@ -130,11 +126,19 @@ const PostDetail = ({ post, slug, categories }) => {
             }}
           />
         </div>
-        <div>
-          {relatedPosts.map((post) => (
-
-          <RecentPosts key={post.id} post={post} />
-          ))}
+        <div className={styles.moreDetailsRight} id="moreDetailsRight">
+          <div className={styles.categoryBox}>
+            <h5 className={styles.categoryHeading}>Categories</h5>
+            {categories.map((category) => (
+              <PostCategories category={category} slug={category.slug} />
+            ))}
+          </div>
+          <div className={styles.similarPostsDiv} id="similarPostsDiv">
+            <PostsWidget
+              slug={post.slug}
+              categories={post.categories.map((category) => category.slug)}
+            />
+          </div>
         </div>
       </div>
     </main>
