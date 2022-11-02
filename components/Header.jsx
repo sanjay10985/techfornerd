@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import { BsThreeDots } from "react-icons/bs";
 import DarkMode from "./DarkMode";
 import AlternateSize from "./AlternateSize";
+import Link from "next/link";
 
 const Header = () => {
   const mode = useSelector(selectMode);
@@ -21,7 +22,8 @@ const Header = () => {
     <div className={styles.header} id="header">
       <nav className={styles.navbar}>
         <div className={styles.navbar_left}>
-          <a href="/" style={{ color: mode ? "white" : "#595d69" }}>
+          <Link href="/"  >
+          <a  style={{ color: mode ? "white" : "#595d69" }}>
             <Image
               src="/images/title-icon.png"
               width="60px"
@@ -31,6 +33,7 @@ const Header = () => {
             />
             <h1>FN</h1>
           </a>
+          </Link>
         </div>
         <ul
           className={styles.menu}
@@ -73,7 +76,8 @@ const List = ({ href, text, arr }) => {
   return (
     <li>
       {/* {icon && <FiberManualRecordIcon sx={{color: '#2163e8'}} fontSize="small" style={{position: 'absolute',left: "-15px",bottom: '22px',}}/>} */}
-      <a href={href}>{text}</a>
+      <Link href={href}>
+      <a >{text}</a></Link>
       {arr && (
         <KeyboardArrowDownIcon
           style={{ position: "absolute", right: "-16px", bottom: "16px" }}

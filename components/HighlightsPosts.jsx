@@ -6,6 +6,7 @@ import { BsInfoCircle } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { selectMode } from "../features/darkModeReducer";
 import AuthorCreate from "./AuthorCreate";
+import Link from "next/link";
 
 const HighlightsPosts = ({ post }) => {
   const mode = useSelector(selectMode);
@@ -47,8 +48,8 @@ const HighlightsPosts = ({ post }) => {
               <p>Sponsored</p>
             </div>
           </>
-        )}
-        <a href={`/post/${post.slug}`} className={styles.hlPostTitle}>
+        )}<Link href={`/post/${post.slug}`} >
+        <a className={styles.hlPostTitle}>
           <h1
             style={{
               backgroundImage: mode
@@ -61,6 +62,7 @@ const HighlightsPosts = ({ post }) => {
             {post.title.charAt(0).toUpperCase() + post.title.slice(1)}
           </h1>
         </a>
+        </Link>
         <p>{post.excerpt.slice()}...</p>
         <AuthorCreate
           authorName={post.author.name}
