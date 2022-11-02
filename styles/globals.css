@@ -60,11 +60,10 @@ a {
   animation: aniCircle .2s backwards;
 }
 
-@keyframes aniCircle {
+/* @keyframes aniCircle {
   0%{
       width: 0px;
       height: 0px;
-      /* background-color: transparent; */
       background-color: rgba(1, 0, 0, 0.147);
       opacity: 0;
   }
@@ -79,21 +78,20 @@ a {
       width: 0;
       height: 0;
       opacity: 0;
-      /* background-color: transparent; */
       background-color: rgba(1, 0, 0, 0.147);
   }
-}
+} */
 
 
 @media only screen and (max-width: 1400px)  {
-  #home,#top__header,#header,#postDetailsBox {
+  #home,#top__header,#header,#postDetailsBox,#blogPostPage {
     width: 84%;
   }
   
 } 
 
 @media only screen and (max-width: 1200px)  {
-  #home,#top__header,#header {
+  #home,#top__header,#header,#blogPostPage {
     width: 90%;
     font-size: 96%;
   }
@@ -108,7 +106,7 @@ a {
   }
 } 
 @media only screen and (max-width: 1100px)  {
-  #home,#top__header,#header {
+  #home,#top__header,#header,#blogPostPage {
     width: 94%;
     font-size: 94%;
   }
@@ -120,7 +118,7 @@ a {
 
 @media only screen and (max-width: 1050px)  {
   
-  #home,#top__header,#header {
+  #home,#top__header,#header,#blogPostPage {
     width: 96%;
     font-size: 90%;
   }
@@ -224,6 +222,16 @@ a {
     width: 100%;
     height: 100%;
   }
+  #blogPostPage{
+    flex-direction: column;
+    width: 80%;
+  }
+  #blogPostsSection{
+    padding-right: 0;
+  }
+  #blogPostImgBox{
+    height: 70%;
+  }
 } 
 @media only screen and (max-width: 768px)  {
   
@@ -273,13 +281,33 @@ a {
     height: 57em;
     margin-bottom: 2em;
   }
+  #blogPostPage{
+    width: 88%;
+  }
+  #blogPostDiv{
+    width: 100%;
+    height: calc(50em + 40vw);
+    /* height: 80%; */
+    flex-direction: column;
+  }
+  #blogPostImgBox{
+    width: 100%;
+    height: 100%;
+    flex: .7;
+  }
+  #blogPostDetailsBox{
+    flex: .3;
+    margin-left: 0;
+    margin-top: 2em;
+    justify-content: flex-start;
+  }
 } 
 @media only screen and (max-width: 576px)  {
   #smMenuDiv > label{
     display: none;
   }
  
-  #home,#header {
+  #home,#header  {
     width: 90%;
     font-size: 100%;
   }
@@ -311,7 +339,7 @@ a {
   #smMenuDiv > label{
     display: none;
   }
-  #home,#header {
+  #home,#header,#blogPostPage {
     width: 95%;
     font-size: 90%;
   }

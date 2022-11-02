@@ -12,8 +12,8 @@ const BlogLayoutOne = ({ posts }) => {
   return (
     <div className={styles.blogPostBox}>
       {posts.map((post) => (
-        <div key={post.id} className={styles.blogPostDiv}>
-          <div className={styles.blogPostImgBox}>
+        <div key={post.id} className={styles.blogPostDiv} id="blogPostDiv">
+          <div className={styles.blogPostImgBox} id="blogPostImgBox">
             <Image
               src={post.featuredImage.url}
               layout="fill"
@@ -21,7 +21,7 @@ const BlogLayoutOne = ({ posts }) => {
               alt="postThumbnail"
             />
           </div>
-          <div className={styles.blogPostDetailsBox}>
+          <div className={styles.blogPostDetailsBox} id="blogPostDetailsBox">
             <CategoryColorLabel category={post.categories[0]} />
             <h3 className={styles.postTitle}>
               <a

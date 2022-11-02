@@ -8,6 +8,7 @@
 
 .blogPostsSection{
     flex: .75;
+    padding-right: 1em;
 }
 
 .blogWidgetSection{
