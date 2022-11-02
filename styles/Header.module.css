@@ -31,15 +31,10 @@
   color: #383a40;
 }
 
-/* .menu li:first-child a{
-    color: #2163e8 !important;
-    margin-left: 0;
-    padding-left: 0;
-} */
 
 .menu > li {
   font-size: 1.6em;
-  font-weight: 400;
+  font-weight: 600;
   margin-right: 2em;
   display: flex;
   align-items: center;
@@ -47,7 +42,6 @@
 }
 
 .menu > li > a {
-  /* font-family:  Rubik, sans-serif; */
   padding: 1em 0;
 }
 

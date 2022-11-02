@@ -5,7 +5,7 @@
     justify-content: center;
 }
 
-.socialMediaDiv > div{
+.socialMediaDiv div{
     display: flex;
     flex-direction: column;
     width: 33%;
@@ -17,6 +17,7 @@
     color: white;
     padding-top: 2em;
     font-family: "Nunito Sans", sans-serif;
+    cursor: pointer;
 }
 
 .socialMediaDiv > div > svg{

@@ -2,24 +2,24 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { getHighlightsPosts, getCategories, getTrendPosts } from "../services";
 import { BsHourglassTop } from "react-icons/bs";
-// import HighlightsPosts from "../components/HighlightsPosts";
+import HighlightsPosts from "../components/HighlightsPosts";
 import { useSelector } from "react-redux";
 import { selectMode } from "../features/darkModeReducer";
 import SocialMedia from "../components/SocialMedia";
 import { useEffect, useState } from "react";
-// import Categories from "../containers/Categories";
+import Categories from "../containers/Categories";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import TextCarousel from "../components/TextCarousel";
-// import PostsWidget from "../components/PostsWidget";
-// import FeaturedPostBox from "../containers/FeaturedPostBox";
+import PostsWidget from "../components/PostsWidget";
+import FeaturedPostBox from "../containers/FeaturedPostBox";
 
 export default function Home({ highlightposts, trendposts }) {
   const mode = useSelector(selectMode);
 
-  // const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    // getCategories().then((categories) => setCategories(categories));
+    getCategories().then((categories) => setCategories(categories));
   }, []);
 
 
@@ -31,7 +31,7 @@ export default function Home({ highlightposts, trendposts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TextCarousel trendPosts={trendposts} />
-      {/* <FeaturedPostBox/> */}
+      <FeaturedPostBox/>
 
       <section
         className={styles.topHighlightsPosts}
@@ -48,9 +48,9 @@ export default function Home({ highlightposts, trendposts }) {
           </div>
           <div className={styles.highlightLeftSection}>
             <div className={styles.highlightsPostsBox}>
-              {/* {highlightposts.map((post) => (
+              {highlightposts.map((post) => (
                 <HighlightsPosts post={post} key={post.id} />
-              ))} */}
+              ))}
             </div>
             <div
               className={styles.morePostButtonDiv}
@@ -70,18 +70,11 @@ export default function Home({ highlightposts, trendposts }) {
           <SocialMedia />
           <div className={styles.trendignTopics}>
             <h1>Trending Topics</h1>
-            {/* {categories.map((category) => (
-              <Categories
-                key={category.name}
-                title={category.name}
-                slug={category.slug}
-                photoUrl={category.photo.url}
-              />
-            ))} */}
+            <Categories/>
           </div>
           <div className={styles.recentPostnAd} id="recentPostnAd">
             <div className={styles.recentPostsBox}>
-              {/* <PostsWidget /> */}
+              <PostsWidget />
             </div>
             <div className={styles.addShowDiv} id="container">
               <h1>Ads Will be Shown Here...</h1>
@@ -93,17 +86,17 @@ export default function Home({ highlightposts, trendposts }) {
   );
 }
 
-// export async function getStaticProps() {
-//   const highlightposts = (await getHighlightsPosts()) || [];
-//   const trendposts = (await getTrendPosts()) || [];
-//   return {
-//     props: { highlightposts, trendposts },
-//   };
-// }
 export async function getStaticProps() {
-  // const highlightposts = (await getHighlightsPosts()) || [];
+  const highlightposts = (await getHighlightsPosts()) || [];
   const trendposts = (await getTrendPosts()) || [];
   return {
-    props: { trendposts },
+    props: { highlightposts, trendposts },
   };
 }
+// export async function getStaticProps() {
+//   // const highlightposts = (await getHighlightsPosts()) || [];
+//   const trendposts = (await getTrendPosts()) || [];
+//   return {
+//     props: { trendposts },
+//   };
+// }
