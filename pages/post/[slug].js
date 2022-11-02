@@ -10,6 +10,11 @@ const PostDetails = ({ post }) => {
   const[domLoaded, setDomLoaded] = useState(false);
   const router = useRouter();
 
+  if(router.isFallback)
+  {
+    return <Loader/>
+  }
+
   useEffect(() => {
     setDomLoaded(true);
   },[])
