@@ -34,9 +34,11 @@ const TextCarousel = ({ trendPosts }) => {
       <div className={styles.carouselDiv}>
         <div className={styles.trendingTitles}>
           <span>
+            <Link 
+            href={`/post/${trendPosts[index].slug}`}
+            >
             <a
               className={styles.title}
-              href={`/post/${trendPosts[index].slug}`}
               style={{
                 backgroundImage: mode
                   ? "linear-gradient(white,white)"
@@ -47,6 +49,7 @@ const TextCarousel = ({ trendPosts }) => {
            
               {true && !undefined ? trendPosts[index].title : ""}
             </a>
+            </Link>
           </span>
         </div>
         <div className={styles.carouselButtons} style={{ color: mode ? "white":'black' }} id="textCarouselButtons">

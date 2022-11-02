@@ -23,7 +23,7 @@ export default function Home({ highlightposts, trendposts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TextCarousel trendPosts={trendposts} />
-      <FeaturedPostBox/>
+      <FeaturedPostBox />
 
       <section
         className={styles.topHighlightsPosts}
@@ -62,7 +62,7 @@ export default function Home({ highlightposts, trendposts }) {
           <SocialMedia />
           <div className={styles.trendignTopics}>
             <h1>Trending Topics</h1>
-            <Categories/>
+            <Categories />
           </div>
           <div className={styles.recentPostnAd} id="recentPostnAd">
             <div className={styles.recentPostsBox}>

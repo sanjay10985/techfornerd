@@ -57,8 +57,8 @@ const FeaturedPosts = ({
             <FiberManualRecordIcon sx={{ color: "white", fontSize: 20 }} />
             <label id={styles.category}> {category}</label>
           </div>
-
-          <a className={styles.featuredPostTitle} href={`posts/${slug}`}>
+          <Link  href={`posts/${slug}`}>
+          <a className={styles.featuredPostTitle}>
             <h1
               className="link"
               style={{ fontSize: font }}
@@ -68,6 +68,7 @@ const FeaturedPosts = ({
               {title.substring(0, 55)}...
             </h1>
           </a>
+          </Link>
           {excerpt && <p id={styles.excerpt}>{excerpt}</p>}
           <div id={styles.postDetails}>
             <div id={styles.authorDiv}>
@@ -84,7 +85,7 @@ const FeaturedPosts = ({
               )}
               <span id={styles.authorName}>
                 {" "}
-                by <a className={styles.authorNameLink}> {authorName} </a>
+                by <Link href="/"> <a className={styles.authorNameLink}> {authorName} </a></Link>
               </span>
             </div>
             <label></label>

@@ -31,8 +31,8 @@ const PostDetail = ({ post }) => {
             <h2>{post.title}</h2>
             <div className={styles.postMoreDetails}>
               <div className={styles.hlAuthorBox}>
-                s
-                <a href="/" className={styles.hlAuthorDiv}>
+                <Link href="/">
+                <a  className={styles.hlAuthorDiv}>
                   <Image
                     src={post.author.photo.url}
                     width="40px"
@@ -52,6 +52,7 @@ const PostDetail = ({ post }) => {
                     </label>
                   </label>
                 </a>
+                </Link>
               </div>
               <label></label>
               <span>{moment(post.createdAt).format("DD MMM, YYYY")}</span>

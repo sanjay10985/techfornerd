@@ -30,7 +30,7 @@ const HighlightsPosts = ({ post }) => {
           <FiberManualRecordIcon sx={{ color: "white", fontSize: 20 }} />
           <label id={styles.category}>
             {" "}
-            <a href={post.categories[0].slug}> {post.categories[0].name} </a>
+            <Link href={`/category/${post.categories[0].slug}`}><a > {post.categories[0].name} </a></Link>
           </label>
         </div>
       </div>

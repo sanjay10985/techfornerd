@@ -45,6 +45,7 @@ const Categories = () => {
             onMouseLeave={animate_img}
           >
             {" "}
+            {/* <Link></Link> */}
             <a href={`category/${category.slug}`}>{category.name}</a>
           </span>
         </div>

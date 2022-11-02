@@ -32,43 +32,46 @@ const PostsWidget = ({ slug, categories }) => {
   };
 
   return (
-    <div className={styles.relatedPostsBox} id="relatedPostsBox" style={{color: mode ? 'white' : 'black'}}>
-      <h5 className={styles.widgetTitle} 
-        
-      >
+    <div
+      className={styles.relatedPostsBox}
+      id="relatedPostsBox"
+      style={{ color: mode ? "white" : "black" }}
+    >
+      <h5 className={styles.widgetTitle}>
         {slug ? "Similar Posts" : "Recent Posts"}
       </h5>
       {relatedPosts.map((post) => (
-        <Link key={post.id} href={  `/post/${post.slug}`}> 
-        <div  className={styles.relatedPostDiv}>
-          <div
-            className={styles.relatedPostsImg}
-            onMouseEnter={animate_text}
-            onMouseLeave={animate_text}
-          >
-            <Image
-              src={post.featuredImage.url}
-              layout="fill"
-              objectFit="cover"
-              alt="postThumbnail"
-            />
+        <Link key={post.id} href={`/post/${post.slug}`}>
+          <div className={styles.relatedPostDiv}>
+            <div
+              className={styles.relatedPostsImg}
+              onMouseEnter={animate_text}
+              onMouseLeave={animate_text}
+            >
+              <Image
+                src={post.featuredImage.url}
+                layout="fill"
+                objectFit="cover"
+                alt="postThumbnail"
+              />
+            </div>
+            <div className={styles.relatedPostsDesc}>
+              <h2 className={styles.relatedPostTitle}>
+                <Link href={`/post/${post.slug}`}>
+                  <a
+                    style={{
+                      backgroundImage: mode
+                        ? "linear-gradient(white, white)"
+                        : "linear-gradient(black, black)",
+                    }}
+                  >
+                    {post.title}
+                  </a>
+                </Link>
+              </h2>
+              <label>{moment(post.createdAt).format("MMM DD,YYYY")}</label>
+            </div>
           </div>
-          <div className={styles.relatedPostsDesc}>
-            <h2 className={styles.relatedPostTitle}>
-              <a
-                href={`post/${post.slug}`}
-                style={{
-                  backgroundImage: mode
-                    ? "linear-gradient(white, white)"
-                    : "linear-gradient(black, black)",
-                }}
-              >
-                {post.title}
-              </a>
-            </h2>
-            <label>{moment(post.createdAt).format("MMM DD,YYYY")}</label>
-          </div>
-        </div>
         </Link>
       ))}
     </div>

@@ -14,7 +14,7 @@ const CategoryColorLabel = ({category}) => {
           <FiberManualRecordIcon sx={{ color: "white", fontSize: 15 }} />
           <label id={styles.category}>
             {" "}
-            <a href={category.slug}> {category.name} </a>
+           <Link href={category.slug}> <a > {category.name} </a></Link>
           </label>
         </div>
   )

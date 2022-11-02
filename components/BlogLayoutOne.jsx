@@ -5,6 +5,7 @@ import CategoryColorLabel from "./CategoryColorLabel";
 import { selectMode } from "../features/darkModeReducer";
 import { useSelector } from "react-redux";
 import AuthorCreate from "./AuthorCreate";
+import Link from "next/link";
 
 const BlogLayoutOne = ({ posts }) => {
   const mode = useSelector(selectMode);
@@ -24,8 +25,11 @@ const BlogLayoutOne = ({ posts }) => {
           <div className={styles.blogPostDetailsBox} id="blogPostDetailsBox">
             <CategoryColorLabel category={post.categories[0]} />
             <h3 className={styles.postTitle}>
-              <a
+              <Link
+              
                 href={`/post/${post.slug}`}
+              >
+              <a
                 style={{
                   backgroundImage: mode
                     ? "linear-gradient(white,white)"
@@ -35,6 +39,7 @@ const BlogLayoutOne = ({ posts }) => {
               >
                 {post.title.charAt(0).toUpperCase() + post.title.slice(1)}
               </a>
+              </Link>
             </h3>
             <p style={{color: mode ? 'white' : 'black'}} className={styles.postExcerpt}>{post.excerpt}</p>
             <AuthorCreate authorName={post.author.name} authorImg={post.author.photo.url} createdAt={post.createdAt}/>
