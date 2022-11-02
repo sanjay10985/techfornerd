@@ -9,6 +9,7 @@ import { getCategories } from "../services";
 import PostCategories from "./PostCategories";
 import { selectMode } from "../features/darkModeReducer";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const PostDetail = ({ post }) => {
   const [categories, setCategories] = useState([]);
