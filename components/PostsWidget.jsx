@@ -32,8 +32,10 @@ const PostsWidget = ({ slug, categories }) => {
   };
 
   return (
-    <div className={styles.relatedPostsBox} id="relatedPostsBox">
-      <h5 className={styles.widgetTitle}>
+    <div className={styles.relatedPostsBox} id="relatedPostsBox" style={{color: mode ? 'white' : 'black'}}>
+      <h5 className={styles.widgetTitle} 
+        
+      >
         {slug ? "Similar Posts" : "Recent Posts"}
       </h5>
       {relatedPosts.map((post) => (
@@ -59,7 +61,6 @@ const PostsWidget = ({ slug, categories }) => {
                   backgroundImage: mode
                     ? "linear-gradient(white, white)"
                     : "linear-gradient(black, black)",
-                  color: mode ? "white" : "black",
                 }}
               >
                 {post.title}

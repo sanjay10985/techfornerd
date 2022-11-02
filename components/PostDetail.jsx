@@ -7,9 +7,12 @@ import Image from "next/image";
 import PostsWidget from "./PostsWidget";
 import { getCategories } from "../services";
 import PostCategories from "./PostCategories";
+import { selectMode } from "../features/darkModeReducer";
+import { useSelector } from "react-redux";
 
 const PostDetail = ({ post }) => {
   const [categories, setCategories] = useState([]);
+  const mode = useSelector(selectMode);
 
   useEffect(() => {
     getCategories().then((result) => setCategories(result));
@@ -80,24 +83,25 @@ const PostDetail = ({ post }) => {
                   target={openInNewTab ? "_blank" : "_self"}
                   rel="noreferrer"
                   className={styles.link}
+                  style={{color: mode ? '#a1a1a8': '#595d69'}}
                 >
                   {children}
                 </a>
               ),
               h2: ({ children }) => (
-                <h2 className={styles.headingTwo}>{children}</h2>
+                <h2 className={styles.headingTwo} style={{color: mode ? 'white':'black'}}>{children}</h2>
               ),
               h3: ({ children }) => (
-                <h3 className={styles.headingThree}>{children}</h3>
+                <h3 className={styles.headingThree} style={{color: mode ? 'white':'black'}}>{children}</h3>
               ),
               h4: ({ children }) => (
-                <h4 className={styles.headingFour}>{children}</h4>
+                <h4 className={styles.headingFour} style={{color: mode ? 'white':'black'}}>{children}</h4>
               ),
               p: ({ children }) => (
-                <p className={styles.paragraph}>{children}</p>
+                <p className={styles.paragraph} style={{color: mode ? '#a1a1a8':'#595d69'}}>{children}</p>
               ),
               bold: ({ children }) => (
-                <strong className={styles.boldText}>{children}</strong>
+                <strong className={styles.boldText} style={{color: mode ? '#a1a1a8': '#595d69'}} >{children}</strong>
               ),
               code_block: ({ children }) => {
                 return (
@@ -128,7 +132,7 @@ const PostDetail = ({ post }) => {
         </div>
         <div className={styles.moreDetailsRight} id="moreDetailsRight">
           <div className={styles.categoryBox}>
-            <h5 className={styles.categoryHeading}>Categories</h5>
+            <h5 className={styles.categoryHeading} style={{color: mode ? 'white' : 'black'}}>Categories</h5>
             {categories.map((category) => (
               <PostCategories key={category.id} category={category} slug={category.slug} />
             ))}
