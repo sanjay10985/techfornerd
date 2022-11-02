@@ -80,7 +80,7 @@ const List = ({ href, text, arr }) => {
       <a >{text}</a></Link>
       {arr && (
         <KeyboardArrowDownIcon
-          style={{ position: "absolute", right: "-16px", bottom: "16px" }}
+          style={{ position: "absolute", right: "-16px", bottom: "18px" }}
         />
       )}
     </li>

@@ -57,6 +57,7 @@
 
 .carouselButtons{
   font-size: 3em;
+  display: flex;
 }
 
 .carouselButtons > svg{
