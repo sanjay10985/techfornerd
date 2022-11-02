@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
-import styles from "../../styles/PostDetails.module.css";
 import PostDetail from "../../components/PostDetail";
 import { getPostDetails, getPosts } from "../../services";
 import { useState } from "react";
+import { useRouter } from "next/router";
+import Loader from "../../components/Loader";
 
 const PostDetails = ({ post }) => {
 
   const[domLoaded, setDomLoaded] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setDomLoaded(true);

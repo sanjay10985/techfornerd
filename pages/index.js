@@ -1,12 +1,11 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { getHighlightsPosts, getCategories, getTrendPosts } from "../services";
+import { getHighlightsPosts, getTrendPosts } from "../services";
 import { BsHourglassTop } from "react-icons/bs";
 import HighlightsPosts from "../components/HighlightsPosts";
 import { useSelector } from "react-redux";
 import { selectMode } from "../features/darkModeReducer";
 import SocialMedia from "../components/SocialMedia";
-import { useEffect, useState } from "react";
 import Categories from "../containers/Categories";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import TextCarousel from "../components/TextCarousel";
@@ -15,13 +14,6 @@ import FeaturedPostBox from "../containers/FeaturedPostBox";
 
 export default function Home({ highlightposts, trendposts }) {
   const mode = useSelector(selectMode);
-
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    getCategories().then((categories) => setCategories(categories));
-  }, []);
-
 
   return (
     <div className={styles.home} id="home">
@@ -93,10 +85,3 @@ export async function getStaticProps() {
     props: { highlightposts, trendposts },
   };
 }
-// export async function getStaticProps() {
-//   // const highlightposts = (await getHighlightsPosts()) || [];
-//   const trendposts = (await getTrendPosts()) || [];
-//   return {
-//     props: { trendposts },
-//   };
-// }
