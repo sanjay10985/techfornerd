@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../styles/CategoryColorLabel.module.css'
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import Link from 'next/link';
 
 
 const CategoryColorLabel = ({category}) => {

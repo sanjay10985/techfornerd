@@ -31,7 +31,7 @@ const PostDetail = ({ post }) => {
             <h2>{post.title}</h2>
             <div className={styles.postMoreDetails}>
               <div className={styles.hlAuthorBox}>
-                <Link href="/">
+                <Link href="#">
                 <a  className={styles.hlAuthorDiv}>
                   <Image
                     src={post.author.photo.url}
@@ -113,7 +113,7 @@ const PostDetail = ({ post }) => {
               },
               img: ({ src, width, height }) => (
                 <>
-                  <img src={src} className={styles.img} width="100%" />
+                  <img src={src} className={styles.img} alt="img" width="100%" />
                 </>
               ),
               Asset: {

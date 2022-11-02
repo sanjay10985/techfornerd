@@ -14,7 +14,7 @@ const AuthorCreate = ({ authorName, authorImg, createdAt }) => {
       className={styles.AuthorBox}
       style={{ color: mode ? "#a1a1b7" : "#595d69" }}
     >
-      <Link href="#" className={styles.AuthorBox}>
+      <Link href="*" className={styles.AuthorBox}>
         <div className={styles.AuthorDiv}>
         <Image
           src={authorImg}
