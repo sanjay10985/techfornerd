@@ -49,7 +49,7 @@ const FeaturedPosts = ({
         >
           {" "}
         </div>
-        <div className={styles.textDisc}>
+        <div className={styles.textDisc} id="textDisc">
           <div
             id={styles.categoryDiv}
             style={{ backgroundColor: `${catcolor}` }}
@@ -57,7 +57,7 @@ const FeaturedPosts = ({
             <FiberManualRecordIcon sx={{ color: "white", fontSize: 20 }} />
             <label id={styles.category}> {category}</label>
           </div>
-          <Link  href={`posts/${slug}`}>
+          <Link  href={`post/${slug}`}>
           <a className={styles.featuredPostTitle}>
             <h1
               className="link"
@@ -69,7 +69,7 @@ const FeaturedPosts = ({
             </h1>
           </a>
           </Link>
-          {excerpt && <p id={styles.excerpt}>{excerpt}</p>}
+          {excerpt && <p id={styles.excerpt} className="featuredExcerpt">{excerpt}</p>}
           <div id={styles.postDetails}>
             <div id={styles.authorDiv}>
               {authorImg && (
@@ -85,7 +85,7 @@ const FeaturedPosts = ({
               )}
               <span id={styles.authorName}>
                 {" "}
-                by  <a className={styles.authorNameLink}> {authorName} </a>
+                by  <a href="#" className={styles.authorNameLink}> {authorName} </a>
               </span>
             </div>
             <label></label>

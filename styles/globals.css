@@ -240,7 +240,7 @@ a {
   
   #home,#header {
     width: 88%;
-    font-size: 95%;
+    font-size: 90%;
   }
   #featuredImageDiv{
     background-size: 130% !important;
@@ -309,10 +309,19 @@ a {
   #smMenuDiv > label{
     display: none;
   }
- 
+ .featuredExcerpt{
+  display: none;
+ }  
+ #textDisc{
+  left: 16px;
+  right: 8px;
+}
+.imgbox{
+  /* background-size: 100% !important; */
+}
   #home,#header  {
     width: 90%;
-    font-size: 100%;
+    font-size: 85%;
   }
   #featuredImageDiv{
     background-size: 160% !important;
@@ -344,11 +353,15 @@ a {
   }
   #home,#header,#blogPostPage {
     width: 95%;
-    font-size: 90%;
+    font-size: 70%;
   }
   #postDetailsBox{
     width: 95%;
-    font-size: 75%;
+    font-size: 80%;
+  }
+  #textDisc{
+    left: 12px;
+    right: 2px;
   }
   #featuredImageDiv{
     background-size: 200% !important;
@@ -360,10 +373,14 @@ a {
   }
   #home,#header {
     width: 95%;
-    font-size: 88%;
+    font-size: 60%;
   }
   #postDetailsBox{
     width: 95%;
     font-size: 75%;
+  }
+  #textDisc{
+    left: 16px;
+    right: 0;
   }
 } 
