@@ -85,7 +85,7 @@ const FeaturedPosts = ({
               )}
               <span id={styles.authorName}>
                 {" "}
-                by <a href="#"> <a className={styles.authorNameLink}> {authorName} </a></a>
+                by  <a className={styles.authorNameLink}> {authorName} </a>
               </span>
             </div>
             <label></label>
