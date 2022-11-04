@@ -6,17 +6,13 @@ import moment from "moment";
 import Image from "next/image";
 
 const FeaturedPosts = ({
-  title,
-  imgSrc,
-  slug,
-  category,
-  catcolor,
-  authorName,
   authorImg,
-  createdAt,
+  post,
   excerpt,
   font,
   bgpos,
+  right,
+  left,
 }) => {
   const animate_text = (e) => {
     const textDiv = e.target.nextElementSibling;
@@ -33,7 +29,7 @@ const FeaturedPosts = ({
   return (
     <Link
       id={styles.postLink}
-      href={`post/${slug}`}
+      href={`post/${post.slug}`}
       style={{ cursor: "pointer" }}
     >
       <div className={styles.featuredPost}>
@@ -41,7 +37,7 @@ const FeaturedPosts = ({
           id={styles.imgbox}
           className="imgbox"
           style={{
-            backgroundImage: `linear-gradient(180deg, transparent, black),url(${imgSrc})`,
+            backgroundImage: `linear-gradient(180deg, transparent, black),url(${post.featuredImage.url})`,
             backgroundPosition: `${bgpos}`,
           }}
           onMouseEnter={animate_text}
@@ -49,27 +45,35 @@ const FeaturedPosts = ({
         >
           {" "}
         </div>
-        <div className={styles.textDisc} id="textDisc">
+        <div
+          className={styles.textDisc}
+          id="textDisc"
+          style={{ right: right, left: left }}
+        >
           <div
             id={styles.categoryDiv}
-            style={{ backgroundColor: `${catcolor}` }}
+            style={{ backgroundColor: `${post.categories[0].color.hex}` }}
           >
             <FiberManualRecordIcon sx={{ color: "white", fontSize: 20 }} />
-            <label id={styles.category}> {category}</label>
+            <label id={styles.category}> {post.categories[0].name}</label>
           </div>
-          <Link  href={`post/${slug}`}>
-          <a className={styles.featuredPostTitle}>
-            <h1
-              className="link"
-              style={{ fontSize: font }}
-              onMouseEnter={animate_img}
-              onMouseLeave={animate_img}
-            >
-              {title.substring(0, 55)}...
-            </h1>
-          </a>
+          <Link href={`post/${post.slug}`}>
+            <a className={styles.featuredPostTitle}>
+              <h1
+                className="link"
+                style={{ fontSize: font }}
+                onMouseEnter={animate_img}
+                onMouseLeave={animate_img}
+              >
+                {post.title}...
+              </h1>
+            </a>
           </Link>
-          {excerpt && <p id={styles.excerpt} className="featuredExcerpt">{excerpt}</p>}
+          {excerpt && (
+            <p id={styles.excerpt} className="featuredExcerpt">
+              {excerpt}
+            </p>
+          )}
           <div id={styles.postDetails}>
             <div id={styles.authorDiv}>
               {authorImg && (
@@ -85,11 +89,15 @@ const FeaturedPosts = ({
               )}
               <span id={styles.authorName}>
                 {" "}
-                by  <a href="#" className={styles.authorNameLink}> {authorName} </a>
+                by{" "}
+                <a href="#" className={styles.authorNameLink}>
+                  {" "}
+                  {post.author.name}{" "}
+                </a>
               </span>
             </div>
             <label></label>
-            <span>{moment(createdAt).format("MMM DD, YYYY")}</span>
+            <span>{moment(post.createdAt).format("MMM DD, YYYY")}</span>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
 
 @tailwind base;
@@ -15,12 +15,14 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-body{
-  transition: all .2s ease;
+body {
+  transition: all 0.2s ease;
   margin: auto !important;
 }
 
-#home,#top__header,#header {
+#home,
+#top__header,
+#header {
   width: 78%;
 }
 
@@ -32,355 +34,416 @@ a {
 * {
   box-sizing: border-box;
   margin: 0;
-  transition: all .1s;
+  transition: all 0.1s;
 }
 
-.featuredPostBox{
+.featuredPostBox {
   width: 100%;
 }
 
-
-
-.animateText{
+.animateText {
   background-size: 100% 2px !important;
   transition: background-size 1s;
 }
-.animateRecentText{
+.animateRecentText {
   background-size: 100% 1px !important;
-  transition: background-size .5s;
+  transition: background-size 0.5s;
 }
 
 .animateImg {
   transform: scale(1.1);
   transition: all 1s ease-in-out;
-} 
+}
 
-.circle{
+.circle {
   position: absolute;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
   /* filter: contrast(1.5); */
-  animation: aniCircle .2s backwards;
+  animation: aniCircle 0.2s backwards;
 }
 
-/* @keyframes aniCircle {
-  0%{
-      width: 0px;
-      height: 0px;
-      background-color: rgba(1, 0, 0, 0.147);
-      opacity: 0;
+@media only screen and (min-width: 1410px) {
+  #home {
+    font-size: 105%;
   }
 
-  50%{
-      width: 40px;
-      height: 40px;
-      background-color: rgba(1, 0, 0, 0.147);
-      opacity: 1;
-  }
-  100%{
-      width: 0;
-      height: 0;
-      opacity: 0;
-      background-color: rgba(1, 0, 0, 0.147);
-  }
-} */
+  /* Start TopHeader */
 
+  #top__header {
+  }
 
-@media only screen and (max-width: 1400px)  {
-  #home,#top__header,#header,#postDetailsBox,#blogPostPage {
+  /* Start FeaturedPostBox*/
+
+  #featuredPostDiv {
+    height: 60em + 25vw;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  #home,
+  #top__header,
+  #header,
+  #postDetailsBox,
+  #blogPostPage {
     width: 84%;
   }
-  
-} 
+}
 
-@media only screen and (max-width: 1200px)  {
-  #home,#top__header,#header,#blogPostPage {
+@media only screen and (max-width: 1200px) {
+  #home,
+  #top__header,
+  #header,
+  #blogPostPage {
     width: 90%;
     font-size: 96%;
   }
-  #postDetailsBox{
+  #postDetailsBox {
     width: 90%;
   }
-  #fplTitle{
+  #fplTitle {
     font-size: 3.2em;
   }
-  #fplExcerpt{
+  #fplExcerpt {
     font-size: 1.6em;
   }
-} 
-@media only screen and (max-width: 1100px)  {
-  #home,#top__header,#header,#blogPostPage {
+}
+@media only screen and (max-width: 1100px) {
+  #home,
+  #top__header,
+  #header,
+  #blogPostPage {
     width: 94%;
     font-size: 94%;
   }
-  #postDetailsBox{
+  #postDetailsBox {
     width: 94%;
     font-size: 96%;
   }
-} 
+}
 
-@media only screen and (max-width: 1050px)  {
-  
-  #home,#top__header,#header,#blogPostPage {
+@media only screen and (max-width: 1050px) {
+  #home,
+  #top__header,
+  #header,
+  #blogPostPage {
     width: 96%;
     font-size: 90%;
   }
-  #postDetailsBox{
+  #postDetailsBox {
     width: 96%;
     font-size: 94%;
   }
-} 
+}
 
-
-@media only screen and (max-width: 990px)  {
-  #home,#header {
+@media only screen and (max-width: 990px) {
+  #home,
+  #header {
     width: 80%;
     font-size: 100%;
   }
-  #postDetailsBox{
+  #postDetailsBox {
     width: 80%;
     font-size: 100%;
-
   }
-  #postContentBox{
+  #postContentBox {
     flex-direction: column;
   }
-  #postContentDiv{
+  #postContentDiv {
     width: 100%;
   }
-  #moreDetailsRight{
+  #moreDetailsRight {
     padding-left: 0;
   }
-  #featuredImageDiv{
+  #featuredImageDiv {
     background-size: 120% !important;
   }
-  #textCarouselButtons{
+  #textCarouselButtons {
     display: none;
   }
-  #top__header{
+  #top__header {
     display: none !important;
-}
-  #menu{
+  }
+  #menu {
     display: none;
   }
-  #smMenuDiv{
+  #smMenuDiv {
     display: flex !important;
   }
-  #featuredPostDiv{
-    width: 100%;  
+  #featuredPostDiv {
+    width: 100%;
     height: auto;
     flex-direction: column;
   }
-  #box1Div{
+  #box1Div {
     margin-right: 0;
     height: 50em;
     width: 100%;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
-  #box2Div{
+  #box2Div {
     margin-left: 0;
     margin-top: 0;
     height: 70em;
     width: 100%;
   }
-  #box3Div{
+  #box3Div {
     margin-left: 0;
     height: 50%;
     width: 100%;
   }
-  #box4Div{
+  #box4Div {
     height: 50%;
     width: 100%;
-    margin-top:.5em ;
+    margin-top: 0.5em;
   }
-  #box5Div{
+  #box5Div {
     height: 100%;
     /* width: 100%; */
     margin-top: 0;
     margin-left: 0;
   }
-  #box6Div{
+  #box6Div {
     height: 100%;
     margin-top: 0;
     /* width: 100%; */
   }
-  #fplTitle{
+  #fplTitle {
     font-size: 3em;
   }
-  #fplExcerpt{
+  #fplExcerpt {
     font-size: 1.4em;
   }
-  #topHighlightsPosts{
+  #topHighlightsPosts {
     flex-direction: column;
   }
-  #highlightRightDiv{
+  #highlightRightDiv {
     padding-left: 0;
     margin-left: 0;
   }
-  #socialAccDiv{
+  #socialAccDiv {
     padding: 3em 0;
   }
-  #recentPostnAd{
+  #recentPostnAd {
     flex-direction: row;
     width: 100%;
     height: 100%;
   }
-  #blogPostPage{
+  #blogPostPage {
     flex-direction: column;
     width: 80%;
   }
-  #blogPostsSection{
+  #blogPostsSection {
     padding-right: 0;
   }
-  #blogPostImgBox{
+  #blogPostImgBox {
     height: 70%;
   }
-} 
-@media only screen and (max-width: 768px)  {
-  
-  #home,#header {
+}
+@media only screen and (max-width: 768px) {
+  #home,
+  #header {
     width: 88%;
-    font-size: 90%;
+    font-size: 100%;
   }
-  #featuredImageDiv{
+  #featuredImageDiv {
     background-size: 130% !important;
   }
-  #postDetailsBox{
+  .featuredExcerpt {
+    display: none;
+  }
+  #postDetailsBox {
     width: 88%;
     font-size: 95%;
   }
-  #subButton{
+  #subButton {
     display: none;
   }
-  #box2Div{
+  #box2Div {
     margin-left: 0;
-    height: 90em;
+    height: 120em;
     width: 100%;
   }
-  #box3Div{
+  #box3Div {
     margin-left: 0;
     height: 50%;
     width: 100%;
   }
-  #box4Div{
+  #box4Div {
     height: 100%;
     width: 100%;
-    margin-top:1em ;
+    margin-top: 1em;
     flex-direction: column;
   }
-  #box5Div{
+  #box5Div {
     height: 100%;
     width: 100%;
     /* margin-top: 0; */
     margin-left: 0;
   }
-  #box6Div{
+  #box6Div {
     height: 100%;
     /* margin-top: 0; */
     width: 100%;
     margin-left: 0;
   }
-  #highlightsPosts{
+  #highlightsPosts {
     height: 57em;
     margin-bottom: 2em;
   }
-  #blogPostPage{
+  #blogPostPage {
     width: 88%;
   }
-  #blogPostDiv{
+  #blogPostDiv {
     width: 100%;
     height: calc(50em + 40vw);
     /* height: 80%; */
     flex-direction: column;
   }
-  #blogPostImgBox{
+  #blogPostImgBox {
     width: 100%;
     height: 100%;
-    flex: .7;
+    flex: 0.7;
   }
-  #blogPostDetailsBox{
-    flex: .3;
+  #blogPostDetailsBox {
+    flex: 0.3;
     margin-left: 0;
     margin-top: 2em;
     justify-content: flex-start;
   }
-} 
-@media only screen and (max-width: 576px)  {
-  #smMenuDiv > label{
+}
+@media only screen and (max-width: 576px) {
+  #smMenuDiv > label {
     display: none;
   }
- .featuredExcerpt{
-  display: none;
- }  
- #textDisc{
-  left: 16px;
-  right: 8px;
-}
-.imgbox{
-  /* background-size: 100% !important; */
-}
-  #home,#header  {
-    width: 90%;
-    font-size: 85%;
+  .featuredExcerpt {
+    display: none;
   }
-  #featuredImageDiv{
+  #textDisc {
+    left: 16px;
+    right: 8px;
+  }
+
+  #home,
+  #header {
+    width: 92%;
+    font-size: 90%;
+  }
+  #featuredImageDiv {
     background-size: 160% !important;
   }
-  #postDetailsBox{
+  #postDetailsBox {
     width: 90%;
     font-size: 80%;
   }
-  #postDetails{
+  #postDetails {
     padding: 0 !important;
   }
-  #highlightsPosts{
+  #highlightsPosts {
     width: 100%;
     height: 57em;
     /* margin-bottom: 1em; */
   }
-  #highlightsPostsImage{
+  #highlightsPostsImage {
     height: 60%;
   }
-  #recentPostnAd{
+  #recentPostnAd {
     flex-direction: column;
     width: 100%;
     height: 100%;
   }
-} 
-@media only screen and (max-width: 370px)  {
-  #smMenuDiv > label{
+}
+@media only screen and (max-width: 370px) {
+  #smMenuDiv > label {
     display: none;
   }
-  #home,#header,#blogPostPage {
+  #home,
+  #header,
+  #blogPostPage {
     width: 95%;
     font-size: 70%;
   }
-  #postDetailsBox{
+  #postDetailsBox {
     width: 95%;
     font-size: 80%;
   }
-  #textDisc{
+  #textDisc {
     left: 12px;
     right: 2px;
   }
-  #featuredImageDiv{
+  #featuredImageDiv {
     background-size: 200% !important;
   }
-} 
-@media only screen and (max-width: 290px)  {
-  #smMenuDiv > label{
+}
+@media only screen and (max-width: 290px) {
+  #smMenuDiv > label {
     display: none;
   }
-  #home,#header {
+  #home,
+  #header {
     width: 95%;
     font-size: 60%;
   }
-  #postDetailsBox{
+  #postDetailsBox {
     width: 95%;
     font-size: 75%;
   }
-  #textDisc{
+  #textDisc {
     left: 16px;
     right: 0;
   }
-} 
+}
+ @media only screen and (max-width: 990px) {
+  #menu {
+    z-index: 10;
+    position: absolute;
+    display: block;
+    opacity: 0;
+    top: 10em;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    transition: all .5s;
+    /* transition: color .1s; */
+    border: none;
+    /* transform: translateY(100px); */
+    box-shadow: 0.1em 0.1em 1em rgba(0, 0, 0, 0.186);
+    }
+    #menu svg {
+      display: none;
+    }
+    #menu li {
+      display: flex;
+      margin-right: 0;
+      justify-content: center;
+    }
+    #menu li a {
+      padding: 0.8em 1em;
+    }
+    #menu.active{
+      display: block ;
+      top: 9em;
+      transition: all .2s;
+      z-index: 10;
+      opacity: 1;
+    }
+}
+
+/* .toggleMenu { */
+  /* animation: toggleMenu .5s ease linear; */
+/* } */
+
+/* @keyframes toggleMenu { */
+  /* 0%{
+    top: 10em !important;
+    display: none;
+  }
+  100%{
+    top: 7em !important;
+    display: block;
+  } */
+/* } */
+

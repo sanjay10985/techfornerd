@@ -22,19 +22,13 @@ const FeaturedPostBox = () => {
         {featuredPosts.slice(-1).map((post) => (
             // {post.categories.map((ca))}
           <FeaturedPosts
-            title={post.title}
-            imgSrc={post.featuredImage.url}
-            slug={post.slug}
+          post={post}
             key={post.id}
-            category ={post.categories[0].name}
-            // catcolor="#C42323"
-            catcolor={post.categories[0].color.hex}
-            authorName = {post.author.name}
             authorImg = {post.author.photo.url}
-            createdAt = {post.createdAt}
             excerpt={post.excerpt}
             font = "3.6em"
             bgpos='center'
+            right="25px"
           />
           ))}
         </div>
@@ -42,16 +36,12 @@ const FeaturedPostBox = () => {
           <div className={`${styles["box3"]} ${styles["box"]}`} id="box3Div">
           {featuredPosts.slice(-2,-1).map((post) => (
           <FeaturedPosts
-            title={post.title}
-            imgSrc={post.featuredImage.url}
-            slug={post.slug}
+            post={post}
             key={post.id}
-            category ={post.categories[0].name}
-            catcolor={post.categories[0].color.hex}
-            authorName = {post.author.name}
-            createdAt = {post.createdAt}
+            
             bgpos="center"
             font="2.8em"
+            right="25px"
           />
           ))}
           </div>
@@ -60,32 +50,27 @@ const FeaturedPostBox = () => {
             {featuredPosts.slice(-3,-2).map((post) => (
             // {post.categories.map((ca))}
           <FeaturedPosts
-            title={post.title}
-            imgSrc={post.featuredImage.url}
-            slug={post.slug}
+            
+            post={post}
             key={post.id}
-            category ={post.categories[0].name}
-            catcolor={post.categories[0].color.hex}
-            authorName = {post.author.name}
-            createdAt = {post.createdAt}
+            
             bgpos="top"
             font="2.2em"
+            left="18px"
+            right="12px"
           />
           ))}
             </div>
             <div className={`${styles["box6"]} ${styles["box"]}`} id="box6Div">
               {featuredPosts.slice(-4, -3).map((post) => (
                 <FeaturedPosts
-            title={post.title}
-            imgSrc={post.featuredImage.url}
-            slug={post.slug}
+           
             key={post.id}
-            category ={post.categories[0].name}
-            catcolor={post.categories[0].color.hex}
-            authorName = {post.author.name}
-            createdAt = {post.createdAt}
+                post={post}
             bgpos="top"
             font="2.2em"
+            left="18px"
+            right="12px"
           />
               ))}
             </div>

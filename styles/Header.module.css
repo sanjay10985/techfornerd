@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* position: relative; */
 }
 
 .navbar_left > a {
@@ -45,8 +46,8 @@
   padding: 1em 0;
 }
 
-.menu > li:hover,
 .menu > li > a:focus,
+.menu > li > a:hover,
 .menu > li > a.active {
   color: #2163e8;
 }
