@@ -50,8 +50,8 @@ const Header = () => {
                 height="55px"
                 alt="siteicon"
                 objectFit="contain"
-              />
-              <h1>FN</h1>
+                />
+                <h1>ode</h1>
             </a>
           </Link>
         </div>

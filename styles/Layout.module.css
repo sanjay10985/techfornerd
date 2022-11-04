@@ -1,0 +1,29 @@
+.toTopDiv{
+    background-color: rgba(17, 187, 239, 0.132);
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 40px;
+    bottom: -75px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .4s;
+    opacity: 0;
+    z-index: 10000;
+}
+
+.toTopDiv:hover .toTopButton{
+    color: white;
+}
+.toTopDiv:hover{
+background-color: #0fb9f1;
+}
+.toTopButton{
+    font-size: 40px;
+    /* font-weight: 700; */
+    color: #0fb9f1;
+}
+

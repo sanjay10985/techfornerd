@@ -11,6 +11,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 10px;
+  position: relative;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -18,6 +19,11 @@ body {
 body {
   transition: all 0.2s ease;
   margin: auto !important;
+}
+
+#toTop.active{
+  opacity: 1;
+  bottom: 50px;
 }
 
 #home,
@@ -421,7 +427,7 @@ a {
       justify-content: center;
     }
     #menu li a {
-      padding: 0.8em 1em;
+      padding: 0.8em 11em;
     }
     #menu.active{
       display: block ;

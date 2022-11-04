@@ -26,7 +26,7 @@ const FeaturedPostBox = () => {
             key={post.id}
             authorImg = {post.author.photo.url}
             excerpt={post.excerpt}
-            font = "3.6em"
+            font = "3.4em"
             bgpos='center'
             right="25px"
           />

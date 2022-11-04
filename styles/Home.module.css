@@ -1,5 +1,6 @@
 .home{
     margin: auto;
+    /* padding-bottom: 8em; */
 }
 
 .topHighlightsPosts{
@@ -14,10 +15,6 @@
     flex: 0.75;
 }
 
-.highlightLeftDiv > div{
-    margin-bottom: 4em;
-
-}
 
 
 .highlightTitleDiv{

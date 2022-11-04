@@ -1,0 +1,17 @@
+.footerBox{
+    width: 100%;
+    background-color: #191a1f;
+    position: absolute;
+    left: 0;
+    bottom: -30em;
+    height: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerText{
+    color: white;
+    font-size: 2em;
+    font-family: Rubik, sans-serif;
+}

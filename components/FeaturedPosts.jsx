@@ -65,7 +65,7 @@ const FeaturedPosts = ({
                 onMouseEnter={animate_img}
                 onMouseLeave={animate_img}
               >
-                {post.title}...
+                {post.title}
               </h1>
             </a>
           </Link>

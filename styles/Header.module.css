@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* position: relative; */
+  position: relative;
 }
 
 .navbar_left > a {
@@ -18,10 +18,11 @@
 }
 
 .navbar_left > a > h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   font-family: "Roboto Slab", sans-serif;
   font-style: italic;
   font-weight: 400;
+  margin-left: -5px;
 }
 
 .menu {
