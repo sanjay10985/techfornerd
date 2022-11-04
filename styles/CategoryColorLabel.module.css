@@ -5,7 +5,6 @@
     border-radius: 1em;
     width: fit-content;
     margin-bottom: .5em;
-    z-index: 100;
   }
 
 #categoryDiv > svg{

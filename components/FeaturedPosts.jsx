@@ -66,6 +66,7 @@ const FeaturedPosts = ({
                 onMouseLeave={animate_img}
               >
                 {post.title}
+                {/* {post.title.substring(0,45)} */}
               </h1>
             </a>
           </Link>

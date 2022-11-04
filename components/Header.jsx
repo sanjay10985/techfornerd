@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import { useSelector } from "react-redux";
@@ -19,27 +19,50 @@ const Header = () => {
 
   const router = useRouter();
 
-  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", listenScroll)
+  },[])
+
+  const listenScroll = () =>{
+    const header = document.getElementById('header')
+    const scrollTop = document.documentElement.scrollTop;
+    console.log(scrollTop)
+    if(scrollTop > 300 && router.pathname==='/')
+    {
+      header.classList.toggle('anime');
+    }
+    if(scrollTop > 800 && router.pathname==='/')
+    {
+      header.classList.add('active');
+    }
+    else{
+      
+      header.classList.remove('anime');
+      header.classList.remove('active');
+    }
+
+  }
+
 
   function toggleMenu(){
   
     const menu = document.getElementById('menu')
     if(menu.style.display==='block')
     {
-      // menu.style.display="none"
       menu.classList.toggle('active')
     }
     else{
-      // menu.style.display="block"
       menu.classList.toggle('active')
-
     }
   }
 
 
 
   return (
-    <div className={styles.header} id="header">
+    <div className={styles.header} id="header" style={{
+      position: router.pathname==='/' ? '' : 'sticky',
+      top: '0', 
+      }}>
       <nav className={styles.navbar}>
         <div className={styles.navbar_left}>
           <Link href="/">
@@ -84,6 +107,14 @@ const Header = () => {
             </>
           ) : (
             <>
+            <div
+                className={styles.smMenu}
+                id="smMenuDiv"
+                onClick={() => toggleMenu()}
+              >
+                <label htmlFor="menu">Menu</label>
+                <AiOutlineMenu id="smMenu" fontSize="3.5em" />
+              </div>
               <DarkMode />
               <BsThreeDots fontSize="3em" color="gray" />
               <AlternateSize />

@@ -32,7 +32,7 @@ export default function Home({ highlightposts, trendposts }) {
         style={{ color: mode ? "white" : "black" }}
       >
         <div className={styles.highlightLeftDiv}>
-          <div style={{ color: mode ? "white" : "black" }}>
+          <div style={{ color: mode ? "white" : "black",marginBottom: "4em" }}>
             <div className={styles.highlightTitleDiv}>
               <BsHourglassTop fontSize="3.5em" />
               <h1>Today's top highlights</h1>

@@ -8,9 +8,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    z-index: 100;
     align-items: center;
-    /* box-shadow: .3em .3em .5em black,inset -.3em -.3em .5em black; */
 }
 
 .categoryImg{
@@ -27,7 +25,6 @@
     height: 100%;
     left: 0;
     top: 0;
-    /* background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.879)); */
     background-color: black;
     z-index: 1;
     opacity: .2;
