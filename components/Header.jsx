@@ -25,19 +25,13 @@ const Header = () => {
 
   const listenScroll = () =>{
     const header = document.getElementById('header')
-    const scrollTop = document.documentElement.scrollTop;
-    console.log(scrollTop)
-    if(scrollTop > 300 && router.pathname==='/')
-    {
-      header.classList.toggle('anime');
-    }
-    if(scrollTop > 800 && router.pathname==='/')
+     
+    if(document.documentElement.scrollTop > 800 && router.pathname==='/')
     {
       header.classList.add('active');
     }
     else{
       
-      header.classList.remove('anime');
       header.classList.remove('active');
     }
 
@@ -63,7 +57,7 @@ const Header = () => {
       position: router.pathname==='/' ? '' : 'sticky',
       top: '0', 
       }}>
-      <nav className={styles.navbar}>
+      <nav className={styles.navbar} style={{backgroundColor: mode ? '#191a1f': 'white'}}>
         <div className={styles.navbar_left}>
           <Link href="/">
             <a style={{ color: mode ? "white" : "#595d69" }}>

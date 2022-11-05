@@ -4,7 +4,7 @@
   font-family: 'Rubik', sans-serif;
   background-color: white;
   z-index: 9999;
-  transition: position .5s;
+  transition: all .5s;
 }
 
 .navbar {
