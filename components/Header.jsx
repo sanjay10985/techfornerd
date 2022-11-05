@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import { useSelector } from "react-redux";
@@ -20,44 +20,41 @@ const Header = () => {
   const router = useRouter();
 
   useEffect(() => {
-    window.addEventListener("scroll", listenScroll)
-  },[])
+    window.addEventListener("scroll", listenScroll);
+  }, []);
 
-  const listenScroll = () =>{
-    const header = document.getElementById('header')
-     
-    if(document.documentElement.scrollTop > 800 && router.pathname==='/')
-    {
-      header.classList.add('active');
+  const listenScroll = () => {
+    const header = document.getElementById("header");
+
+    if (document.documentElement.scrollTop > 800 && router.pathname === "/") {
+      header.classList.add("active");
+    } else {
+      header.classList.remove("active");
     }
-    else{
-      
-      header.classList.remove('active');
-    }
+  };
 
-  }
-
-
-  function toggleMenu(){
-  
-    const menu = document.getElementById('menu')
-    if(menu.style.display==='block')
-    {
-      menu.classList.toggle('active')
-    }
-    else{
-      menu.classList.toggle('active')
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    if (menu.style.display === "block") {
+      menu.classList.toggle("active");
+    } else {
+      menu.classList.toggle("active");
     }
   }
-
-
 
   return (
-    <div className={styles.header} id="header" style={{
-      position: router.pathname==='/' ? '' : 'sticky',
-      top: '0', 
-      }}>
-      <nav className={styles.navbar} style={{backgroundColor: mode ? '#191a1f': 'white'}}>
+    <div
+      className={styles.header}
+      id="header"
+      style={{
+        position: router.pathname === "/" ? "" : "sticky",
+        top: "0",
+      }}
+    >
+      <nav
+        className={styles.navbar}
+        style={{ backgroundColor: mode ? "#191a1f" : "white" }}
+      >
         <div className={styles.navbar_left}>
           <Link href="/">
             <a style={{ color: mode ? "white" : "#595d69" }}>
@@ -67,21 +64,20 @@ const Header = () => {
                 height="55px"
                 alt="siteicon"
                 objectFit="contain"
-                />
-                <h1>ode</h1>
+              />
+              <h1>ode</h1>
             </a>
           </Link>
         </div>
         <ul
           className={styles.menu}
           id="menu"
-          style={{ color: mode ? "#a1a1a8" : "#383a40"}}
-
+          style={{ color: mode ? "#a1a1a8" : "#383a40" }}
         >
           <List text="Home" href="/" />
-          <List text="Blog" arr={true} href="/blog" />
-          <List text="Internet" arr={true} href="/internet" />
-          <List text="Game" arr={true} href="/game" />
+          <List text="Blog" href="/blog" />
+          <List text="Internet" href="/internet" />
+          <List text="Game" href="/game" />
         </ul>
         <div className={styles.navbarRight}>
           {router.pathname === "/" ? (
@@ -95,13 +91,15 @@ const Header = () => {
                 <label htmlFor="menu">Menu</label>
                 <AiOutlineMenu id="smMenu" fontSize="3.5em" />
               </div>
-              <button id="subButton">Subscribe!</button>
+              <form action="https://www.youtube.com/channel/UCKXMaI7IRw0bAdTv4Mo2yDA" target="__blank">
+              <button type="submit" id="subButton">Subscribe!</button>
+              </form>
               <BsSearch id="searchIcon" fontSize="3em" />
               <CgMenuRight fontSize="5em" />{" "}
             </>
           ) : (
             <>
-            <div
+              <div
                 className={styles.smMenu}
                 id="smMenuDiv"
                 onClick={() => toggleMenu()}
@@ -128,11 +126,6 @@ const List = ({ href, text, arr }) => {
       <Link href={href}>
         <a>{text}</a>
       </Link>
-      {arr && (
-        <KeyboardArrowDownIcon
-          style={{ position: "absolute", right: "-16px", bottom: "18px" }}
-        />
-      )}
     </li>
   );
 };

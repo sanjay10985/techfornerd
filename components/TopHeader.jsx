@@ -27,24 +27,55 @@ const TopHeader = () => {
         </ul>
       </div>
       <div id={styles.top_header__right}>
-        <AlternateSize/>
+        <AlternateSize />
         <DarkMode />
         <div id={styles.social_media__handles}>
-          <FacebookIcon
-            sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
-          />
-          <TwitterIcon
-            sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
-            />
-          <LinkedInIcon
-            sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
-          />
-          <YouTubeIcon
-            sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
-          />
-          <InstagramIcon
-            sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
-          />
+          <form action="" target="__blank">
+            {" "}
+            <button className={styles.socialIcons}>
+              <FacebookIcon
+                 sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
+              />
+            </button>
+          </form>
+          <form action="https://twitter.com/SanjayTomar_" target="__blank">
+            {" "}
+            <button className={styles.socialIcons}>
+              <TwitterIcon
+                 sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
+              />
+            </button>
+          </form>
+          <form
+            action="https://www.linkedin.com/in/sanjay-tomar-777825236/"
+            target="__blank"
+          >
+            {" "}
+            <button className={styles.socialIcons}> 
+              <LinkedInIcon
+                 sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
+              />
+            </button>
+          </form>
+          <form
+            action="https://www.youtube.com/channel/UCKXMaI7IRw0bAdTv4Mo2yDA"
+            target="__blank"
+          >
+            <button className={styles.socialIcons}>
+              {" "}
+              <YouTubeIcon
+                 sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
+              />
+            </button>
+          </form>
+          <form action="https://www.instagram.com/cns_sanjay/reels/?next=%2Ftomarsanjay.13%2F" target="__blank">
+            {" "}
+            <button className={styles.socialIcons}>
+              <InstagramIcon
+                 sx={{ fontSize: 30, color: mode ? "#a1a1a8" : "#595d69" }}
+              />
+            </button>
+          </form>
         </div>
       </div>
     </div>

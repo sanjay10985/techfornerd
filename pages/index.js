@@ -45,9 +45,8 @@ export default function Home({ highlightposts, trendposts }) {
                 <HighlightsPosts post={post} key={post.id} />
               ))}
             </div>
-            <div
+            <form action="../blog"
               className={styles.morePostButtonDiv}
-              onClick={() => window.location.href = '/blog'}
             >
               <button
                 className={styles.morePostsButton}
@@ -56,7 +55,7 @@ export default function Home({ highlightposts, trendposts }) {
                 Load more posts
               </button>
               <MdOutlineDownloadForOffline />
-            </div>
+            </form>
           </div>
         </div>
         <div className={styles.highlightRightDiv} id="highlightRightDiv">

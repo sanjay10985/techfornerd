@@ -3,10 +3,10 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(128, 128, 128, 0.44);
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
   width: 78%;
   margin: auto;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 #top_header__left {
@@ -36,24 +36,23 @@
   align-items: center;
 }
 
-
-#social_media_handles {
+#social_media__handles {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-#social_media__handles > svg {
+.socialIcons > svg {
   margin-left: 0.1em;
   padding: 0.1em 0 0.1em 0.1em;
   cursor: pointer;
 }
 
-#social_media__handles > svg:hover {
+.socialIcons > svg:hover {
   color: #2163e8;
 }
-@media only screen and (max-width: 990px)  {
-  #top__header{
-      display: none !important;
+@media only screen and (max-width: 990px) {
+  #top__header {
+    display: none !important;
   }
-} 
+}

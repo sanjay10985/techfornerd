@@ -78,7 +78,7 @@
   cursor: pointer;
 }
 
-.navbarRight > button{
+.navbarRight > form > button{
   background-color: #d6293e;
   color: white;
   border: none;
