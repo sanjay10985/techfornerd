@@ -47,13 +47,13 @@ export default function Home({ highlightposts, trendposts }) {
             </div>
             <div
               className={styles.morePostButtonDiv}
-              onClick={() => console.log("click")}
+              onClick={() => window.location.href = '/blog'}
             >
               <button
                 className={styles.morePostsButton}
-                onClick={() => loadmMoreItems(endCuro)}
+                
               >
-                Load more posts{" "}
+                Load more posts
               </button>
               <MdOutlineDownloadForOffline />
             </div>

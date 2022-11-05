@@ -42,6 +42,7 @@
 .highlightLeftSection{
     width: 100%;
     height: 100%;
+    margin-bottom: 2em;
 }
 
 .highlightsPostsBox{
@@ -63,6 +64,7 @@
     border-radius: .5em;
     /* font-size: 2em; */
     position: relative;
+    margin-top: 1em;
     cursor: pointer;
 }
 
