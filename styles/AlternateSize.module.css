@@ -30,7 +30,7 @@
     border: 0.1em solid #2163e8;
     color: #2163e8;
     transition: all 0.2s ease;
-    width: 1em;
-    font-size: 1.3em;
+    width: 10px;
+    font-size: 13px;
     cursor: pointer;
   }

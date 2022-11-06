@@ -96,8 +96,8 @@ const Header = () => {
               <form action="https://www.youtube.com/channel/UCKXMaI7IRw0bAdTv4Mo2yDA" target="__blank">
               <button type="submit" id="subButton">Subscribe!</button>
               </form>
-              <BsSearch id="searchIcon" fontSize="3em" />
-              <CgMenuRight fontSize="5em" />{" "}
+              <BsSearch id="searchIcon" fontSize="30px" style={{color: mode ? 'rgb(242, 239, 230)': 'black'}}/>
+              {/* <CgMenuRight fontSize="5em" style={{color: mode ? 'rgb(242, 239, 230)': 'black'}}/>{" "} */}
             </>
           ) : (
             <>
@@ -105,6 +105,8 @@ const Header = () => {
                 className={styles.smMenu}
                 id="smMenuDiv"
                 onClick={() => toggleMenu()}
+                style={{color: mode ? 'rgb(242, 239, 230)': 'black'}}
+
               >
                 <label htmlFor="menu">Menu</label>
                 <AiOutlineMenu id="smMenu" fontSize="3.5em" />
@@ -112,7 +114,7 @@ const Header = () => {
               <DarkMode />
               {/* <BsThreeDots fontSize="3em" color="gray" /> */}
               <AlternateSize />
-              <BsSearch id="searchIcon" fontSize="3em" />
+              <BsSearch id="searchIcon" fontSize="30px" style={{color: mode ? 'rgb(242, 239, 230)': 'black'}}/>
             </>
           )}
         </div>

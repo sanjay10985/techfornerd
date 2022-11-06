@@ -21,7 +21,7 @@
 }
 
 .navbar_left > a > h1 {
-  font-size: 3em;
+  font-size: 30px;
   font-family: "Roboto Slab", sans-serif;
   font-style: italic;
   font-weight: 400;
@@ -38,7 +38,7 @@
 
 
 .menu > li {
-  font-size: 1.6em;
+  font-size: 16px;
   font-weight: 600;
   margin-right: 2em;
   display: flex;
