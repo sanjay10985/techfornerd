@@ -1,0 +1,44 @@
+.postContent{
+    width: 100%;
+    height: auto;
+  }
+  
+  .headingTwo {
+    font-size: 3.5em;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    margin: 0.5em 0;
+    color: black;
+  }
+  .headingThree {
+    font-size: 2.8em;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    margin-bottom: 1em;
+    color: black;
+  }
+  .headingFour {
+    font-size: 2.5em;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    color: black;
+  }
+  
+  .paragraph {
+    font-family: Rubik, sans-serif;
+    color: #595d69;
+    font-size: 1.7em;
+    margin-bottom: 2em;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  
+  
+  .boldText {
+    color: #3e4048;
+  }
+  
+  .link {
+    color: black;
+    text-decoration: underline;
+  }
