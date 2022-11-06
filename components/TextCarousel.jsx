@@ -43,7 +43,7 @@ const TextCarousel = ({ trendPosts }) => {
                 backgroundImage: mode
                   ? "linear-gradient(white,white)"
                   : "linear-gradient(rgb(79, 77, 77),rgb(79, 77, 77))",
-                color: mode ? "rgb(229, 221, 194)" : "rgb(80, 75, 75)",
+                color: mode ? "rgb(242, 239, 230)" : "rgb(80, 75, 75)",
               }}
             >
            

@@ -54,6 +54,7 @@ const Header = () => {
       <nav
         className={styles.navbar}
         style={{ backgroundColor: mode ? "#191a1f" : "white" }}
+        id="mainNavbar"
       >
         <div className={styles.navbar_left}>
           <Link href="/">
@@ -87,7 +88,8 @@ const Header = () => {
                 className={styles.smMenu}
                 id="smMenuDiv"
                 onClick={() => toggleMenu()}
-              >
+                style={{color: mode ? 'rgb(242, 239, 230)': 'black'}}
+              > 
                 <label htmlFor="menu">Menu</label>
                 <AiOutlineMenu id="smMenu" fontSize="3.5em" />
               </div>
@@ -108,7 +110,7 @@ const Header = () => {
                 <AiOutlineMenu id="smMenu" fontSize="3.5em" />
               </div>
               <DarkMode />
-              <BsThreeDots fontSize="3em" color="gray" />
+              {/* <BsThreeDots fontSize="3em" color="gray" /> */}
               <AlternateSize />
               <BsSearch id="searchIcon" fontSize="3em" />
             </>

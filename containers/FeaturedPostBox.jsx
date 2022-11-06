@@ -55,7 +55,7 @@ const FeaturedPostBox = () => {
             key={post.id}
             
             bgpos="top"
-            font="2.2em"
+            font="2.4em"
             left="18px"
             right="12px"
           />
@@ -68,7 +68,7 @@ const FeaturedPostBox = () => {
             key={post.id}
                 post={post}
             bgpos="top"
-            font="2.2em"
+            font="2.4em"
             left="18px"
             right="12px"
           />

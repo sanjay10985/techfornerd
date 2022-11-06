@@ -64,6 +64,7 @@ const PostDetail = ({ post }) => {
       <div className={styles.postContentBox} id="postContentBox">
         <div className={styles.postContentDiv} id="postContentDiv">
           {/* {post.content.raw.children[0].children[0].text} */}
+          <div className={styles.postContent}>
           <RichText
             content={post.content.raw.children}
             renderers={{
@@ -117,6 +118,12 @@ const PostDetail = ({ post }) => {
                   <img src={src} className={styles.img} alt="img" width="100%" />
                 </>
               ),
+              video: ({ src, width, height }) => (
+                <>
+                  <img src={src} className={styles.img} alt="img" width="100%" />
+                  {console.log(src)}
+                </>
+              ),
               Asset: {
                 application: () => (
                   <div>
@@ -131,6 +138,10 @@ const PostDetail = ({ post }) => {
               },
             }}
           />
+          </div>
+          {/* Author */}
+          {/* next post */}
+          {/* previous post */}
         </div>
         <div className={styles.moreDetailsRight} id="moreDetailsRight">
           <div className={styles.categoryBox}>
